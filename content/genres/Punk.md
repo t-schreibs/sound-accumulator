@@ -3,8 +3,6 @@ title: "Punk"
 draft: false
 ---
 
-# Punk
-
 Punk is a music genre and subculture that was originally rooted in the garage rock movement of the '60s.
 
 |              |                                  |

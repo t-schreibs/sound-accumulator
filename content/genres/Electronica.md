@@ -3,8 +3,6 @@ title: "Electronica"
 draft: false
 ---
 
-# Electronica
-
 Electronica is a general term for a variety of electronic musical subgenres that are intended for personal listening rather than for dancing, though the term is often used ambiguously to describe most or all electronic music.
 
 |              |                                       |

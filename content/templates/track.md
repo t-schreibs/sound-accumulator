@@ -1,11 +1,9 @@
 ---
-title: "{{title}}"
+title: "(track title)"
 draft: true
 ---
 
-# (Track name)
-
-(Track intro)
+(track intro)
 
 |              |                                  |
 | ------------ | -------------------------------- |
@@ -17,7 +15,7 @@ draft: true
 | Spotify      | (spotify link)                   |
 
 ## About
-(About track)
+(about track)
 
 ## Similar tracks
-(Track links)
+(track links)

@@ -1,11 +1,9 @@
 ---
-title: "{{title}}"
+title: "(album title)"
 draft: true
 ---
 
-# (Album name)
-
-(Album intro)
+(album intro)
 
 |              |                                  |
 | ------------ | -------------------------------- |
@@ -16,10 +14,10 @@ draft: true
 | Spotify      | (spotify link)                   |
 
 ## About
-(About album)
+(about album)
 
 ## Tracks
-(Track links)
+(track links)
 
 ## Similar albums
-(Album links)
+(album links)

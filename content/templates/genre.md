@@ -1,11 +1,9 @@
 ---
-title: "{{title}}"
+title: "(genre name)"
 draft: true
 ---
 
-# (Genre name)
-
-(Genre intro)
+(genre intro)
 
 |              |                                  |
 | ------------ | -------------------------------- |
@@ -14,10 +12,10 @@ draft: true
 | Subgenre(s)  | (genre links)                    |
 
 ## About
-(About genre)
+(about genre)
 
 ## Recommended tracks
-(Track links)
+(track links)
 
 ## Similar genres
-(Genre links)
+(genre links)

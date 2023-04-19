@@ -1,9 +1,7 @@
 ---
-title: "{{title}}"
+title: "(username)"
 draft: true
 ---
-
-# (Username)
 
 |               |                                  |
 | ------------- | -------------------------------- |
@@ -12,7 +10,7 @@ draft: true
 | Website       | (website link)                   |
 
 ## About
-(About contributor)
+(about contributor)
 
 ## Contributions
-(Contribution links)
+(contribution links)

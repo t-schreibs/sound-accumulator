@@ -1,11 +1,9 @@
 ---
-title: "{{title}}"
+title: "(artist name)"
 draft: true
 ---
 
-# (Artist name)
-
-(Artist intro)
+(artist intro)
 
 |              |                                  |
 | ------------ | -------------------------------- |
@@ -18,13 +16,13 @@ draft: true
 | Spotify      | (spotify link)                   |
 
 ## About
-(About artist)
+(about artist)
 
 ## Albums
-(Album links)
+(album links)
 
 ## Recommended tracks
-(Track links)
+(track links)
 
 ## Similar artists
-(Artist links)
+(artist links)
