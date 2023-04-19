@@ -1,5 +1,5 @@
 ---
-title: "{{title}}"
+title: "t-schreibs"
 draft: false
 ---
 
@@ -16,5 +16,7 @@ draft: false
 
 ## Contributions
 [Trip hop](genres/Trip%20hop.md)
+
 [Punk](genres/Punk.md)
+
 [Electronica](genres/Electronica.md)

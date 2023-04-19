@@ -1,6 +1,6 @@
 ---
-title: "{{title}}"
-draft: true
+title: "Electronica"
+draft: false
 ---
 
 # Electronica

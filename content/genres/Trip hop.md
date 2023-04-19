@@ -1,5 +1,5 @@
 ---
-title: "{{title}}"
+title: "Trip hop"
 draft: false
 ---
 
