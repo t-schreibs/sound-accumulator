@@ -47,7 +47,7 @@ Sound Accumulator is always looking for new submissions. Want to feature your ba
 
 ### Can I include images in my submissions?
 
-Image files may not be included in pull requests, and will be removed. Sound Accumulator is a text and link-based site, and images are far too expensive in terms of both performance and storage. However, links media on other sites are encouraged, such as to [Bandcamp](https://bandcamp.com) and [Spotify](https://open.spotify.com).
+Image files may not be included in pull requests, and will be removed. Sound Accumulator is a text and link-based site, and images are far too expensive in terms of both performance and storage. However, links to media on other sites are encouraged, such as to [Bandcamp](https://bandcamp.com) and [Spotify](https://open.spotify.com).
 
 ### Will an artist that has become too popular for Sound Accumulator have their submissions removed?
 
