@@ -22,5 +22,7 @@ description:
 page_title:
   "Sound Accumulator"
 links:
-  - link_name: GitHub
-    link: https://github.com/t-schreibs/sound-accumulator
+  - link_name: Discuss
+    link: https://github.com/t-schreibs/sound-accumulator/discussions
+  - lin_name: Contribute
+    link: https://soundaccumulator.com/contribute
