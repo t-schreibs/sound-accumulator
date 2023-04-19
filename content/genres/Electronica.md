@@ -12,7 +12,7 @@ Electronica is a general term for a variety of electronic musical subgenres that
 | Subgenre(s)  | [Trip hop](genres/Trip%20hop.md)      |
 
 ## About
-A useful and less-ambiguous definition of electronica stipulates a genre of music that is generally characterized by:
+A less-ambiguous definition of electronica stipulates a genre of music that is generally characterized by:
 - An increased focus on ambient or unusual sounds, when compared with EDM
 - Often less rigid (or, sometimes, completely absent) propulsive dance beats
 - A much wider range of tempos than found in EDM
