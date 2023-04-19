@@ -23,10 +23,10 @@ Sound Accumulator is always looking for new submissions. Want to feature your ba
 3. Submissions should closely follow the [templates provided in the repository](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/templates)
     - Replace parenthesized text with content
     - Where the words "link" or "links" are included in the parenthesized text, provide [markdown links](https://www.markdownguide.org/basic-syntax/#links) as appropriate
-        - "Local" links (meaning, links across Sound Accumulator) should be handled with shortened URIs as follows:
+        - Internal links (meaning, links across Sound Accumulator) should be handled with shortened paths as follows:
             - folder/filename.md
             - Replace any spaces in the filename with "%20"
-            - Ex. genres/Trip%20hop.md
+            - E.g., `[Trip hop](genres/Trip%20hop.md)`
     - Unused rows from the info tables may be removed, but please don't add new rows - any additional information should be submitted in the "About" section
 4. All submissions should be placed in the correct folder
     - Submissions live in subfolders of the [content folder](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content):
