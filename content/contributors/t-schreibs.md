@@ -7,7 +7,7 @@ draft: false
 | ------------- | ---------------------------------------------------------------------------------------------- |
 | Name          | Tyler Schreiber                                                                                |
 | Fav. genre(s) | [Trip hop](genres/Trip%20hop.md), [Punk](genres/Punk.md), [Electronica](genres/Electronica.md) |
-| Website       | (website link)                                                                                 |
+| Website       | [Tyler Schreiber](https://tylerschreiber.com)                                                  |
 
 ## About
 
