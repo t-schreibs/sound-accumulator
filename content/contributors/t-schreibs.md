@@ -12,7 +12,7 @@ draft: false
 | Website       | (website link)                                                                                 |
 
 ## About
-(About contributor)
+
 
 ## Contributions
 [Trip hop](genres/Trip%20hop.md)
