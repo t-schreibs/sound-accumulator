@@ -10,8 +10,8 @@ other = "Всі {{.Title}}"
 [last_updated]
 other = "Оновлено"
 
-[notes_count]
-other = "нонаток з цим тегом"
+[posts_count]
+other = "публікацій із цим тегом"
 
 [first_10]
 other = "показано 10 перших результатів"
@@ -49,11 +49,11 @@ other = "Іконка Пошуку"
 [icon_search]
 other = "Іконка для відкриття пошуку"
 
-[recent_notes]
-other = "Нещодавні Нотатки"
+[recent_posts]
+other = "останні дописи"
 
-[first_3_notes]
-other = "перші 3 {{ .notes }}"
+[first_3_posts]
+other = "перші 3 {{ .posts }}"
 
 [search_for_something]
 other = "Знайти щось..."
@@ -62,4 +62,4 @@ other = "Знайти щось..."
 other = "Зміст"
 
 [copyright]
-other = "Створено {{ .name }} з використанням <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a>, © {{ .year }}"
+other = "Підтримується {{ .name }} з використанням <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a>, © {{ .year }}"

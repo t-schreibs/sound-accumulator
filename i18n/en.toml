@@ -10,8 +10,8 @@ other = "All {{.Title}}"
 [last_updated]
 other = "Last updated"
 
-[notes_count]
-other = "notes with this tag"
+[posts_count]
+other = "posts with this tag"
 
 [first_10]
 other = "showing first 10 results"
@@ -49,11 +49,11 @@ other = "Search Icon"
 [icon_search]
 other = "Icon to open search"
 
-[recent_notes]
-other = "Recent Notes"
+[recent_posts]
+other = "Recent Posts"
 
-[first_3_notes]
-other = "first 3 {{ .notes }}"
+[first_3_posts]
+other = "first 3 {{ .posts }}"
 
 [search_for_something]
 other = "Search for something..."

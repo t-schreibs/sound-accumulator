@@ -10,8 +10,8 @@ other = "Alle {{.Title}}"
 [last_updated]
 other = "Sist oppdatert"
 
-[notes_count]
-other = "notater med denne taggen"
+[posts_count]
+other = "innlegg med denne taggen"
 
 [first_10]
 other = "viser første 10 resultatene"
@@ -49,11 +49,11 @@ other = "Søkeikon"
 [icon_search]
 other = "Ikon for å åpne søk"
 
-[recent_notes]
-other = "Nylige notater"
+[recent_posts]
+other = "Nylige innlegg"
 
-[first_3_notes]
-other = "første 3 {{ .notes }}"
+[first_3_posts]
+other = "første 3 {{ .posts }}"
 
 [search_for_something]
 other = "Søk etter noe..."
@@ -62,4 +62,4 @@ other = "Søk etter noe..."
 other = "Innholdsfortegnelse"
 
 [copyright]
-other = "Opprettet av {{ .name }} ved hjelp av <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a>, © {{ .year }}"
+other = "Vedlikeholdt av {{ .name }} ved hjelp av <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a>, © {{ .year }}"

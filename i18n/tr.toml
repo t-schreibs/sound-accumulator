@@ -10,8 +10,8 @@ other = "Hepsi {{.Title}}"
 [last_updated]
 other = "Son güncelleme"
 
-[notes_count]
-other = "Bu etikete sahip notlar"
+[posts_count]
+other = "Bu etikete sahip yayınlar"
 
 [first_10]
 other = "İlk 10 sonuç gösteriliyor"
@@ -49,11 +49,11 @@ other = "Arama Simgesi"
 [icon_search]
 other = "Aramayı açmak için simge tıklayın"
 
-[recent_notes]
-other = "Son Notlar"
+[recent_posts]
+other = "Yakın Zamanda Gönderilenler"
 
-[first_3_notes]
-other = "İlk Üç {{ .notes }}"
+[first_3_posts]
+other = "İlk Üç {{ .posts }}"
 
 [search_for_something]
 other = "Bir şey ara..."
@@ -62,4 +62,4 @@ other = "Bir şey ara..."
 other = "İçindekiler"
 
 [copyright]
-other = "{{ .name }} tarafından <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a> kullanılarak yapılmıştır, © {{ .year }}"
+other = "{{ .name }} tarafından <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a> kullanılarak sürdürüldür, © {{ .year }}"

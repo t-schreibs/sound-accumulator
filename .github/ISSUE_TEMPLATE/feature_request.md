@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea or improvement for Quartz
+about: Suggest an idea or improvement for Sound Accumulator
 title: ''
 labels: enhancement
 assignees: ''

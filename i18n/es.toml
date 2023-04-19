@@ -10,8 +10,8 @@ other = "Todos {{.Title}}"
 [last_updated]
 other = "Actualizado por última vez"
 
-[notes_count]
-other = "notas con esta etiqueta"
+[posts_count]
+other = "publicaciones con esta etiqueta"
 
 [first_10]
 other = "mostrando los primeros 10 resultados"
@@ -49,11 +49,11 @@ other = "Ícono de Búsqueda"
 [icon_search]
 other = "Ícono para abrir la búsqueda"
 
-[recent_notes]
-other = "Notas Recientes"
+[recent_posts]
+other = "Publicaciones Recientes"
 
-[first_3_notes]
-other = "primeras 3 {{ .notes }}"
+[first_3_posts]
+other = "primeras 3 {{ .posts }}"
 
 [search_for_something]
 other = "Buscar algo..."
@@ -62,4 +62,4 @@ other = "Buscar algo..."
 other = "Tabla de Contenido"
 
 [copyright]
-other = "Hecho por {{ .name }} usando <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a>, © {{ .year }}"
+other = "Mantenido por {{ .name }} usando <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a>, © {{ .year }}"

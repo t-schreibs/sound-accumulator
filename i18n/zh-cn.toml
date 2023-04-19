@@ -10,8 +10,8 @@ other = "所有 {{.Title}}"
 [last_updated]
 other = "最后更新于"
 
-[notes_count]
-other = "带有此标签的笔记"
+[posts_count]
+other = "用这个标签发邮政"
 
 [first_10]
 other = "正在展示前10个结果"
@@ -49,11 +49,11 @@ other = "搜索图标"
 [icon_search]
 other = "打开搜索图标"
 
-[recent_notes]
-other = "近期笔记"
+[recent_posts]
+other = "近期邮政"
 
-[first_3_notes]
-other = "前3个 {{ .notes }}"
+[first_3_posts]
+other = "前3个 {{ .posts }}"
 
 [search_for_something]
 other = "进行搜索......"
@@ -62,4 +62,4 @@ other = "进行搜索......"
 other = "目录"
 
 [copyright]
-other = "由 {{ .name }} 用 <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a> 创造, © {{ .year }}"
+other = "由 {{ .name }} 用 <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a> 维护, © {{ .year }}"

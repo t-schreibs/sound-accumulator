@@ -10,7 +10,7 @@ other = "সকল {{.Title}}"
 [last_updated]
 other = "সর্বশেষ পরিবর্তিত"
 
-[notes_count]
+[posts_count]
 other = "সংখ্যক এই ট্যাগের"
 
 [first_10]
@@ -49,11 +49,11 @@ other = "খোঁজার আইকন"
 [icon_search]
 other = "জ্ঞানকোষ"
 
-[recent_notes]
+[recent_posts]
 other = "সাম্প্রতিক"
 
-[first_3_notes]
-other = "প্রথম ৩ {{ .notes }}"
+[first_3_posts]
+other = "প্রথম ৩ {{ .posts }}"
 
 [search_for_something]
 other = "খুঁজুন..."
