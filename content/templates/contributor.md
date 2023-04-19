@@ -8,7 +8,7 @@ draft: true
 |               |                                  |
 | ------------- | -------------------------------- |
 | Name          | (name)                           |
-| Fav. genre(s) | (genres)                         |
+| Fav. genre(s) | (genre links)                    |
 | Website       | (website link)                   |
 
 ## About

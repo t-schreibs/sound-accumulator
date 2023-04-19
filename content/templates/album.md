@@ -10,7 +10,7 @@ draft: true
 |              |                                  |
 | ------------ | -------------------------------- |
 | Artist       | (artist link)                    |
-| Genre(s)     | (genres)                         |
+| Genre(s)     | (genre links)                    |
 | Published    | (publish date)                   |
 | Bandcamp     | (bandcamp link)                  |
 | Spotify      | (spotify link)                   |

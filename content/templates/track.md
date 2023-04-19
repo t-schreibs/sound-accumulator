@@ -11,7 +11,7 @@ draft: true
 | ------------ | -------------------------------- |
 | Artist       | (artist link)                    |
 | Album        | (album link)                     |
-| Genre(s)     | (genres)                         |
+| Genre(s)     | (genre links)                    |
 | Published    | (publish date)                   |
 | Bandcamp     | (bandcamp link)                  |
 | Spotify      | (spotify link)                   |
