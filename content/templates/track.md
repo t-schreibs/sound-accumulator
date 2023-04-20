@@ -1,6 +1,8 @@
 ---
 title: "(track title)"
 draft: true
+tags: []
+categories: ['track']
 ---
 
 (track intro)

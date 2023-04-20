@@ -1,6 +1,8 @@
 ---
 title: "Trip hop"
 draft: false
+tags: ['electronica']
+categories: ['genre']
 ---
 
 Trip hop is a fusion music genre that originated in the UK in the 1990s.
