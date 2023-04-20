@@ -7,4 +7,4 @@ enableToc: false
 
 Sound Accumulator is a community-generated music wiki that prioritizes small & local artists and focuses on discoverability.
 
-### [View tags](https://soundaccumulator.com/tags)
+### [View posts by tag](https://soundaccumulator.com/tags)
