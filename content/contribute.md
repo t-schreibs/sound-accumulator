@@ -5,7 +5,29 @@ enableToc: false
 
 ## Get involved!
 
-Sound Accumulator is always looking for new submissions. Want to feature your band's music? Want to help a local artist out? Enjoy this space and looking for a way to give back? Consider forking the [repository](https://github.com/t-schreibs/sound-accumulator) and submitting a pull request.
+Sound Accumulator is always looking for new submissions. Want to feature your band's music? Want to help a local artist out? Enjoy this space and looking for a way to give back? Consider contributing to the [repository](https://github.com/t-schreibs/sound-accumulator).
+
+## Contributing to the GitHub repository
+
+In order to submit to the project, you will need to [create a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks#forking-a-repository-versus-duplicating-a-repository) of the [main repository](https://github.com/t-schreibs/sound-accumulator), add content to your fork, and then [generate a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) for the [hugo branch](https://github.com/t-schreibs/sound-accumulator/tree/hugo) of the main repository. A general overview of the workflow would look something like this:
+
+1. Make sure you have a GitHub account and are currently logged into it
+2. Navigate to the [sound-accumulator repository](https://github.com/t-schreibs/sound-accumulator) on GitHub
+3. At the top of the page, select "Fork", and generate a fork of the repository on your profile
+    - You do _not_ need to copy all branches - the only one you should be adding changes to is the hugo one
+4. Using whatever method works for you, add .md files to the subfolders underneath the "content" folder in the hugo branch of your fork
+    - You can technically do this directly in the GitHub web app, but using a tool like [VS Code](https://code.visualstudio.com) is much nicer
+    - Submitted files must meet the submission guidelines as outlined in the following section of this guide
+    - You will need to use Git to commit your files to your fork, but if you're unfamiliar, both GitHub and VS Code have a simple GUI interface for doing that
+5. Once you are happy with the content you've created, it's time to submit your pull request
+    - Navigate to the ["Pull requests" tab](https://github.com/t-schreibs/sound-accumulator/pulls) of the sound-accumulator repository
+    - Click "New pull request" at the top of the page, and create a pull request with the hugo branch of your fork as the *compare* branch and the hugo branch of the main repo as the *base* branch
+6. Your pull request will be reviewed by the project maintainers
+    - In some instances, the pull request will be outright rejected - see the submission guidelines below for more information on this
+    - Some suggestions may or may not be provided - they will be marked as either optional or required
+    - To complete the process, make all required changes and implement whatever optional suggestions you feel are worthwhile
+    - The pull request will be accepted by the maintainers, and your submission will go live!
+7. Sit back and admire your handiwork
 
 ## Submission guidelines
 
@@ -34,12 +56,12 @@ Sound Accumulator is always looking for new submissions. Want to feature your ba
         - Albums in [content/albums](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/albums)
         - Tracks in [content/tracks](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/tracks)
         - Genres in [content/genres](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/genres)
-4. Focus on linking!
+5. Focus on linking!
     - While there are defined sections for certain kinds of links (genre links in the info tables, links in the "Similar tracks" section at the bottom of track submissions, etc.), internal links should be peppered liberally throughout the "Intro" and "About" sections of any submission
     - Links are how users find music on this site - without links, your submissions will disappear into the void
-5. Keep the tone concise and generally neutral, but a degree of conversationality is permitted, and fun & interesting comparisons to other artists, albums, tracks, or genres are condoned and even encouraged
+6. Keep the tone concise and generally neutral, but a degree of conversationality is permitted, and fun & interesting comparisons to other artists, albums, tracks, or genres are condoned and even encouraged
     - Keep opinions to the [discussion boards](https://github.com/t-schreibs/sound-accumulator/discussions) - Sound Accumulator is not a review site
-6. All submissions must at a minimum meet the Quartz [citizen code of conduct](https://github.com/t-schreibs/sound-accumulator/blob/hugo/CODE_OF_CONDUCT.md) - and that goes for both the music/artists submitted and the way in which they are represented
+7. All submissions must at a minimum meet the Quartz [citizen code of conduct](https://github.com/t-schreibs/sound-accumulator/blob/hugo/CODE_OF_CONDUCT.md) - and that goes for both the music/artists submitted and the way in which they are represented
     - This site is not Wikipedia, and its intention is not to catalog all notable music
     - Sound Accumulator is committed to fostering an open & inclusive community of audiophiles, while increasing exposure for small & local artists
 
