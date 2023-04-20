@@ -1,8 +1,7 @@
 ---
 title: "(album title)"
 draft: true
-tags: []
-categories: ['album']
+tags: ['album']
 ---
 
 (album intro)

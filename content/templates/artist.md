@@ -1,8 +1,7 @@
 ---
 title: "(artist name)"
 draft: true
-tags: []
-categories: ['artist']
+tags: ['artist']
 ---
 
 (artist intro)

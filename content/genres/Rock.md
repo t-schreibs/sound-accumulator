@@ -1,8 +1,7 @@
 ---
 title: "Rock"
 draft: false
-tags: ['rock']
-categories: ['genre']
+tags: ['genre']
 ---
 
 Rock (originally, "rock and roll") is a genre of music that was pioneered in the '40s and early '50s by musicians that borrowed from & electrified blues, folk, and other popular musics of the time. 

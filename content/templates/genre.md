@@ -1,8 +1,7 @@
 ---
 title: "(genre name)"
 draft: true
-tags: []
-categories: ['genre']
+tags: ['genre']
 ---
 
 (genre intro)
