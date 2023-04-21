@@ -46,9 +46,9 @@ In order to submit to the project, you will need to [create a fork](https://docs
     - Replace parenthesized text with content
     - Where the words "link" or "links" are included in the parenthesized text, provide [markdown links](https://www.markdownguide.org/basic-syntax/#links) as appropriate
         - Internal links (meaning, links across Sound Accumulator) should be handled with shortened paths as follows:
-            - folder/filename.md
-            - Replace any spaces in the filename with "%20"
-            - E.g., `[Trip hop](genres/Trip%20hop.md)`
+            - folder/path/filename.md
+            - Replace any spaces with "%20"
+            - E.g., `[Trip hop](genres/Trip%20hop.md)`, `[1-5](tracks/scribble%20t/1-5.md)`
     - Unused rows from the info tables may be removed, but please don't add new rows - any additional information should be submitted in the "About" section
     - Multiple artists may be linked in the info table of a single track or release, as can multiple releases in the table of a single track
 4. All submissions should be placed in the correct folder
