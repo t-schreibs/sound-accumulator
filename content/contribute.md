@@ -1,6 +1,6 @@
 ---
 title: Contribute
-enableToc: false
+tags: ['meta']
 ---
 
 ## Get involved!
