@@ -50,12 +50,15 @@ In order to submit to the project, you will need to [create a fork](https://docs
             - Replace any spaces in the filename with "%20"
             - E.g., `[Trip hop](genres/Trip%20hop.md)`
     - Unused rows from the info tables may be removed, but please don't add new rows - any additional information should be submitted in the "About" section
+    - Multiple artists may be linked in the info table of a single track or release, as can multiple releases in the table of a single track
 4. All submissions should be placed in the correct folder
     - Submissions live in subfolders of the [content folder](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content):
         - Artists in [content/artists](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/artists)
         - Albums, EPs, singles in [content/releases](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/releases)
         - Tracks in [content/tracks](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/tracks)
         - Genres in [content/genres](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/genres)
+        - Release and track submissions should be grouped inside of subfolders labeled with the artist's name
+        - In the event that multiple artists contributed to a track or release (such as in the form of a compilation or collaboration), a primary artist should be selected for the submission, and the submission can then be organized in the folders accordingly
 5. Focus on linking!
     - While there are defined sections for certain kinds of links (genre links in the info tables, links in the "Similar tracks" section at the bottom of track submissions, etc.), internal links should be peppered liberally throughout the "Intro" and "About" sections of any submission
     - Links are how users find music on this site - without links, your submissions will disappear into the void
