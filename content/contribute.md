@@ -53,7 +53,7 @@ In order to submit to the project, you will need to [create a fork](https://docs
 4. All submissions should be placed in the correct folder
     - Submissions live in subfolders of the [content folder](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content):
         - Artists in [content/artists](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/artists)
-        - Albums in [content/albums](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/albums)
+        - Albums, EPs, singles in [content/releases](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/releases)
         - Tracks in [content/tracks](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/tracks)
         - Genres in [content/genres](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/genres)
 5. Focus on linking!
