@@ -6,13 +6,14 @@ tags: ['album']
 
 (album intro)
 
-|              |                                  |
-| ------------ | -------------------------------- |
-| Artist       | (artist link)                    |
-| Genre(s)     | (genre links)                    |
-| Published    | (publish date)                   |
-| Bandcamp     | (bandcamp link)                  |
-| Spotify      | (spotify link)                   |
+|                  |                                  |
+| ---------------- | -------------------------------- |
+| **Artist**       | (artist link)                    |
+| **Genre(s)**     | (genre links)                    |
+| **Published**    | (publish date)                   |
+| **Bandcamp**     | (bandcamp link)                  |
+| **Spotify**      | (spotify link)                   |
+| **SoundCloud**   | (soundcloud link)                |
 
 ## About
 (about album)

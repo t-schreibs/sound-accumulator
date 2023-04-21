@@ -6,11 +6,11 @@ tags: ['genre']
 
 Electronica is a general term for a variety of electronic musical subgenres that are intended for personal listening rather than for dancing, though the term is often used ambiguously to describe most or all electronic music.
 
-|              |                                       |
-| ------------ | ------------------------------------- |
-| AKA          | Post-rock, alternative dance, ambient |
-| Origins      | 1990s UK                              |
-| Subgenre(s)  | [Trip hop](genres/Trip%20hop.md)      |
+|                  |                                       |
+| ---------------- | ------------------------------------- |
+| **AKA**          | Post-rock, alternative dance, ambient |
+| **Origins**      | 1990s UK                              |
+| **Subgenre(s)**  | [Trip hop](genres/Trip%20hop.md)      |
 
 ## About
 A less-ambiguous definition of electronica stipulates a genre of music that is generally characterized by:

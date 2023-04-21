@@ -6,15 +6,16 @@ tags: ['artist']
 
 (artist intro)
 
-|              |                                  |
-| ------------ | -------------------------------- |
-| AKA          | (aliases)                        |
-| Origin       | (city, state/province, country)  |
-| Genre(s)     | (genre links)                    |
-| Years active | (start year-end year or present) |
-| Website      | (website link)                   |
-| Bandcamp     | (bandcamp link)                  |
-| Spotify      | (spotify link)                   |
+|                  |                                  |
+| ---------------- | -------------------------------- |
+| **AKA**          | (aliases)                        |
+| **Origin**       | (city, state/province, country)  |
+| **Genre(s)**     | (genre links)                    |
+| **Years active** | (start year-end year or present) |
+| **Website**      | (website link)                   |
+| **Bandcamp**     | (bandcamp link)                  |
+| **Spotify**      | (spotify link)                   |
+| **SoundCloud**   | (soundcloud link)                |
 
 ## About
 (about artist)

@@ -6,11 +6,11 @@ tags: ['genre']
 
 (genre intro)
 
-|              |                                  |
-| ------------ | -------------------------------- |
-| AKA          | (aliases)                        |
-| Origins      | (origins)                        |
-| Subgenre(s)  | (genre links)                    |
+|                  |                                  |
+| ---------------- | -------------------------------- |
+| **AKA**          | (aliases)                        |
+| **Origins**      | (origins)                        |
+| **Subgenre(s)**  | (genre links)                    |
 
 ## About
 (about genre)
