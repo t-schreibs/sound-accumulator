@@ -1,6 +1,6 @@
 ---
 title: "Follow the Cyborg"
-draft: true
+draft: false
 tags: ['release']
 ---
 
