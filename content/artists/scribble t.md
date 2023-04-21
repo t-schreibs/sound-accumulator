@@ -20,11 +20,10 @@ scribble t is a project born out of Tyler Schreiber's developing fascination wit
 scribble t is currently developing an interesting audiovisual set and hopes to unveil it, both in live and recorded formats, sometime in the next year.
 
 ## Releases
-[1-5](releases/scribble%t/1-5.md)
-[4-6](releases/scribble%20t/4-6.md)
+[1-5](releases/scribble%20t/1-5.md), [4-6](releases/scribble%20t/4-6.md)
 
 ## Recommended tracks
-[1-5](tracks/scribble%t/1-5.md)
+[1-5](tracks/scribble%20t/1-5.md)
 
 ## Similar artists
 [Combobox](artists/Combobox.md)
