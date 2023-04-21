@@ -1,25 +1,26 @@
 ---
-title: "(album title)"
+title: "(release title)"
 draft: true
-tags: ['album']
+tags: ['release']
 ---
 
-(album intro)
+(release intro)
 
 |                  |                                  |
 | ---------------- | -------------------------------- |
 | **Artist**       | (artist link)                    |
 | **Genre(s)**     | (genre links)                    |
+| **Type**         | (LP/EP/single)                   |
 | **Published**    | (publish date)                   |
 | **Bandcamp**     | (bandcamp link)                  |
 | **Spotify**      | (spotify link)                   |
 | **SoundCloud**   | (soundcloud link)                |
 
 ## About
-(about album)
+(about release)
 
 ## Tracks
 (track links)
 
-## Similar albums
-(album links)
+## Similar releases
+(release links)

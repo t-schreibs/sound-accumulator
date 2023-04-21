@@ -9,7 +9,7 @@ tags: ['track']
 |                  |                                  |
 | ---------------- | -------------------------------- |
 | **Artist**       | (artist link)                    |
-| **Album**        | (album link)                     |
+| **Release**      | (release link)                   |
 | **Genre(s)**     | (genre links)                    |
 | **Published**    | (publish date)                   |
 | **Bandcamp**     | (bandcamp link)                  |

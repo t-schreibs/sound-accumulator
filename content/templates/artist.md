@@ -20,8 +20,8 @@ tags: ['artist']
 ## About
 (about artist)
 
-## Albums
-(album links)
+## Releases
+(release links)
 
 ## Recommended tracks
 (track links)
