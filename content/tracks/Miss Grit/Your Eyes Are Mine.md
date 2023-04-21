@@ -4,12 +4,12 @@ draft: false
 tags: ['track']
 ---
 
-Your Eyes Are Mine is the second track on [Miss Grit](artists/Miss%20Grit.md)'s debut album [Follow the Cyborg](releases/Miss%Grit/Follow%the%Cyborg.md).
+Your Eyes Are Mine is the second track on [Miss Grit](artists/Miss%20Grit.md)'s debut album [Follow the Cyborg](releases/Miss%20Grit/Follow%20the%20Cyborg.md).
 
 |                  |                                                                                                 |
 | ---------------- | ----------------------------------------------------------------------------------------------- |
 | **Artist**       | [Miss Grit](artists/Miss%20Grit.md)                                                             |
-| **Release**      | [Follow the Cyborg](releases/Miss%Grit/Follow%the%Cyborg.md)                                    |
+| **Release**      | [Follow the Cyborg](releases/Miss%20Grit/Follow%20the%20Cyborg.md)                              |
 | **Genre(s)**     | [Alt-rock](genres/Alt-rock.md)                                                                  |
 | **Published**    | February 24, 2023                                                                               |
 | **Bandcamp**     | [Your Eyes Are Mine](https://missgrit.bandcamp.com/track/your-eyes-are-mine)                    |
