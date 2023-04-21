@@ -39,7 +39,7 @@ In order to submit to the project, you will need to [create a fork](https://docs
     - Genre submissions may either be done in separate pull requests, or in the same pull request as an associated artist
 2. Artists must _not_ be internationally famous, and even somewhat well-known artists are likely to be rejected
     - This resource is primarily geared toward exposure for small and local acts
-    - Does the artist you're looking to submit have more than a million streams on Spotify? They're probably too well-known for Sound Accumulator
+    - Does the artist you're looking to submit have more than a million streams for a single track on Spotify? They're probably too well-known for Sound Accumulator
     - You have the right to argue on behalf of "gray-area" mid-tier artists, but please be aware that the maintainers are not easily swayed! All final decisions are made with the intent of supporting small & local artists, and this does mean that some submissions might be unexpectedly rejected
     - Rejections are not a form of discipline - we often learn about cool acts through rejected submissions! But they are used to help keep the site focused
 3. Submissions should closely follow the [templates provided in the repository](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/templates)
