@@ -15,8 +15,5 @@ tags: ['genre']
 ## About
 (about genre)
 
-## Recommended tracks
-(track links)
-
 ## Similar genres
 (genre links)

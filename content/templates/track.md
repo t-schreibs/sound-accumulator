@@ -10,11 +10,8 @@ tags: ['track']
 | ---------------- | -------------------------------- |
 | **Artist**       | (artist link)                    |
 | **Release**      | (release link)                   |
-| **Genre(s)**     | (genre links)                    |
 | **Published**    | (publish date)                   |
-| **Bandcamp**     | (bandcamp link)                  |
-| **Spotify**      | (spotify link)                   |
-| **SoundCloud**   | (soundcloud link)                |
+| **Links**        | (external links)                 |
 
 ## About
 (about track)
