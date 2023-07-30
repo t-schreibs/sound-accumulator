@@ -12,19 +12,10 @@ tags: ['artist']
 | **Origin**       | (city, state/province, country)  |
 | **Genre(s)**     | (genre links)                    |
 | **Years active** | (start year-end year or present) |
-| **Website**      | (website link)                   |
-| **Bandcamp**     | (bandcamp link)                  |
-| **Spotify**      | (spotify link)                   |
-| **SoundCloud**   | (soundcloud link)                |
+| **Links**        | (external links)                 |
 
 ## About
 (about artist)
 
 ## Releases
 (release links)
-
-## Recommended tracks
-(track links)
-
-## Similar artists
-(artist links)
