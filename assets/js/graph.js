@@ -144,7 +144,7 @@ async function drawGraph(baseUrl, isHome, pathColors, graphConfig) {
     .join("line")
     .attr("class", "link")
     .attr("stroke", "var(--g-link)")
-    .attr("stroke-width", 2)
+    .attr("stroke-width", 1)
     .attr("data-source", (d) => d.source.id)
     .attr("data-target", (d) => d.target.id)
 
@@ -179,7 +179,7 @@ async function drawGraph(baseUrl, isHome, pathColors, graphConfig) {
         }
       })
     })
-    .on("mouseover", function(_, d) {
+    .on("mouseover", function (_, d) {
       d3.selectAll(".node").transition().duration(100).attr("fill", "var(--g-node-inactive)")
 
       const neighbours = parseIdsFromLinks([
@@ -209,10 +209,11 @@ async function drawGraph(baseUrl, isHome, pathColors, graphConfig) {
         .duration(200)
         .attr('opacityOld', d3.select(this.parentNode).select('text').style("opacity"))
         .style('opacity', 1)
+        .style('font-weight', 'bold')
         .style('font-size', bigFont + 'em')
-        .attr('dy', d => nodeRadius(d) + 20 + 'px') // radius is in px
+        .attr('dy', d => nodeRadius(d) - 14 + 'px') // radius is in px
     })
-    .on("mouseleave", function(_, d) {
+    .on("mouseleave", function (_, d) {
       d3.selectAll(".node").transition().duration(200).attr("fill", color)
 
       const currentId = d.id
@@ -228,7 +229,8 @@ async function drawGraph(baseUrl, isHome, pathColors, graphConfig) {
         .duration(200)
         .style('opacity', d3.select(this.parentNode).select('text').attr("opacityOld"))
         .style('font-size', fontSize + 'em')
-        .attr('dy', d => nodeRadius(d) + 8 + 'px') // radius is in px
+        .style('font-weight', 'normal')
+        .attr('dy', d => nodeRadius(d) - 8 + 'px') // radius is in px
     })
     .call(drag(simulation))
 
@@ -236,7 +238,7 @@ async function drawGraph(baseUrl, isHome, pathColors, graphConfig) {
   const labels = graphNode
     .append("text")
     .attr("dx", 0)
-    .attr("dy", (d) => nodeRadius(d) + 8 + "px")
+    .attr("dy", (d) => nodeRadius(d) - 8 + "px")
     .attr("text-anchor", "middle")
     .text((d) => content[d.id]?.title || (d.id.charAt(1).toUpperCase() + d.id.slice(2)).replace("-", " "))
     .style('opacity', (opacityScale - 1) / 3.75)
