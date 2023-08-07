@@ -15,6 +15,3 @@ tags: ['track']
 
 ## About
 (about track)
-
-## Similar tracks
-(track links)
