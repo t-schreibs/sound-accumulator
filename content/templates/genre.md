@@ -14,6 +14,3 @@ tags: ['genre']
 
 ## About
 (about genre)
-
-## Similar genres
-(genre links)
