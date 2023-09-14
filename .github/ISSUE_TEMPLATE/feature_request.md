@@ -1,10 +1,9 @@
 ---
 name: Feature request
-about: Suggest an idea or improvement for Sound Accumulator
-title: ''
+about: Suggest an idea or improvement for Quartz
+title: ""
 labels: enhancement
-assignees: ''
-
+assignees: ""
 ---
 
 **Is your feature request related to a problem? Please describe.**

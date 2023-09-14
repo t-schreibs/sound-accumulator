@@ -10,13 +10,13 @@ and Zach Kay.
 |                  |                                                             |
 | ---------------- | ----------------------------------------------------------- |
 | **Origin**       | Portland, Oregon, USA                                       |
-| **Genre(s)**     | [Rock](genres/Rock.md), [Punk](genres/Punk.md)              |
+| **Genre(s)**     | [[genres/Rock]], [[genres/Punk]]             |
 | **Years active** | 2022-present                                                |
 | **Website**      | [Combobox](https://www.combobox.band)                       |
 | **SoundCloud**   | [Combobox](https://soundcloud.com/user-413903244-326605094) |
 
 ## About
-Combobox is Zach Kay, Tyler Schreiber, Ben Headwall, and Jack Hopfinger.
+Combobox is Zach Kay, Tyler Schreiber, Ben Headwall, and Cody.
 
 ## Releases
 
@@ -25,4 +25,4 @@ Combobox is Zach Kay, Tyler Schreiber, Ben Headwall, and Jack Hopfinger.
 
 
 ## Similar artists
-[scribble t](artists/scribble%20t.md)
+[[scribble t]]

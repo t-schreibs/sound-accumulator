@@ -10,7 +10,7 @@ scribble t is the solo project of guitarist and synthesist Tyler Schreiber.
 | ---------------- | -------------------------------------------------------------------------------- |
 | **AKA**          | Tyler Schreiber                                                                  |
 | **Origin**       | Portland, Oregon, USA                                                            |
-| **Genre(s)**     | [Electronica](genres/Electronica.md), [Post-classical](genres/Post-classical.md) |
+| **Genre(s)**     | [[genres/Electronica]], [[genres/Post-classical]] |
 | **Years active** | 2022-present                                                                     |
 | **Website**      | [Tyler Schreiber](https://tylerschreiber.com)                                    |
 | **Bandcamp**     | [scribble t](https://scribble-t.bandcamp.com)                                    |
@@ -20,10 +20,10 @@ scribble t is a project born out of Tyler Schreiber's developing fascination wit
 scribble t is currently developing an interesting audiovisual set and hopes to unveil it, both in live and recorded formats, sometime in the next year.
 
 ## Releases
-[1-5](releases/scribble%20t/1-5.md), [4-6](releases/scribble%20t/4-6.md)
+[[releases/scribble t/1-5]], [[releases/scribble t/4-6]]
 
 ## Recommended tracks
-[1-5](tracks/scribble%20t/1-5.md)
+[[tracks/scribble t/1-5]]
 
 ## Similar artists
-[Combobox](artists/Combobox.md)
+[[Combobox]]

@@ -4,12 +4,12 @@ draft: false
 tags: ['release']
 ---
 
-Follow the Cyborg is the debut album from New York-based artist [Miss Grit](artists/Miss%20Grit.md).
+Follow the Cyborg is the debut album from New York-based artist [[Miss Grit]].
 
 |                  |                                                                                                      |
 | ---------------- | ---------------------------------------------------------------------------------------------------- |
-| **Artist**       | [Miss Grit](artists/Miss%20Grit.md)                                                                  |
-| **Genre(s)**     | [Alt-rock](genres/Alt-rock.md)                                                                       |
+| **Artist**       | [[Miss Grit]]                                                |
+| **Genre(s)**     | [[genres/Alt-rock]]                                                                  |
 | **Type**         | LP                                                                                                   |
 | **Published**    | February 24, 2023                                                                                    |
 | **Bandcamp**     | [Follow the Cyborg](https://missgrit.bandcamp.com/album/follow-the-cyborg)                           |
@@ -20,6 +20,6 @@ Follow the Cyborg is the debut album from New York-based artist [Miss Grit](arti
 
 
 ## Tracks
-[Perfect Blue](tracks/Miss%20Grit/Perfect%20Blue.md), [Your Eyes Are Mine](tracks/Miss%20Grit/Your%20Eyes%20Are%20Mine.md), [Nothing's Wrong](tracks/Miss%20Grit/Nothing's%20Wrong.md), [Lain (Phone Clone)](tracks/Miss%20Grit/Lain.md), [Buffering](tracks/Miss%20Grit/Buffering.md), [Follow the Cyborg](tracks/Miss%20Grit/Follow%20the%20Cyborg.md), [사이보그를 따라와](tracks/Miss%20Grit/사이보그를%20따라와.md), [Like You](tracks/Miss%20Grit/Like%20You.md), [The End](tracks/Miss%20Grit/The%20End.md), [Syncing](tracks/Miss%20Grit/Syncing.md)
+[[tracks/Miss Grit/Perfect Blue]], [[tracks/Miss Grit/Your Eyes Are Mine]], [[tracks/Miss Grit/Nothing's Wrong]], [[tracks/Miss Grit/Lain | Lain (Phone Clone)]], [[tracks/Miss Grit/Buffering]], [[tracks/Miss Grit/Follow the Cyborg]], [[tracks/Miss Grit/사이보그를 따라와]], [[tracks/Miss Grit/Like You]], [[tracks/Miss Grit/The End]], [[tracks/Miss Grit/Syncing]]
 
 ## Similar releases

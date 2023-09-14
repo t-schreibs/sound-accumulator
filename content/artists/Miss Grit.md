@@ -10,7 +10,7 @@ Miss Grit is the solo project of Margaret Sohn, a New York-based musician.
 | ---------------- | ------------------------------------------------------------------- |
 | **AKA**          | Margaret Sohn                                                       |
 | **Origin**       | New York, New York, USA                                             |
-| **Genre(s)**     | [Alt-rock](genres/Alt-rock.md)                                      |
+| **Genre(s)**     | [[genres/Alt-rock]]                                      |
 | **Years active** | 2018-present                                                        |
 | **Website**      | [Miss Grit](https://missgrit.com)                                   |
 | **Bandcamp**     | [Miss Grit](https://missgrit.bandcamp.com)                          |
@@ -21,9 +21,9 @@ Miss Grit is the solo project of Margaret Sohn, a New York-based musician.
 Miss Grit produces deeply introspective alt-rock that often harkens to the noise and genre fusion of [St. Vincent](https://ilovestvincent.com).
 
 ## Releases
-[Follow the Cyborg](releases/Miss%20Grit/Follow%20the%20Cyborg.md)
+[[releases/Miss Grit/Follow the Cyborg]]
 
 ## Recommended tracks
-[Follow the Cyborg](tracks/Miss%20Grit/Follow%20the%20Cyborg.md)
+[[tracks/Miss Grit/Follow the Cyborg]]
 
 ## Similar artists

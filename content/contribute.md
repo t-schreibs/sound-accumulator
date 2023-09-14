@@ -9,14 +9,14 @@ Sound Accumulator is always looking for new submissions. Want to feature your ba
 
 ## Contributing to the GitHub repository
 
-In order to submit to the project, you will need to [create a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks#forking-a-repository-versus-duplicating-a-repository) of the [main repository](https://github.com/t-schreibs/sound-accumulator), add content to your fork, and then [generate a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) for the [hugo branch](https://github.com/t-schreibs/sound-accumulator/tree/hugo) of the main repository. A general overview of the workflow would look something like this:
+In order to submit to the project, you will need to [create a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks#forking-a-repository-versus-duplicating-a-repository) of the [main repository](https://github.com/t-schreibs/sound-accumulator), add content to your fork, and then [generate a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) for the [main branch](https://github.com/t-schreibs/sound-accumulator/tree/main) of the main repository. A general overview of the workflow would look something like this:
 
 1. Make sure you have a GitHub account and are currently logged into it
 2. Navigate to the [sound-accumulator repository](https://github.com/t-schreibs/sound-accumulator) on GitHub
 3. At the top of the page, select "Fork", and generate a fork of the repository on your profile
-    - You do _not_ need to copy all branches - the only one you should be adding changes to is the hugo one
-4. Using whatever method works for you, add .md files to the subfolders underneath the "content" folder in the hugo branch of your fork
-    - You can technically do this directly in the GitHub web app, but using a tool like [VS Code](https://code.visualstudio.com) is much nicer
+    - You do _not_ need to copy all branches - the only one you should be adding changes to is the main one
+4. Using whatever method works for you, add .md files to the subfolders underneath the "content" folder in the main branch of your fork
+    - You can technically do this directly in the GitHub web app, but using a tool like [VS Code](https://code.visualstudio.com) is much nicer, and there is a [plugin in the works](https://github.com/t-schreibs/sound-accumulator-tools) for quickly scaffolding new entries.
     - Submitted files must meet the submission guidelines as outlined in the following section of this guide
     - You will need to use Git to commit your files to your fork, but if you're unfamiliar, both GitHub and VS Code have a simple GUI interface for doing that
 5. Once you are happy with the content you've created, it's time to submit your pull request
@@ -32,7 +32,7 @@ In order to submit to the project, you will need to [create a fork](https://docs
 ## Submission guidelines
 
 >[!info]
->These guidelines are a work in progress - please consult this guide for the latest & greatest before each and every submission.
+>These guidelines are a work in progress - please consult this guide for the latest & greatest before submitting.
 
 1. No more than one artist is to be represented in each pull request - this keeps the complexity of review to a minimum
     - Multiple albums and tracks may be submitted per pull request, but they must be associated with a single artist
@@ -45,18 +45,15 @@ In order to submit to the project, you will need to [create a fork](https://docs
 3. Submissions should closely follow the [templates provided in the repository](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/templates)
     - Replace parenthesized text with content
     - Where the words "link" or "links" are included in the parenthesized text, provide [markdown links](https://www.markdownguide.org/basic-syntax/#links) as appropriate
-        - Internal links (meaning, links across Sound Accumulator) should be handled with shortened paths as follows:
-            - folder/path/filename.md
-            - Replace any spaces with "%20"
-            - E.g., `[Trip hop](genres/Trip%20hop.md)`, `[1-5](tracks/scribble%20t/1-5.md)`
+        - Internal links (meaning, links across Sound Accumulator) should be handled as [Obsidian-style Wikilinks](https://help.obsidian.md/Linking+notes+and+files/Internal+links#Supported+formats+for+internal+links). 
     - Unused rows from the info tables may be removed, but please don't add new rows - any additional information should be submitted in the "About" section
     - Multiple artists may be linked in the info table of a single track or release, as can multiple releases in the table of a single track
 4. All submissions should be placed in the correct folder
-    - Submissions live in subfolders of the [content folder](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content):
-        - Artists in [content/artists](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/artists)
-        - Albums, EPs, singles in [content/releases](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/releases)
-        - Tracks in [content/tracks](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/tracks)
-        - Genres in [content/genres](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/genres)
+    - Submissions live in subfolders of the [content folder](https://github.com/t-schreibs/sound-accumulator/tree/main/content):
+        - Artists in [content/artists](https://github.com/t-schreibs/sound-accumulator/tree/main/content/artists)
+        - Albums, EPs, singles in [content/releases](https://github.com/t-schreibs/sound-accumulator/tree/main/content/releases)
+        - Tracks in [content/tracks](https://github.com/t-schreibs/sound-accumulator/tree/main/content/tracks)
+        - Genres in [content/genres](https://github.com/t-schreibs/sound-accumulator/tree/main/content/genres)
         - Release and track submissions should be grouped inside of subfolders labeled with the artist's name
         - In the event that multiple artists contributed to a track or release (such as in the form of a compilation or collaboration), a primary artist should be selected for the submission, and the submission can then be organized in the folders accordingly
 5. Focus on linking!
@@ -64,7 +61,7 @@ In order to submit to the project, you will need to [create a fork](https://docs
     - Links are how users find music on this site - without links, your submissions will disappear into the void
 6. Keep the tone concise and generally neutral, but a degree of conversationality is permitted, and fun & interesting comparisons to other artists, albums, tracks, or genres are condoned and even encouraged
     - Keep opinions to the [discussion boards](https://github.com/t-schreibs/sound-accumulator/discussions) - Sound Accumulator is not a review site
-7. All submissions must at a minimum meet the Quartz [citizen code of conduct](https://github.com/t-schreibs/sound-accumulator/blob/hugo/CODE_OF_CONDUCT.md) - and that goes for both the music/artists submitted and the way in which they are represented
+7. All submissions must at a minimum meet the Quartz [citizen code of conduct](https://github.com/t-schreibs/sound-accumulator/blob/main/CODE_OF_CONDUCT.md) - and that goes for both the music/artists submitted and the way in which they are represented
     - This site is not Wikipedia, and its intention is not to catalog all notable music
     - Sound Accumulator is committed to fostering an open & inclusive community of audiophiles, while increasing exposure for small & local artists
 

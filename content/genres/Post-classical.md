@@ -16,7 +16,7 @@ Post-classical is a genre of music that experiments with classical music's sonor
 Post-classical music has its origins in the experimental recordings of French composers such as Pierre Schaeffer, as well as the "furniture music" of Erik Satie. Post-classical music is typically defined by its slow tempos, sense of space, use of classical music sonorites (whether sampled, recorded bespoke, or replicated electronically), reliance on a variety of synthesis techniques, and tendency toward minimal structures.
 
 ## Recommended tracks
-[1-5](tracks/scribble%20t/1-5.md)
+[[tracks/scribble t/1-5]]
 
 ## Similar genres
-[Trip hop](genres/Trip%20hop.md)
+[[genres/Trip hop]]
