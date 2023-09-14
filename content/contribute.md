@@ -21,7 +21,7 @@ In order to submit to the project, you will need to [create a fork](https://docs
     - You will need to use Git to commit your files to your fork, but if you're unfamiliar, both GitHub and VS Code have a simple GUI interface for doing that
 5. Once you are happy with the content you've created, it's time to submit your pull request
     - Navigate to the ["Pull requests" tab](https://github.com/t-schreibs/sound-accumulator/pulls) of the sound-accumulator repository
-    - Click "New pull request" at the top of the page, and create a pull request with the hugo branch of your fork as the *compare* branch and the hugo branch of the main repo as the *base* branch
+    - Click "New pull request" at the top of the page, and create a pull request with the main branch of your fork as the *compare* branch and the main branch of the main repo as the *base* branch
 6. Your pull request will be reviewed by the project maintainers
     - In some instances, the pull request will be outright rejected - see the submission guidelines below for more information on this
     - Some suggestions may or may not be provided - they will be marked as either optional or required
@@ -31,8 +31,9 @@ In order to submit to the project, you will need to [create a fork](https://docs
 
 ## Submission guidelines
 
->[!info]
->These guidelines are a work in progress - please consult this guide for the latest & greatest before submitting.
+> [!info] FYI
+>
+> These guidelines are a work in progress - please consult this guide for the latest & greatest before submitting.
 
 1. No more than one artist is to be represented in each pull request - this keeps the complexity of review to a minimum
     - Multiple albums and tracks may be submitted per pull request, but they must be associated with a single artist
