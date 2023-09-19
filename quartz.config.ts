@@ -11,11 +11,11 @@ const config: QuartzConfig = {
     },
     baseUrl: "soundaccumulator.com",
     ignorePatterns: ["private", "templates", ".obsidian"],
-    defaultDateType: "created",
+    defaultDateType: "modified",
     theme: {
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
+        header: "Roboto Slab",
+        body: "Roboto",
         code: "IBM Plex Mono",
       },
       colors: {
@@ -25,9 +25,9 @@ const config: QuartzConfig = {
           gray: "#b8b8b8",
           darkgray: "#4e4e4e",
           dark: "#2b2b2b",
-          secondary: "#284b63",
+          secondary: "#0283c7",
           tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          highlight: "rgba(143, 159, 169, 0.10)",
         },
         darkMode: {
           light: "#161618",
@@ -47,7 +47,7 @@ const config: QuartzConfig = {
       Plugin.FrontMatter(),
       Plugin.TableOfContents(),
       Plugin.CreatedModifiedDate({
-        priority: ["frontmatter", "git", "filesystem"], // you can add 'git' here for last modified from Git but this makes the build slower
+        priority: ["git", "filesystem"], // you can add 'git' here for last modified from Git but this makes the build slower
       }),
       Plugin.InfoTable(),
       Plugin.SyntaxHighlighting(),

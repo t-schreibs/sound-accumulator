@@ -14,4 +14,4 @@ Miss Grit is the solo project of Margaret Sohn, a New York-based musician.
 ${infoTable}
 
 ## About
-Miss Grit produces deeply introspective alt-rock that often harkens to the noise and genre fusion of [[https://ilovestvincent.com | St. Vincent]].
+Miss Grit produces introspective alt-rock that often brings to mind the noise and genre fusion of [St. Vincent](https://ilovestvincent.com).
