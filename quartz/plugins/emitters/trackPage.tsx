@@ -6,7 +6,6 @@ import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import {
   FilePath,
-  FullSlug,
   joinSegments,
   pathToRoot,
   slugifyFilePath,
@@ -53,7 +52,9 @@ export const TrackPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
                             },
                             intro: track.intro,
                             about: track.about,
-                            release: data.frontmatter?.title
+                            release: data.frontmatter?.title,
+                            index: data.frontmatter!.tracks.indexOf(track),
+                            published: data.frontmatter!.table.Published
                           });
                         const componentData: QuartzComponentProps = {
                             fileData: file.data,

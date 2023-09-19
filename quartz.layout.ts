@@ -9,6 +9,7 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       Discuss: "https://github.com/t-schreibs/sound-accumulator/discussions",
       Contribute: "https://soundaccumulator.com/contribute",
+      RSS: "https://soundaccumulator.com/index.xml"
     },
   }),
 }
@@ -23,7 +24,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Darkmode(),
     Component.DesktopOnly(Component.TableOfContents()),
   ],
-  right: [Component.Graph(), Component.Backlinks()],
+  right: [Component.Graph({ localGraph: { depth: 2 }, globalGraph: {} }), Component.Backlinks()],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
