@@ -57,6 +57,7 @@ const config: QuartzConfig = {
       Plugin.Latex({ renderEngine: "katex" }),
       Plugin.Description(),
       Plugin.TrackLinksOnReleasePage(),
+      Plugin.ReleaseLinksOnArtistPage()
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
