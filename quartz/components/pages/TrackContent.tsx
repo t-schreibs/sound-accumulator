@@ -50,7 +50,7 @@ function TrackContent(props: QuartzComponentProps) {
                     </tr>
                     <tr>
                         <td><b>Published</b></td>
-                        <td>{published}</td>
+                        <td>{published ?? "Not available"}</td>
                     </tr>
                 </table>
                 <h2>About</h2>
