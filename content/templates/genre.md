@@ -1,16 +1,15 @@
 ---
 title: "(genre name)"
-draft: true
 tags: ['genre']
+table:
+    AKA: "(aliases)"
+    Origins: "(origins)"
+    Subgenre(s): "(genre links)"
 ---
 
 (genre intro)
 
-|                  |                                  |
-| ---------------- | -------------------------------- |
-| **AKA**          | (aliases)                        |
-| **Origins**      | (origins)                        |
-| **Subgenre(s)**  | (genre links)                    |
+${infoTable}
 
 ## About
 (about genre)

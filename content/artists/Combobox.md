@@ -1,28 +1,17 @@
 ---
 title: "Combobox"
-draft: false
 tags: ['artist']
+table:
+    Origin: "Portland, Oregon, USA"
+    Genre(s): "[[genres/Rock]], [[genres/Punk]]"
+    Years active: "2022-present"
+    Links: "[[https://www.combobox.band | Website]], [[https://soundcloud.com/user-413903244-326605094 | SoundCloud]]"
 ---
 
-Combobox is an alt-punk band from Portland, Oregon founded by [Tyler Schreiber](artists/scribble%20t.md)
+Combobox is an alt-punk band from Portland, Oregon founded by [[scribble t | Tyler Schreiber]]
 and Zach Kay.
 
-|                  |                                                             |
-| ---------------- | ----------------------------------------------------------- |
-| **Origin**       | Portland, Oregon, USA                                       |
-| **Genre(s)**     | [[genres/Rock]], [[genres/Punk]]             |
-| **Years active** | 2022-present                                                |
-| **Website**      | [Combobox](https://www.combobox.band)                       |
-| **SoundCloud**   | [Combobox](https://soundcloud.com/user-413903244-326605094) |
+${infoTable}
 
 ## About
 Combobox is Zach Kay, Tyler Schreiber, Ben Headwall, and Cody.
-
-## Releases
-
-
-## Recommended tracks
-
-
-## Similar artists
-[[scribble t]]
