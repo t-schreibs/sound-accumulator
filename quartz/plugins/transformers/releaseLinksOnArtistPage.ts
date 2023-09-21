@@ -1,17 +1,12 @@
 import { QuartzTransformerPlugin } from "../types"
 import {
+    FilePath,
     FullSlug,
-    RelativeURL,
-    SimpleSlug,
     TransformOptions,
     _stripSlashes,
-    simplifySlug,
-    splitAnchor,
-    transformLink,
+    slugifyFilePath,
 } from "../../util/path"
-import path from "path"
 import { visit } from "unist-util-visit"
-import isAbsoluteUrl from "is-absolute-url"
 
 interface Options {
     /** How to resolve Markdown paths */
@@ -33,10 +28,53 @@ export const ReleaseLinksOnArtistPage: QuartzTransformerPlugin<Partial<Options> 
             return [
                 () => {
                     return (tree, file) => {
-                        if (file.data.slug?.startsWith('artists/')) {
-                            let allFiles: FullSlug[] = ctx.allSlugs;
-                            //Use allFiles to create the appropriate links if the current file is an artist.
-                            console.warn(`Found artist: ${file.data.slug}`);
+                        let slugSegments = file.data.slug?.split('/') ?? ['{no slug here}'];
+                        if (slugSegments[0] === 'artists' && !slugSegments.includes('index')) {
+                            let releaseSlugs: FullSlug[] = ctx.allSlugs.filter(
+                                slug => slug.startsWith(`releases/${slugSegments.at(-1)}`)
+                            );
+                            console.warn(releaseSlugs);
+                            visit(tree, "root", (root) => {
+                                root.children.push(
+                                    {
+                                        type: 'element',
+                                        tagName: 'h2',
+                                        children: [
+                                            {
+                                                type: 'text',
+                                                value: 'Releases'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        type: 'element',
+                                        tagName: 'ul',
+                                        children: releaseSlugs.map(
+                                            (releaseSlug: FullSlug) => {
+                                                return {
+                                                    type: 'element',
+                                                    tagName: 'li',
+                                                    children: [
+                                                        {
+                                                            type: 'element',
+                                                            tagName: 'a',
+                                                            properties: {
+                                                                href: '../' + releaseSlug
+                                                            },
+                                                            children: [
+                                                                {
+                                                                    type: 'text',
+                                                                    value: releaseSlug.split('/').at(-1)
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        )
+                                    }
+                                )
+                            });
                         }
                     }
                 },
