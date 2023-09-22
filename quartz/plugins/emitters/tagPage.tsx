@@ -23,14 +23,14 @@ export const TagPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
     ...userOpts,
   }
 
-  const { head: Head, header, beforeBody, pageBody, left, right, footer: Footer } = opts
+  const { head: Head, header, beforeBody, pageBody, left, right, afterBody, footer: Footer } = opts
   const Header = HeaderConstructor()
   const Body = BodyConstructor()
 
   return {
     name: "TagPage",
     getQuartzComponents() {
-      return [Head, Header, Body, ...header, ...beforeBody, pageBody, ...left, ...right, Footer]
+      return [Head, Header, Body, ...header, ...beforeBody, pageBody, ...left, ...right, ...afterBody, Footer]
     },
     async emit(ctx, content, resources, emit): Promise<FilePath[]> {
       const fps: FilePath[] = []
@@ -45,7 +45,7 @@ export const TagPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
 
       const tagDescriptions: Record<string, ProcessedContent> = Object.fromEntries(
         [...tags].map((tag) => {
-          const title = tag === "" ? "Tag Index" : `Tag: #${tag}`
+          const title = tag === "index" ? "All tags" : `Tag: #${tag}`
           return [
             tag,
             defaultProcessedContent({

@@ -1,6 +1,7 @@
 import Content from "./pages/Content"
 import TagContent from "./pages/TagContent"
 import FolderContent from "./pages/FolderContent"
+import TrackContent from "./pages/TrackContent"
 import NotFound from "./pages/404"
 import ArticleTitle from "./ArticleTitle"
 import Darkmode from "./Darkmode"
@@ -17,12 +18,14 @@ import Footer from "./Footer"
 import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
+import LinkList from "./LinkList"
 
 export {
   ArticleTitle,
   Content,
   TagContent,
   FolderContent,
+  TrackContent,
   Darkmode,
   Head,
   PageTitle,
@@ -38,4 +41,5 @@ export {
   MobileOnly,
   RecentNotes,
   NotFound,
+  LinkList
 }

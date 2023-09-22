@@ -9,6 +9,7 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       Discuss: "https://github.com/t-schreibs/sound-accumulator/discussions",
       Contribute: "https://soundaccumulator.com/contribute",
+      RSS: "https://soundaccumulator.com/index.xml"
     },
   }),
 }
@@ -22,8 +23,15 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(Component.TableOfContents()),
+    Component.DesktopOnly(Component.RecentNotes(
+      { 
+        title: "Recent", 
+        limit: 5, filter: 
+        (f) => f.frontmatter?.excludeFromRecent != true ?? true 
+      }))
   ],
-  right: [Component.Graph(), Component.Backlinks()],
+  right: [Component.Graph({ localGraph: { depth: 2 }, globalGraph: {} }), Component.Backlinks()],
+  afterBody: [Component.LinkList()]
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
@@ -34,6 +42,13 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
+    Component.DesktopOnly(Component.RecentNotes(
+      { 
+        title: "Recent", 
+        limit: 5, filter: 
+        (f) => f.frontmatter?.excludeFromRecent != true ?? true 
+      }))
   ],
   right: [],
+  afterBody: []
 }
