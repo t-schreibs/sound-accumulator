@@ -2,16 +2,16 @@
 title: "Follow the Cyborg"
 tags: ['release']
 tracks:
-    - name: Perfect Blue
-    - name: Your Eyes Are Mine
-    - name: Nothing's Wrong
-    - name: Lain (Phone Clone)
-    - name: Buffering
-    - name: Follow the Cyborg
-    - name: 사이보그를 따라와
-    - name: Like You
-    - name: The End
-    - name: Syncing
+    - name: "Perfect Blue"
+    - name: "Your Eyes Are Mine"
+    - name: "Nothing's Wrong"
+    - name: "Lain (Phone Clone)"
+    - name: "Buffering"
+    - name: "Follow the Cyborg"
+    - name: "사이보그를 따라와"
+    - name: "Like You"
+    - name: "The End"
+    - name: "Syncing"
 table:
     Artist: "[[Miss Grit]]"
     Genre(s): "[[genres/Alt-rock]]"
