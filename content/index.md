@@ -2,7 +2,7 @@
 title: Sound Accumulator
 hideTitle: true
 enableToc: false
-includeRecents: true
+excludeFromRecent: true
 ---
 
 ## Discover your new favorite artist!

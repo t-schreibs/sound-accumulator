@@ -45,7 +45,7 @@ export const TagPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
 
       const tagDescriptions: Record<string, ProcessedContent> = Object.fromEntries(
         [...tags].map((tag) => {
-          const title = tag === "" ? "Tag Index" : `Tag: #${tag}`
+          const title = tag === "index" ? "All tags" : `Tag: #${tag}`
           return [
             tag,
             defaultProcessedContent({

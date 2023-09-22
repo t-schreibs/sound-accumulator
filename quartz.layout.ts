@@ -23,6 +23,12 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(Component.TableOfContents()),
+    Component.DesktopOnly(Component.RecentNotes(
+      { 
+        title: "Recent", 
+        limit: 5, filter: 
+        (f) => f.frontmatter?.excludeFromRecent != true ?? true 
+      }))
   ],
   right: [Component.Graph({ localGraph: { depth: 2 }, globalGraph: {} }), Component.Backlinks()],
 }
@@ -35,6 +41,12 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
+    Component.DesktopOnly(Component.RecentNotes(
+      { 
+        title: "Recent", 
+        limit: 5, filter: 
+        (f) => f.frontmatter?.excludeFromRecent != true ?? true 
+      }))
   ],
   right: [],
 }

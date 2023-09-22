@@ -1,6 +1,7 @@
 ---
 title: Contribute
 tags: ['meta']
+excludeFromRecent: true
 ---
 
 ## Get involved!

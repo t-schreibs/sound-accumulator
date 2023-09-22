@@ -18,6 +18,7 @@ import Footer from "./Footer"
 import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
+import LinkList from "./LinkList"
 
 export {
   ArticleTitle,
@@ -39,5 +40,6 @@ export {
   DesktopOnly,
   MobileOnly,
   RecentNotes,
-  NotFound
+  NotFound,
+  LinkList
 }

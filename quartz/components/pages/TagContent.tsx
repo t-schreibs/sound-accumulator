@@ -41,7 +41,7 @@ function TagContent(props: QuartzComponentProps) {
         <article>
           <p>{content}</p>
         </article>
-        <p>Found {tags.length} total tags.</p>
+        <p>{tags.length} total tags.</p>
         <div>
           {tags.map((tag) => {
             const pages = tagItemMap.get(tag)!
