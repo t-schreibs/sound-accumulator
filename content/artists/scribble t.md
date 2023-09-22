@@ -4,7 +4,7 @@ tags: ['artist']
 table:
     AKA: "Tyler Schreiber"
     Origin: Portland, Oregon, USA
-    Genre(s): "[[genres/Electronica]], [[genres/Post-classical]]"
+    Genres: "[[genres/Electronica]], [[genres/Post-classical]]"
     Years active: "2022-present"
     Links: "[[https://tylerschreiber.com | Website]], [[https://scribble-t.bandcamp.com | Bandcamp]]"
 ---

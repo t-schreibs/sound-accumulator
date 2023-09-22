@@ -3,7 +3,7 @@ title: "Combobox"
 tags: ['artist']
 table:
     Origin: "Portland, Oregon, USA"
-    Genre(s): "[[genres/Rock]], [[genres/Punk]]"
+    Genres: "[[genres/Rock]], [[genres/Punk]]"
     Years active: "2022-present"
     Links: "[[https://www.combobox.band | Website]], [[https://soundcloud.com/user-413903244-326605094 | SoundCloud]]"
 ---

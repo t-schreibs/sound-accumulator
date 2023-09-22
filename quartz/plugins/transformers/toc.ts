@@ -6,13 +6,13 @@ import Slugger from "github-slugger"
 
 export interface Options {
   maxDepth: 1 | 2 | 3 | 4 | 5 | 6
-  minEntries: 1
+  minEntries: number
   showByDefault: boolean
 }
 
 const defaultOptions: Options = {
   maxDepth: 3,
-  minEntries: 1,
+  minEntries: 2,
   showByDefault: true,
 }
 
@@ -49,7 +49,7 @@ export const TableOfContents: QuartzTransformerPlugin<Partial<Options> | undefin
                 }
               })
 
-              if (toc.length > opts.minEntries) {
+              if (toc.length >= opts.minEntries) {
                 file.data.toc = toc.map((entry) => ({
                   ...entry,
                   depth: entry.depth - highestDepth,

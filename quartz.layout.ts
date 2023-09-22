@@ -31,6 +31,7 @@ export const defaultContentPageLayout: PageLayout = {
       }))
   ],
   right: [Component.Graph({ localGraph: { depth: 2 }, globalGraph: {} }), Component.Backlinks()],
+  afterBody: [Component.LinkList()]
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
@@ -49,4 +50,5 @@ export const defaultListPageLayout: PageLayout = {
       }))
   ],
   right: [],
+  afterBody: []
 }

@@ -45,7 +45,6 @@ const config: QuartzConfig = {
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
-      Plugin.TableOfContents({ showByDefault: true }),
       Plugin.CreatedModifiedDate({
         priority: ["git", "filesystem"], // you can add 'git' here for last modified from Git but this makes the build slower
       }),
@@ -53,11 +52,11 @@ const config: QuartzConfig = {
       Plugin.SyntaxHighlighting(),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
-      Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Latex({ renderEngine: "katex" }),
       Plugin.Description(),
-      Plugin.TrackLinksOnReleasePage(),
-      Plugin.ReleaseLinksOnArtistPage()
+      Plugin.TrackLinksOnReleasePage(),     
+      Plugin.TableOfContents({ showByDefault: true, maxDepth: 2, minEntries: 3 }),
+      Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
