@@ -24,14 +24,14 @@ export const TrackPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
     ...userOpts,
   }
 
-  const { head: Head, header, beforeBody, pageBody, left, right, afterBody, footer: Footer } = opts
+  const { head: Head, header, beforeBody, pageBody, left, right, footer: Footer } = opts
   const Header = HeaderConstructor()
   const Body = BodyConstructor()
 
   return {
     name: "TrackPage",
     getQuartzComponents() {
-      return [Head, Header, Body, ...header, ...beforeBody, pageBody, ...left, ...right, afterBody, Footer]
+      return [Head, Header, Body, ...header, ...beforeBody, pageBody, ...left, ...right, Footer]
     },
     async emit(ctx, content, resources, emit): Promise<FilePath[]> {
       const fps: FilePath[] = []
@@ -53,8 +53,10 @@ export const TrackPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
                             intro: track.intro,
                             about: track.about,
                             release: data.frontmatter?.title,
-                            index: data.frontmatter!.tracks.indexOf(track),
-                            published: data.frontmatter!.table.Published
+                            releaseType: data.frontmatter?.table.Type,
+                            index: data.frontmatter?.tracks.indexOf(track),
+                            published: data.frontmatter?.table.Published,
+                            externalLinks: track.links
                           });
                         const componentData: QuartzComponentProps = {
                             fileData: file.data,

@@ -5,6 +5,7 @@ export interface TrackEntry {
   name: string
   intro?: string
   about?: string
+  links?: string
 }
 
 export const TrackLinksOnReleasePage: QuartzTransformerPlugin = () => {

@@ -18,8 +18,8 @@ function ordinal_suffix_of(i: number) {
     return i + "th";
 }
 
-function DefaultTrackIntro(title: string, release: string, artist: string, index: number) {
-    return `${title} is the ${ordinal_suffix_of(index + 1)} track from ${artist}'s release ${release}.`;
+function DefaultTrackIntro(title: string, release: string, releaseType: string, artist: string, index: number) {
+    return `${title} is the ${ordinal_suffix_of(index + 1)} track from ${artist}'s ${releaseType} ${release}.`;
 }
 function DefaultTrackAbout(title: string, published: string) {
     return `${title} was published on ${published}.`;
@@ -28,30 +28,36 @@ function TrackContent(props: QuartzComponentProps) {
     const { fileData } = props
     const slug = fileData.slug!
     const release = fileData.release as string;
+    const releaseType = fileData.releaseType as string;
     const intro = fileData.intro;
     const about = fileData.about;
     const title = fileData.frontmatter!.title;
     const index = fileData.index as number;
     const published = fileData.published as string
+    const externalLinks = fileData.externalLinks as string
     const artist = simplifySlug(slug as FullSlug).split('/')[1].replace('-', ' ');
 
     return (
         <div class="popover-hint">
             <article>
-                <p>{intro ?? DefaultTrackIntro(title, release, artist, index)}</p>
+                <p>{intro ?? DefaultTrackIntro(title, release, releaseType, artist, index)}</p>
                 <table>
                     <tr>
                         <td><b>Artist</b></td>
-                        <td><a href={slugifyFilePath(`../../../artists/${artist}` as FilePath)}>{artist}</a></td>
+                        <td><a class="internal" href={slugifyFilePath(`../../../artists/${artist}` as FilePath)}>{artist}</a></td>
                     </tr>
                     <tr>
                         <td><b>Release</b></td>
-                        <td><a href={slugifyFilePath(`../../../releases/${artist}/${release}` as FilePath)}>{release}</a></td>
+                        <td><a class="internal" href={slugifyFilePath(`../../../releases/${artist}/${release}` as FilePath)}>{release}</a></td>
                     </tr>
                     <tr>
                         <td><b>Published</b></td>
                         <td>{published ?? "Not available"}</td>
                     </tr>
+                    {/*<tr>
+                        <td><b>Links</b></td>
+                        <td><a></a></td>
+                    </tr>*/}
                 </table>
                 <h2>About</h2>
                 <p>{about ?? DefaultTrackAbout(title, published)}</p>

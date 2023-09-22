@@ -22,7 +22,7 @@ function LinkList(props: QuartzComponentProps) {
     <h2>{header}</h2>
     <ul>
       {links.map(
-        file => (<li><a href={slugifyFilePath(`../${file.filePath?.replace('content/', '')}` as FilePath)}>
+        file => (<li><a class="internal" href={slugifyFilePath(`../${file.filePath?.replace('content/', '')}` as FilePath)}>
           {file.frontmatter?.title}
         </a></li>)
       )}
