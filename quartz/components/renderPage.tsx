@@ -73,7 +73,6 @@ export function renderPage(
       ))}
     </div>
   )
-
   const RightComponent = (
     <div class="right sidebar">
       {right.map((BodyComponent) => (
@@ -104,8 +103,8 @@ export function renderPage(
               </div>
               <Content {...componentData} />
               <div class="popover-hint">
-                {afterBody.map((AfterComponent) => (
-                  <AfterComponent {...componentData} />
+                {afterBody.map((BodyComponent) => (
+                  <BodyComponent {...componentData} />
                 ))}
               </div>
             </div>

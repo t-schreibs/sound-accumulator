@@ -23,9 +23,17 @@ export const defaultContentPageLayout: PageLayout = {
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Darkmode(),
-    Component.RandomPageButton(),
+    Component.Column(
+      [
+        Component.Search(),
+        Component.Row(
+          [
+            Component.Darkmode(),
+            Component.RandomPageButton()
+          ]
+        )
+      ]
+    ),
     Component.DesktopOnly(Component.RecentNotes(
       { 
         title: "Recent", 
@@ -56,9 +64,17 @@ export const defaultListPageLayout: PageLayout = {
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Darkmode(),
-    Component.RandomPageButton(),
+    Component.Column(
+      [
+        Component.Search(),
+        Component.Row(
+          [
+            Component.Darkmode(),
+            Component.RandomPageButton()
+          ]
+        )
+      ]
+    ),
     Component.DesktopOnly(Component.RecentNotes(
       { 
         title: "Recent", 

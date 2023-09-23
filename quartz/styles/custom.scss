@@ -1,1 +1,11 @@
-// put your custom CSS here!
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+    width: 100%
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
