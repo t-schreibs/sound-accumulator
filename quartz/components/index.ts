@@ -19,6 +19,7 @@ import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import LinkList from "./LinkList"
+import HorizontalRule from "./HorizontalRule"
 
 export {
   ArticleTitle,
@@ -41,5 +42,6 @@ export {
   MobileOnly,
   RecentNotes,
   NotFound,
-  LinkList
+  LinkList,
+  HorizontalRule
 }

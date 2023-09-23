@@ -13,6 +13,7 @@ import { FilePath, pathToRoot, slugTag, slugifyFilePath } from "../../util/path"
 import { toHast } from "mdast-util-to-hast"
 import { toHtml } from "hast-util-to-html"
 import { PhrasingContent } from "mdast-util-find-and-replace/lib"
+import { formatLinks } from "../../util/links"
 
 export interface Options {
   comments: boolean
@@ -173,17 +174,8 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
       // pre-transform wikilinks (fix anchors to things that may contain illegal syntax e.g. codeblocks, latex)
       if (opts.wikilinks) {
         src = src.toString()
-        src = src.replaceAll(wikilinkRegex, (value, ...capture) => {
-          const [rawFp, rawHeader, rawAlias] = capture
-          const fp = rawFp ?? ""
-          const anchor = rawHeader?.trim().slice(1)
-          const displayAnchor = anchor ? `#${slugAnchor(anchor)}` : ""
-          const displayAlias = rawAlias ?? rawHeader?.replace("#", "|") ?? ""
-          const embedDisplay = value.startsWith("!") ? "!" : ""
-          return `${embedDisplay}[[${fp}${displayAnchor}${displayAlias}]]`
-        })
+        src = formatLinks(src)
       }
-
       return src
     },
     markdownPlugins() {

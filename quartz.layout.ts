@@ -1,5 +1,8 @@
+import { Data } from "vfile";
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+
+function recentPostFilter(f: Data): boolean { return f.frontmatter?.excludeFromRecent != true ?? true; }
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -26,12 +29,24 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.RecentNotes(
       { 
         title: "Recent", 
-        limit: 5, filter: 
-        (f) => f.frontmatter?.excludeFromRecent != true ?? true 
+        limit: 5, 
+        filter: recentPostFilter
       }))
   ],
-  right: [Component.Graph({ localGraph: { depth: 2 }, globalGraph: {} }), Component.Backlinks()],
-  afterBody: [Component.LinkList()]
+  right: [
+    Component.Graph({ localGraph: { depth: 2 }, globalGraph: {} }), 
+    Component.Backlinks()
+  ],
+  afterBody: [
+    Component.LinkList(), 
+    Component.MobileOnly(Component.HorizontalRule()),
+    Component.MobileOnly(Component.RecentNotes(
+    {
+      title: "Recent",
+      limit: 3, 
+      filter: recentPostFilter
+    }
+  ))]
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
@@ -45,8 +60,8 @@ export const defaultListPageLayout: PageLayout = {
     Component.DesktopOnly(Component.RecentNotes(
       { 
         title: "Recent", 
-        limit: 5, filter: 
-        (f) => f.frontmatter?.excludeFromRecent != true ?? true 
+        limit: 5, 
+        filter: recentPostFilter
       }))
   ],
   right: [],
