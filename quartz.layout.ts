@@ -58,7 +58,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.RandomPageButton()),
+    Component.RandomPageButton(),
     Component.DesktopOnly(Component.RecentNotes(
       { 
         title: "Recent", 
