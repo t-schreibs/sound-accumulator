@@ -35,8 +35,8 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.Graph({ localGraph: { depth: 2 }, globalGraph: {} }), 
-    Component.Backlinks(),
     Component.DesktopOnly(Component.TableOfContents()),
+    Component.Backlinks(),
   ],
   afterBody: [
     Component.LinkList(), 

@@ -1,6 +1,5 @@
 ---
 title: "Trip hop"
-draft: false
 tags: ['genre']
 table:
     AKA: "Downtempo"

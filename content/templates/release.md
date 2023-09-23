@@ -17,6 +17,3 @@ ${infoTable}
 
 ## About
 (about release)
-
-## Tracks
-(track links)

@@ -11,10 +11,7 @@ table:
 
 (artist intro)
 
-${table}
+${infoTable}
 
 ## About
 (about artist)
-
-## Releases
-(release links)

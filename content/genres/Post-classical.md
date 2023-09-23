@@ -1,6 +1,5 @@
 ---
 title: "Post-classical"
-draft: false
 tags: ['genre']
 table:
     AKA: "Ambient"

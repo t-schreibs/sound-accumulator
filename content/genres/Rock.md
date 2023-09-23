@@ -1,6 +1,5 @@
 ---
 title: "Rock"
-draft: false
 tags: ['genre']
 table:
     AKA: "Rock and roll"
