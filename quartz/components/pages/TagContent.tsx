@@ -3,7 +3,7 @@ import { Fragment, jsx, jsxs } from "preact/jsx-runtime"
 import { toJsxRuntime } from "hast-util-to-jsx-runtime"
 import style from "../styles/listPage.scss"
 import { PageList } from "../PageList"
-import { FullSlug, getAllSegmentPrefixes, simplifySlug } from "../../util/path"
+import { FullSlug, getAllSegmentPrefixes, pathToRoot, simplifySlug } from "../../util/path"
 import { QuartzPluginData } from "../../plugins/vfile"
 import { Root } from "hast"
 import { pluralize } from "../../util/lang"
@@ -55,7 +55,7 @@ function TagContent(props: QuartzComponentProps) {
             return (
               <div>
                 <h2>
-                  <a class="internal tag-link" href={`tags/${tag}`}>
+                  <a class="internal tag-link" href={`${pathToRoot(slug)}/tags/${tag}`}>
                     #{tag}
                   </a>
                 </h2>

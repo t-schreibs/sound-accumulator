@@ -1,0 +1,25 @@
+.random-page {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+
+  > svg {
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: calc(50% - 10px);
+  }
+}
+
+.random-page-ellipse {
+  stroke: var(--darkgray);
+  fill: var(--darkgray);
+  transition: stroke 0.5s ease;
+}
+
+.random-page-square {
+  stroke: var(--darkgray);
+  transition: stroke 0.5s ease;
+}

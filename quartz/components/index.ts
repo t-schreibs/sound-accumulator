@@ -20,6 +20,7 @@ import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import LinkList from "./LinkList"
 import HorizontalRule from "./HorizontalRule"
+import RandomPageButton from "./RandomPageButton"
 
 export {
   ArticleTitle,
@@ -43,5 +44,6 @@ export {
   RecentNotes,
   NotFound,
   LinkList,
-  HorizontalRule
+  HorizontalRule,
+  RandomPageButton
 }

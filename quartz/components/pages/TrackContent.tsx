@@ -1,7 +1,7 @@
 import { QuartzComponentConstructor, QuartzComponentProps } from "../types"
 import style from "../styles/listPage.scss"
 import { PageList } from "../PageList"
-import { FilePath, FullSlug, simplifySlug, slugifyFilePath } from "../../util/path"
+import { FilePath, FullSlug, pathToRoot, simplifySlug, slugifyFilePath } from "../../util/path"
 
 function ordinal_suffix_of(i: number) {
     var j = i % 10,
@@ -44,11 +44,11 @@ function TrackContent(props: QuartzComponentProps) {
                 <table>
                     <tr>
                         <td><b>Artist</b></td>
-                        <td><a class="internal" href={slugifyFilePath(`../../../artists/${artist}` as FilePath)}>{artist}</a></td>
+                        <td><a class="internal" href={slugifyFilePath(`${pathToRoot(slug)}/artists/${artist}` as FilePath)}>{artist}</a></td>
                     </tr>
                     <tr>
                         <td><b>Release</b></td>
-                        <td><a class="internal" href={slugifyFilePath(`../../../releases/${artist}/${release}` as FilePath)}>{release}</a></td>
+                        <td><a class="internal" href={slugifyFilePath(`${pathToRoot(slug)}/releases/${artist}/${release}` as FilePath)}>{release}</a></td>
                     </tr>
                     <tr>
                         <td><b>Published</b></td>

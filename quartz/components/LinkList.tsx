@@ -1,5 +1,5 @@
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import { FilePath, slugifyFilePath } from "../util/path"
+import { FilePath, pathToRoot, slugifyFilePath } from "../util/path"
 import { Data } from "vfile"
 
 function LinkList(props: QuartzComponentProps) {
@@ -14,7 +14,8 @@ function LinkList(props: QuartzComponentProps) {
   }
   else if (tags?.includes('genre') ?? false) {
     links = allFiles.filter(file => 
-      file.frontmatter?.tags?.includes('artist') && file.frontmatter?.table?.Genres?.includes(`[[genres/${data.frontmatter?.title}]]`));
+      file.frontmatter?.tags?.includes('artist') && 
+        file.frontmatter?.table?.Genres?.includes(`[[genres/${data.frontmatter?.title}]]`));
       header = "Artists";
   }
   if (links.length > 0) {
@@ -22,7 +23,8 @@ function LinkList(props: QuartzComponentProps) {
     <h2>{header}</h2>
     <ul>
       {links.map(
-        file => (<li><a class="internal" href={slugifyFilePath(`../${file.filePath?.replace('content/', '')}` as FilePath)}>
+        file => (<li><a class="internal" href={slugifyFilePath(
+          `${pathToRoot(data.slug!)}/${file.filePath?.replace('content/', '')}` as FilePath)}>
           {file.frontmatter?.title}
         </a></li>)
       )}
