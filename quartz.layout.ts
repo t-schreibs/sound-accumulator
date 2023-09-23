@@ -25,7 +25,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.TableOfContents()),
+    Component.RandomPageButton(),
     Component.DesktopOnly(Component.RecentNotes(
       { 
         title: "Recent", 
@@ -35,7 +35,8 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.Graph({ localGraph: { depth: 2 }, globalGraph: {} }), 
-    Component.Backlinks()
+    Component.Backlinks(),
+    Component.DesktopOnly(Component.TableOfContents()),
   ],
   afterBody: [
     Component.LinkList(), 
@@ -57,6 +58,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
+    Component.DesktopOnly(Component.RandomPageButton()),
     Component.DesktopOnly(Component.RecentNotes(
       { 
         title: "Recent", 
