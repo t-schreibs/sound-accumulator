@@ -78,7 +78,7 @@ export const TagPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
           tree,
           allFiles,
         }
-
+        componentData.fileData.excludeFromRSS = true;
         const content = renderPage(slug, componentData, opts, externalResources)
         const fp = await emit({
           content,

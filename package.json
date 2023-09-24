@@ -83,6 +83,7 @@
     "to-vfile": "^7.2.4",
     "toml": "^3.0.0",
     "unified": "^10.1.2",
+    "unist-util-select": "^5.0.0",
     "unist-util-visit": "^4.1.2",
     "vfile": "^5.3.7",
     "workerpool": "^6.4.0",

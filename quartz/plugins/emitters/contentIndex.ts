@@ -84,7 +84,9 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
       const cfg = ctx.cfg.configuration
       const emitted: FilePath[] = []
       const linkIndex: ContentIndex = new Map()
-      for (const [tree, file] of content) {
+      for (const [tree, file] of content.filter(
+        (page) => !(page[1].data?.excludeFromRSS ?? false)
+      )) {
         const slug = file.data.slug!
         const date = getDate(ctx.cfg.configuration, file.data) ?? new Date()
         if (opts?.includeEmptyFiles || (file.data.text && file.data.text !== "")) {
