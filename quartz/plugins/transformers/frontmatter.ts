@@ -4,6 +4,9 @@ import { QuartzTransformerPlugin } from "../types"
 import yaml from "js-yaml"
 import toml from "toml"
 import { slugTag } from "../../util/path"
+import { select } from "unist-util-select"
+import { Root, Text } from "mdast"
+import { Paragraph } from "mdast-util-from-markdown/lib"
 
 export interface Options {
   delims: string | string[]
@@ -23,7 +26,7 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
       return [
         [remarkFrontmatter, ["yaml", "toml"]],
         () => {
-          return (_, file) => {
+          return (tree, file) => {
             const { data } = matter(file.value, {
               ...opts,
               engines: {
@@ -52,6 +55,16 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
               title: file.stem ?? "Untitled",
               tags: [],
               ...data,
+            }
+            if (!file.data.frontmatter?.description) {
+              const paragraph = select('paragraph', tree) as Paragraph | null;
+              if (paragraph) {
+                file.data.frontmatter!.description = paragraph.children.filter(
+                  child => child.type == 'text'
+                ).map(
+                  (child) => (child as Text).value
+                ).join(' ');
+              }
             }
           }
         },
