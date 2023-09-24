@@ -1,14 +1,9 @@
+import { getFlexContainer } from "../util/componentGrid";
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types";
 
 export default ((children?: QuartzComponent[]) => {
   if (children) {
-    return function Row(props: QuartzComponentProps) {
-      return <div class={`row ${props.displayClass ?? ""}`}>
-        {children.map((Component) => (
-          <Component {...props} />
-        ))}
-      </div>
-    }
+    return getFlexContainer(children!, 'row');
   }
   else {
     return () => <></>
