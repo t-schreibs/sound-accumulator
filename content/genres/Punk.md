@@ -1,6 +1,5 @@
 ---
 title: "Punk"
-draft: false
 tags: ['genre']
 table:
     AKA: "Punk rock"

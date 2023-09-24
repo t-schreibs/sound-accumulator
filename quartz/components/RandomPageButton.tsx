@@ -4,9 +4,9 @@ import script from "./scripts/randomPage.inline"
 import style from "./styles/randomPage.scss"
 
 export default (() => {
-    function RandomPageButton({ displayClass }: QuartzComponentProps) {
+    function RandomPageButton() {
         return (
-            <div id="random-page-button" class={`${displayClass} random-page`}>
+            <div id="random-page-button" class="random-page">
                 <svg y="0px" x="0px" viewBox="0 0 316 316">
                     <title>Random page</title>
                     <g>

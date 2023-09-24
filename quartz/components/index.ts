@@ -21,6 +21,8 @@ import RecentNotes from "./RecentNotes"
 import LinkList from "./LinkList"
 import HorizontalRule from "./HorizontalRule"
 import RandomPageButton from "./RandomPageButton"
+import Row from "./Row"
+import Column from "./Column"
 
 export {
   ArticleTitle,
@@ -45,5 +47,7 @@ export {
   NotFound,
   LinkList,
   HorizontalRule,
-  RandomPageButton
+  RandomPageButton,
+  Row,
+  Column
 }

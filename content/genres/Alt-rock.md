@@ -1,6 +1,5 @@
 ---
 title: "Alt-rock"
-draft: false
 tags: ['genre']
 table:
     AKA: "Alternative rock, alternative"

@@ -1,6 +1,5 @@
 ---
 title: "Electronica"
-draft: false
 tags: ['genre']
 table:
     AKA: "Post-rock, alternative dance, ambient"
