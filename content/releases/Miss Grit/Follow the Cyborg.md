@@ -25,3 +25,4 @@ Follow the Cyborg is the debut album from New York-based artist [[Miss Grit]].
 ${infoTable}
 
 ## About
+Follow the Cyborg explores gender, cybernetics, and personal identity through quirky, deeply personal alt-rock. 
