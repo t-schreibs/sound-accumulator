@@ -4,7 +4,7 @@ import { PageList } from "../PageList"
 import { FilePath, FullSlug, pathToRoot, simplifySlug, slugifyFilePath } from "../../util/path"
 import { formatLinks, getLinkInfo } from "../../util/links";
 
-function ordinal_suffix_of(i: number) {
+function ordinalSuffixOf(i: number) {
     var j = i % 10,
         k = i % 100;
     if (j == 1 && k != 11) {
@@ -19,8 +19,10 @@ function ordinal_suffix_of(i: number) {
     return i + "th";
 }
 
+function commaBetweenItems(current: string, array: string[]) { return array.indexOf(current) + 1 < array.length ? ', ' : '' }
+
 function DefaultTrackIntro(title: string, release: string, releaseType: string, artist: string, index: number) {
-    return `${title} is the ${ordinal_suffix_of(index + 1)} track from ${artist}'s ${releaseType} ${release}.`;
+    return `${title} is the ${ordinalSuffixOf(index + 1)} track from ${artist}'s ${releaseType} ${release}.`;
 }
 function DefaultTrackAbout(title: string, published: string) {
     return `${title} was published on ${published}.`;
@@ -63,7 +65,10 @@ function TrackContent(props: QuartzComponentProps) {
                                     externalLinks.map(
                                         (link, _, array) => {
                                             let linkInfo = getLinkInfo(formatLinks(link));
-                                            return <span><a href={linkInfo.Url}>{linkInfo.Alias ?? linkInfo.Url}</a>{array.indexOf(link) + 1 < array.length ? ', ' : ''}</span>
+                                            return <span>
+                                                <a href={linkInfo.Url}>{linkInfo.Alias ?? linkInfo.Url}</a>
+                                                {commaBetweenItems(link, array)}
+                                            </span>
                                         })
                                 }
                             </td>

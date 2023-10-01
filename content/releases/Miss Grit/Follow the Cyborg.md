@@ -13,7 +13,7 @@ tracks:
     - name: "Buffering"
       links: "[[https://missgrit.bandcamp.com/track/buffering | Bandcamp]]"
     - name: "Follow the Cyborg"
-      links: "[[https://missgrit.bandcamp.com/track/follow-the-cyborg | Bandcamp]]"
+      links: "[[https://missgrit.bandcamp.com/track/follow-the-cyborg | Bandcamp]], [[https://open.spotify.com/track/29Tr5faNVWpHHaN2JytX98?si=29bc0fee472d4e5e | Spotify]]"
     - name: "사이보그를 따라와"
       links: "[[https://missgrit.bandcamp.com/track/- | Bandcamp]]"
     - name: "Like You"
