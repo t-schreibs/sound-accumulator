@@ -4,7 +4,7 @@ tags: ['genre']
 table:
     AKA: "Alternative rock, alternative"
     Origins: "1970s US and UK"
-    Subgenre(s): ""
+    Subgenres: "[[Bedroom pop]]"
 ---
 
 Alt-rock is a genre of rock music with origins in the US and UK undergrounds of the late '70s.

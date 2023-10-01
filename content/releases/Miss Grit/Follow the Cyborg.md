@@ -24,7 +24,7 @@ tracks:
       links: "[[https://missgrit.bandcamp.com/track/syncing | Bandcamp]]"
 table:
     Artist: "[[Miss Grit]]"
-    Genre(s): "[[genres/Alt-rock]]"
+    Genres: "[[genres/Alt-rock]]"
     Type: "LP"
     Published: "February 24, 2023"
     Links: "[[https://missgrit.bandcamp.com/album/follow-the-cyborg | Bandcamp]], [[https://open.spotify.com/album/1FzCOEjfRrJvwMWqEUCsNO?si=zb-LIBH9SKO-uPGVQJwSZA | Spotify]]"

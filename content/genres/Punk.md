@@ -4,7 +4,6 @@ tags: ['genre']
 table:
     AKA: "Punk rock"
     Origins: "1970s US, UK, and Australia"
-    Subgenre(s): ""
 ---
 
 Punk is a music genre and subculture that was originally rooted in the garage rock movement of the '60s.

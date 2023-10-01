@@ -4,7 +4,7 @@ tags: ['genre']
 table:
     AKA: "(aliases)"
     Origins: "(origins)"
-    Subgenre(s): "(genre links)"
+    Subgenres: "(genre links)"
 ---
 
 (genre intro)

@@ -5,7 +5,7 @@ tracks:
 (tracks)
 table:
     Artist: "(artist link)"
-    Genre(s): "(genre links)"
+    Genres: "(genre links)"
     Type: "(LP/EP/single)"
     Published: "(publish date)"
     Links: "(external links)"

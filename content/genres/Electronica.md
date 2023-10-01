@@ -4,7 +4,7 @@ tags: ['genre']
 table:
     AKA: "Post-rock, alternative dance, ambient"
     Origins: "1990s UK"
-    Subgenre(s): "[[genres/Trip hop]], [[genres/Post-classical]]"
+    Subgenres: "[[genres/Trip hop]], [[genres/Post-classical]]"
 ---
 
 Electronica is a general term for a variety of electronic musical subgenres that are intended for personal listening rather than for dancing, though the term is often used ambiguously to describe most or all electronic music.

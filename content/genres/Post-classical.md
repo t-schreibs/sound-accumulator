@@ -4,7 +4,6 @@ tags: ['genre']
 table:
     AKA: "Ambient"
     Origins: "1940s France"
-    Subgenre(s): ""
 ---
 
 Post-classical is a genre of music that experiments with classical music's sonorities within the context of electronic music.

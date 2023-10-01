@@ -4,7 +4,7 @@ tags: ['genre']
 table:
     AKA: "Rock and roll"
     Origins: "1940s-50s US"
-    Subgenre(s): "[[genres/Punk]], [[genres/Alt-rock]]"
+    Subgenres: "[[genres/Punk]], [[genres/Alt-rock]]"
 ---
 
 Rock (originally, "rock and roll") is a genre of music that was pioneered in the '40s and early '50s by musicians that borrowed from & electrified blues, folk, and other popular musics of the time. 
