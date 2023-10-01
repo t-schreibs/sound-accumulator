@@ -2,6 +2,7 @@ import { QuartzComponentConstructor, QuartzComponentProps } from "../types"
 import style from "../styles/listPage.scss"
 import { PageList } from "../PageList"
 import { FilePath, FullSlug, pathToRoot, simplifySlug, slugifyFilePath } from "../../util/path"
+import { formatLinks, getLinkInfo } from "../../util/links";
 
 function ordinal_suffix_of(i: number) {
     var j = i % 10,
@@ -34,7 +35,7 @@ function TrackContent(props: QuartzComponentProps) {
     const title = fileData.frontmatter!.title;
     const index = fileData.index as number;
     const published = fileData.published as string
-    const externalLinks = fileData.externalLinks as string
+    const externalLinks = (fileData.externalLinks as string)?.split(',') ?? [];
     const artist = simplifySlug(slug as FullSlug).split('/')[1].replace('-', ' ');
 
     return (
@@ -54,10 +55,18 @@ function TrackContent(props: QuartzComponentProps) {
                         <td><b>Published</b></td>
                         <td>{published ?? "Not available"}</td>
                     </tr>
-                    {/*<tr>
+                    <tr>
                         <td><b>Links</b></td>
-                        <td><a></a></td>
-                    </tr>*/}
+                        <td>
+                            {
+                                externalLinks.map(
+                                    (link, _, array) => {
+                                        let linkInfo = getLinkInfo(formatLinks(link));
+                                    return <span><a href={linkInfo.Url}>{linkInfo.Alias ?? linkInfo.Url}</a>{array.indexOf(link) + 1 < array.length ? ', ' : ''}</span>
+                                })
+                            }
+                        </td>
+                    </tr>
                 </table>
                 <h2>About</h2>
                 <p>{about ?? DefaultTrackAbout(title, published)}</p>

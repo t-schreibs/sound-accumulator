@@ -2,7 +2,6 @@ import { PluggableList } from "unified"
 import { QuartzTransformerPlugin } from "../types"
 import { Root, HTML, BlockContent, DefinitionContent, Code, Paragraph } from "mdast"
 import { Replace, findAndReplace as mdastFindReplace } from "mdast-util-find-and-replace"
-import { slug as slugAnchor } from "github-slugger"
 import rehypeRaw from "rehype-raw"
 import { visit } from "unist-util-visit"
 import path from "path"
@@ -13,7 +12,7 @@ import { FilePath, pathToRoot, slugTag, slugifyFilePath } from "../../util/path"
 import { toHast } from "mdast-util-to-hast"
 import { toHtml } from "hast-util-to-html"
 import { PhrasingContent } from "mdast-util-find-and-replace/lib"
-import { formatLinks } from "../../util/links"
+import { LinkInfo, WikilinkRegex, formatLinks, getLinkInfo } from "../../util/links"
 
 export interface Options {
   comments: boolean
@@ -106,12 +105,6 @@ const capitalize = (s: string): string => {
   return s.substring(0, 1).toUpperCase() + s.substring(1)
 }
 
-// !?               -> optional embedding
-// \[\[             -> open brace
-// ([^\[\]\|\#]+)   -> one or more non-special characters ([,],|, or #) (name)
-// (#[^\[\]\|\#]+)? -> # then one or more non-special characters (heading link)
-// (|[^\[\]\|\#]+)? -> | then one or more non-special characters (alias)
-const wikilinkRegex = new RegExp(/!?\[\[([^\[\]\|\#]+)?(#[^\[\]\|\#]+)?(\|[^\[\]\|\#]+)?\]\]/, "g")
 const highlightRegex = new RegExp(/==([^=]+)==/, "g")
 const commentRegex = new RegExp(/%%(.+)%%/, "g")
 // from https://github.com/escwxyz/remark-obsidian-callout/blob/main/src/index.ts
@@ -132,31 +125,31 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
     const hast = toHast(ast, { allowDangerousHtml: true })!
     return toHtml(hast, { allowDangerousHtml: true })
   }
-  const findAndReplace = opts.enableInHtmlEmbed
+  const findAndReplaceMarkdown = opts.enableInHtmlEmbed
     ? (tree: Root, regex: RegExp, replace?: Replace | null | undefined) => {
-        if (replace) {
-          visit(tree, "html", (node: HTML) => {
-            if (typeof replace === "string") {
-              node.value = node.value.replace(regex, replace)
-            } else {
-              node.value = node.value.replaceAll(regex, (substring: string, ...args) => {
-                const replaceValue = replace(substring, ...args)
-                if (typeof replaceValue === "string") {
-                  return replaceValue
-                } else if (Array.isArray(replaceValue)) {
-                  return replaceValue.map(mdastToHtml).join("")
-                } else if (typeof replaceValue === "object" && replaceValue !== null) {
-                  return mdastToHtml(replaceValue)
-                } else {
-                  return substring
-                }
-              })
-            }
-          })
-        }
-
-        mdastFindReplace(tree, regex, replace)
+      if (replace) {
+        visit(tree, "html", (node: HTML) => {
+          if (typeof replace === "string") {
+            node.value = node.value.replace(regex, replace)
+          } else {
+            node.value = node.value.replaceAll(regex, (substring: string, ...args) => {
+              const replaceValue = replace(substring, ...args)
+              if (typeof replaceValue === "string") {
+                return replaceValue
+              } else if (Array.isArray(replaceValue)) {
+                return replaceValue.map(mdastToHtml).join("")
+              } else if (typeof replaceValue === "object" && replaceValue !== null) {
+                return mdastToHtml(replaceValue)
+              } else {
+                return substring
+              }
+            })
+          }
+        })
       }
+
+      mdastFindReplace(tree, regex, replace)
+    }
     : mdastFindReplace
 
   return {
@@ -183,246 +176,235 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
       if (opts.wikilinks) {
         plugins.push(() => {
           return (tree: Root, _file) => {
-            findAndReplace(tree, wikilinkRegex, (value: string, ...capture: string[]) => {
-              let [rawFp, rawHeader, rawAlias] = capture
-              const fp = rawFp?.trim() ?? ""
-              const anchor = rawHeader?.trim() ?? ""
-              const alias = rawAlias?.slice(1).trim()
-
-              // embed cases
-              if (value.startsWith("!")) {
-                const ext: string = path.extname(fp).toLowerCase()
-                const url = slugifyFilePath(fp as FilePath)
-                if ([".png", ".jpg", ".jpeg", ".gif", ".bmp", ".svg"].includes(ext)) {
-                  const dims = alias ?? ""
-                  let [width, height] = dims.split("x", 2)
-                  width ||= "auto"
-                  height ||= "auto"
-                  return {
-                    type: "image",
-                    url,
-                    data: {
-                      hProperties: {
-                        width,
-                        height,
-                      },
-                    },
+            findAndReplaceMarkdown(tree, WikilinkRegex, (value: string, ...capture: string[]) => {
+              let [rawFp, rawHeader, rawAlias] = capture;
+              let linkInfo = getLinkInfo(value, rawFp, rawHeader, rawAlias);
+              let url = linkInfo.Url;
+              if (linkInfo.Type === "image") {
+                let width = linkInfo.Dimensions?.Height;
+                let height = linkInfo.Dimensions?.Height;
+                return {
+                  type: "image",
+                  url,
+                  data: {
+                    hProperties: {
+                      width,
+                      height
+                    }
                   }
-                } else if ([".mp4", ".webm", ".ogv", ".mov", ".mkv"].includes(ext)) {
-                  return {
-                    type: "html",
-                    value: `<video src="${url}" controls></video>`,
-                  }
-                } else if (
-                  [".mp3", ".webm", ".wav", ".m4a", ".ogg", ".3gp", ".flac"].includes(ext)
-                ) {
-                  return {
-                    type: "html",
-                    value: `<audio src="${url}" controls></audio>`,
-                  }
-                } else if ([".pdf"].includes(ext)) {
-                  return {
-                    type: "html",
-                    value: `<iframe src="${url}"></iframe>`,
-                  }
-                } else if (ext === "") {
-                  // TODO: note embed
                 }
-                // otherwise, fall through to regular link
               }
-
-              // internal link
-              const url = fp + anchor
-              return {
-                type: "link",
-                url,
-                children: [
-                  {
-                    type: "text",
-                    value: alias ?? fp,
-                  },
-                ],
-              }
-            })
-          }
-        })
-      }
-
-      if (opts.highlight) {
-        plugins.push(() => {
-          return (tree: Root, _file) => {
-            findAndReplace(tree, highlightRegex, (_value: string, ...capture: string[]) => {
-              const [inner] = capture
-              return {
-                type: "html",
-                value: `<span class="text-highlight">${inner}</span>`,
-              }
-            })
-          }
-        })
-      }
-
-      if (opts.comments) {
-        plugins.push(() => {
-          return (tree: Root, _file) => {
-            findAndReplace(tree, commentRegex, (_value: string, ..._capture: string[]) => {
-              return {
-                type: "text",
-                value: "",
-              }
-            })
-          }
-        })
-      }
-
-      if (opts.callouts) {
-        plugins.push(() => {
-          return (tree: Root, _file) => {
-            visit(tree, "blockquote", (node) => {
-              if (node.children.length === 0) {
-                return
-              }
-
-              // find first line
-              const firstChild = node.children[0]
-              if (firstChild.type !== "paragraph" || firstChild.children[0]?.type !== "text") {
-                return
-              }
-
-              const text = firstChild.children[0].value
-              const restChildren = firstChild.children.slice(1)
-              const [firstLine, ...remainingLines] = text.split("\n")
-              const remainingText = remainingLines.join("\n")
-
-              const match = firstLine.match(calloutRegex)
-              if (match && match.input) {
-                const [calloutDirective, typeString, collapseChar] = match
-                const calloutType = canonicalizeCallout(
-                  typeString.toLowerCase() as keyof typeof calloutMapping,
-                )
-                const collapse = collapseChar === "+" || collapseChar === "-"
-                const defaultState = collapseChar === "-" ? "collapsed" : "expanded"
-                const titleContent =
-                  match.input.slice(calloutDirective.length).trim() || capitalize(calloutType)
-                const titleNode: Paragraph = {
-                  type: "paragraph",
-                  children: [{ type: "text", value: titleContent + " " }, ...restChildren],
+              else if (linkInfo.Type === "video") {
+                return {
+                  type: "html",
+                  value: `<video src=$"${url}" controls></video>`
                 }
-                const title = mdastToHtml(titleNode)
+              }
+              else if (linkInfo.Type === "audio") {
+                return {
+                  type: "html",
+                  value: `<audio src="${url}" controls></audio>`
+                }
+              }
+              else if (linkInfo.Type === "pdf") {
+                return {
+                  type: "html",
+                  value: `<iframe src="${url}"></iframe>`
+                }
+              }
+              else {
+                let alias = linkInfo.Alias;
+                let fp = linkInfo.FilePath;
+                return {
+                  type: "link",
+                  url,
+                  children: [
+                    {
+                      type: "text",
+                      value: alias ?? fp ?? url
+                    }
+                  ]
+                }
+              }
+            })
+          }
+        })
+      }
 
-                const toggleIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold">
+        if (opts.highlight) {
+          plugins.push(() => {
+            return (tree: Root, _file) => {
+              findAndReplaceMarkdown(tree, highlightRegex, (_value: string, ...capture: string[]) => {
+                const [inner] = capture
+                return {
+                  type: "html",
+                  value: `<span class="text-highlight">${inner}</span>`,
+                }
+              })
+            }
+          })
+        }
+
+        if (opts.comments) {
+          plugins.push(() => {
+            return (tree: Root, _file) => {
+              findAndReplaceMarkdown(tree, commentRegex, (_value: string, ..._capture: string[]) => {
+                return {
+                  type: "text",
+                  value: "",
+                }
+              })
+            }
+          })
+        }
+
+        if (opts.callouts) {
+          plugins.push(() => {
+            return (tree: Root, _file) => {
+              visit(tree, "blockquote", (node) => {
+                if (node.children.length === 0) {
+                  return
+                }
+
+                // find first line
+                const firstChild = node.children[0]
+                if (firstChild.type !== "paragraph" || firstChild.children[0]?.type !== "text") {
+                  return
+                }
+
+                const text = firstChild.children[0].value
+                const restChildren = firstChild.children.slice(1)
+                const [firstLine, ...remainingLines] = text.split("\n")
+                const remainingText = remainingLines.join("\n")
+
+                const match = firstLine.match(calloutRegex)
+                if (match && match.input) {
+                  const [calloutDirective, typeString, collapseChar] = match
+                  const calloutType = canonicalizeCallout(
+                    typeString.toLowerCase() as keyof typeof calloutMapping,
+                  )
+                  const collapse = collapseChar === "+" || collapseChar === "-"
+                  const defaultState = collapseChar === "-" ? "collapsed" : "expanded"
+                  const titleContent =
+                    match.input.slice(calloutDirective.length).trim() || capitalize(calloutType)
+                  const titleNode: Paragraph = {
+                    type: "paragraph",
+                    children: [{ type: "text", value: titleContent + " " }, ...restChildren],
+                  }
+                  const title = mdastToHtml(titleNode)
+
+                  const toggleIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold">
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>`
 
-                const titleHtml: HTML = {
-                  type: "html",
-                  value: `<div
+                  const titleHtml: HTML = {
+                    type: "html",
+                    value: `<div
                   class="callout-title"
                 >
                   <div class="callout-icon">${callouts[calloutType]}</div>
                   <div class="callout-title-inner">${title}</div>
                   ${collapse ? toggleIcon : ""}
                 </div>`,
+                  }
+
+                  const blockquoteContent: (BlockContent | DefinitionContent)[] = [titleHtml]
+                  if (remainingText.length > 0) {
+                    blockquoteContent.push({
+                      type: "paragraph",
+                      children: [
+                        {
+                          type: "text",
+                          value: remainingText,
+                        },
+                      ],
+                    })
+                  }
+
+                  // replace first line of blockquote with title and rest of the paragraph text
+                  node.children.splice(0, 1, ...blockquoteContent)
+
+                  // add properties to base blockquote
+                  node.data = {
+                    hProperties: {
+                      ...(node.data?.hProperties ?? {}),
+                      className: `callout ${collapse ? "is-collapsible" : ""} ${defaultState === "collapsed" ? "is-collapsed" : ""
+                        }`,
+                      "data-callout": calloutType,
+                      "data-callout-fold": collapse,
+                    },
+                  }
+                }
+              })
+            }
+          })
+        }
+
+        if (opts.mermaid) {
+          plugins.push(() => {
+            return (tree: Root, _file) => {
+              visit(tree, "code", (node: Code) => {
+                if (node.lang === "mermaid") {
+                  node.data = {
+                    hProperties: {
+                      className: ["mermaid"],
+                    },
+                  }
+                }
+              })
+            }
+          })
+        }
+
+        if (opts.parseTags) {
+          plugins.push(() => {
+            return (tree: Root, file) => {
+              const base = pathToRoot(file.data.slug!)
+              findAndReplaceMarkdown(tree, tagRegex, (_value: string, tag: string) => {
+                tag = slugTag(tag)
+                if (file.data.frontmatter && !file.data.frontmatter.tags.includes(tag)) {
+                  file.data.frontmatter.tags.push(tag)
                 }
 
-                const blockquoteContent: (BlockContent | DefinitionContent)[] = [titleHtml]
-                if (remainingText.length > 0) {
-                  blockquoteContent.push({
-                    type: "paragraph",
-                    children: [
-                      {
-                        type: "text",
-                        value: remainingText,
-                      },
-                    ],
-                  })
+                return {
+                  type: "link",
+                  url: base + `/tags/${tag}`,
+                  data: {
+                    hProperties: {
+                      className: ["tag-link"],
+                    },
+                  },
+                  children: [
+                    {
+                      type: "text",
+                      value: `#${tag}`,
+                    },
+                  ],
                 }
+              })
+            }
+          })
+        }
 
-                // replace first line of blockquote with title and rest of the paragraph text
-                node.children.splice(0, 1, ...blockquoteContent)
+        return plugins
+      },
+      htmlPlugins() {
+        return [rehypeRaw]
+      },
+      externalResources() {
+        const js: JSResource[] = []
 
-                // add properties to base blockquote
-                node.data = {
-                  hProperties: {
-                    ...(node.data?.hProperties ?? {}),
-                    className: `callout ${collapse ? "is-collapsible" : ""} ${
-                      defaultState === "collapsed" ? "is-collapsed" : ""
-                    }`,
-                    "data-callout": calloutType,
-                    "data-callout-fold": collapse,
-                  },
-                }
-              }
-            })
-          }
-        })
-      }
+        if (opts.callouts) {
+          js.push({
+            script: calloutScript,
+            loadTime: "afterDOMReady",
+            contentType: "inline",
+          })
+        }
 
-      if (opts.mermaid) {
-        plugins.push(() => {
-          return (tree: Root, _file) => {
-            visit(tree, "code", (node: Code) => {
-              if (node.lang === "mermaid") {
-                node.data = {
-                  hProperties: {
-                    className: ["mermaid"],
-                  },
-                }
-              }
-            })
-          }
-        })
-      }
-
-      if (opts.parseTags) {
-        plugins.push(() => {
-          return (tree: Root, file) => {
-            const base = pathToRoot(file.data.slug!)
-            findAndReplace(tree, tagRegex, (_value: string, tag: string) => {
-              tag = slugTag(tag)
-              if (file.data.frontmatter && !file.data.frontmatter.tags.includes(tag)) {
-                file.data.frontmatter.tags.push(tag)
-              }
-
-              return {
-                type: "link",
-                url: base + `/tags/${tag}`,
-                data: {
-                  hProperties: {
-                    className: ["tag-link"],
-                  },
-                },
-                children: [
-                  {
-                    type: "text",
-                    value: `#${tag}`,
-                  },
-                ],
-              }
-            })
-          }
-        })
-      }
-
-      return plugins
-    },
-    htmlPlugins() {
-      return [rehypeRaw]
-    },
-    externalResources() {
-      const js: JSResource[] = []
-
-      if (opts.callouts) {
-        js.push({
-          script: calloutScript,
-          loadTime: "afterDOMReady",
-          contentType: "inline",
-        })
-      }
-
-      if (opts.mermaid) {
-        js.push({
-          script: `
+        if (opts.mermaid) {
+          js.push({
+            script: `
           import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
           const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
           mermaid.initialize({
@@ -436,13 +418,13 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
             })
           });
           `,
-          loadTime: "afterDOMReady",
-          moduleType: "module",
-          contentType: "inline",
-        })
-      }
+            loadTime: "afterDOMReady",
+            moduleType: "module",
+            contentType: "inline",
+          })
+        }
 
-      return { js }
-    },
+        return { js }
+      },
+    }
   }
-}
