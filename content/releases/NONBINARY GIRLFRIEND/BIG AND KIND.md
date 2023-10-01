@@ -2,14 +2,14 @@
 title: "BIG AND KIND"
 tags: ['release']
 tracks:
-	- name: "BIG AND KIND"
-	- name: "NO FACE"
-	- name: "TENDER HAND"
-	- name: "WORST DAY"
-	- name: "WAITING"
-	- name: "I TRIED TO FORGET WHO I WAS"
-	- name: "OKAY"
-	- name: "BODY"
+  - name: "BIG AND KIND"
+  - name: "NO FACE"
+  - name: "TENDER HAND"
+  - name: "WORST DAY"
+  - name: "WAITING"
+  - name: "I TRIED TO FORGET WHO I WAS"
+  - name: "OKAY"
+  - name: "BODY"
 table:
     Artist: "[[NONBINARY GIRLFRIEND]]"
     Genres: "[[Punk]], [[Bedroom pop]]"

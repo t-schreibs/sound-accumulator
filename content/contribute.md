@@ -43,7 +43,7 @@ In order to submit to the project, you will need to [create a fork](https://docs
     - This resource is primarily geared toward exposure for small and local acts
     - Does the artist you're looking to submit have more than a million streams for a single track on Spotify? They're probably too well-known for Sound Accumulator
     - You have the right to argue on behalf of "gray-area" mid-tier artists, but please be aware that the maintainers are not easily swayed! All final decisions are made with the intent of supporting small & local artists, and this does mean that some submissions might be unexpectedly rejected
-    - Rejections are not a form of discipline - we often learn about cool acts through rejected submissions! But they are used to help keep the site focused
+    - Rejections are not a form of discipline, but they are used to help keep the site focused
 3. Submissions should closely follow the [templates provided in the repository](https://github.com/t-schreibs/sound-accumulator/tree/hugo/content/templates)
     - Replace parenthesized text with content
     - Where the words "link" or "links" are included in the parenthesized text, provide links as appropriate
@@ -71,7 +71,7 @@ In order to submit to the project, you will need to [create a fork](https://docs
 
 ## Obsidian and the Sound Accumulator Tools plugin
 
-Obsidian was selected as the application of choice for managing and generating Sound Accumulator submissions mostly because of its native abilities such as ease of navigation, robust linking support, and Markdown rendering capabilities. Vanilla Obsidian is powerful. However, given Sound Accumulator's specific requirements, a plugin was created to add a couple of niceties that make working with the repository a bit friendlier. A couple features the plugin adds:
+Obsidian was selected as the application of choice for managing and generating Sound Accumulator submissions mostly because of its native abilities such as ease of navigation, robust linking support, and Markdown rendering capabilities. Vanilla Obsidian is powerful. However, given Sound Accumulator's specific requirements, a [plugin](https://github.com/t-schreibs/sound-accumulator-tools) was created to add a couple of niceties that make working with the repository a bit friendlier. A couple features the plugin adds:
 - You can set a keyboard shortcut (usually ctrl+l) to quickly search for and link to files from within the body of a post while in Edit mode.
 - Info tables are rendered into the body of the post when in Preview mode
 

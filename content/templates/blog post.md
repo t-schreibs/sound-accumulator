@@ -7,6 +7,8 @@ table:
 
 ${infoTable}
 
+(intro)
+
 <% tp.web.random_picture("1500x1000", "music, band") %>
 
 (post)

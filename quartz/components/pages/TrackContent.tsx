@@ -55,18 +55,20 @@ function TrackContent(props: QuartzComponentProps) {
                         <td><b>Published</b></td>
                         <td>{published ?? "Not available"}</td>
                     </tr>
-                    <tr>
-                        <td><b>Links</b></td>
-                        <td>
-                            {
-                                externalLinks.map(
-                                    (link, _, array) => {
-                                        let linkInfo = getLinkInfo(formatLinks(link));
-                                    return <span><a href={linkInfo.Url}>{linkInfo.Alias ?? linkInfo.Url}</a>{array.indexOf(link) + 1 < array.length ? ', ' : ''}</span>
-                                })
-                            }
-                        </td>
-                    </tr>
+                    {externalLinks?.length > 0 &&
+                        <tr>
+                            <td><b>Links</b></td>
+                            <td>
+                                {
+                                    externalLinks.map(
+                                        (link, _, array) => {
+                                            let linkInfo = getLinkInfo(formatLinks(link));
+                                            return <span><a href={linkInfo.Url}>{linkInfo.Alias ?? linkInfo.Url}</a>{array.indexOf(link) + 1 < array.length ? ', ' : ''}</span>
+                                        })
+                                }
+                            </td>
+                        </tr>
+                    }
                 </table>
                 <h2>About</h2>
                 <p>{about ?? DefaultTrackAbout(title, published)}</p>
