@@ -5,7 +5,7 @@ tracks:
     - name: "Rainbow Road"
     - name: "Pop Song"
     - name: "Break Me"
-    - name: "Old Friends // New Friends"
+    - name: "Old Friends / New Friends"
     - name: "Nectarine"
     - name: "Swedish Fish"
     - name: "Mudkip"

@@ -8,7 +8,7 @@ table:
     Links: "[[https://www.instagram.com/nonbinarygirlfriend | Instagram]], [[https://nonbinarygirlfriend.bandcamp.com | Bandcamp]], [[https://open.spotify.com/artist/4i3JiS1urNPGIrIcho9UtU?si=k6Bf8rbbQAapxMqUIhucWw | Spotify]]"
 ---
 
-NONBINARY GIRLFRIEND is a dreamy bedroom punk group fronted by Anaïs Genevieve.
+NONBINARY GIRLFRIEND is a Portland, Oregon-based dreamy bedroom punk group fronted by Anaïs Genevieve.
 
 ${infoTable}
 
