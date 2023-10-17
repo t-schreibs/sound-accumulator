@@ -2,7 +2,7 @@
 title: "Missouri"
 tags: ['release']
 tracks:
-	- Name: "Missouri"
+    - name: "Missouri"
 table:
     Artist: "[[Sadgasm]]"
     Genres: "[[Alt-rock]], [[Punk]]"

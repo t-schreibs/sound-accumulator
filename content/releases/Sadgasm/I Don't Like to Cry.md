@@ -2,10 +2,10 @@
 title: "I Don't Like to Cry"
 tags: ['release']
 tracks:
-	- Name: "Surf Rock America"
-	- Name: "It's Better with Jonny Around"
-	- Name: "Xx Pain Warrior Xx"
-	- Name: "Eating Ash"
+    - name: "Surf Rock America"
+    - name: "It's Better with Jonny Around"
+    - name: "Xx Pain Warrior Xx"
+    - name: "Eating Ash"
 table:
     Artist: "[[Sadgasm]]"
     Genres: "[[Alt-rock]]"

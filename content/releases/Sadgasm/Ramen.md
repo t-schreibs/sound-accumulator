@@ -2,14 +2,14 @@
 title: "Ramen"
 tags: ['release']
 tracks:
-	- Name: "Cum On"
-	- Name: "Barnyard Fun"
-	- Name: "Making Love in 3/4"
-	- Name: "Trim Photo to Fit"
-	- Name: "Puke"
-	- Name: "2AM"
-	- Name: "Couple's Massage"
-	- Name: "Car Crash"
+    - name: "Cum On"
+    - name: "Barnyard Fun"
+    - name: "Making Love in 3/4"
+    - name: "Trim Photo to Fit"
+    - name: "Puke"
+    - name: "2AM"
+    - name: "Couple's Massage"
+    - name: "Car Crash"
 table:
     Artist: "[[Sadgasm]]"
     Genres: "[[Alt-rock]] [[Punk]]"

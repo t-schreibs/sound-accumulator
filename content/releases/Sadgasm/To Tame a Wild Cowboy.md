@@ -2,14 +2,14 @@
 title: "To Tame a Wild Cowboy"
 tags: ['release']
 tracks:
-	- Name: "Rainbow Road"
-	- Name: "Pop Song"
-	- Name: "Break Me"
-	- Name: "Old Friends // New Friends"
-	- Name: "Nectarine"
-	- Name: "Swedish Fish"
-	- Name: "Mudkip"
-	- Name: "Drinking Slurpee and Talking About Naruto"
+    - name: "Rainbow Road"
+    - name: "Pop Song"
+    - name: "Break Me"
+    - name: "Old Friends // New Friends"
+    - name: "Nectarine"
+    - name: "Swedish Fish"
+    - name: "Mudkip"
+    - name: "Drinking Slurpee and Talking About Naruto"
 table:
     Artist: "[[Sadgasm]]"
     Genres: "[[Alt-rock]], [[Punk]]"
