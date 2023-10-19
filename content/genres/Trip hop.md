@@ -6,7 +6,7 @@ table:
     Origins: "1990s UK"
 ---
 
-Trip hop is a fusion music genre that originated in the UK in the 1990s.
+Trip hop is a fusion music genre that originated in the UK in the '90s.
 
 ${infoTable}
 

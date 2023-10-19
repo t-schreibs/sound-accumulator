@@ -3,10 +3,10 @@ title: "Dream pop"
 tags: ['genre']
 table:
     AKA: "Dreampop"
-    Origins: "80s Ireland & UK"
+    Origins: "1980s Ireland & UK"
 ---
 
-Dream pop is a genre of music that spawned out of the neo-psychedelia movement in Ireland and the UK in the 1970s.
+Dream pop is a genre of music that spawned out of the neo-psychedelia movement in Ireland and the UK in the '70s.
 
 ${infoTable}
 

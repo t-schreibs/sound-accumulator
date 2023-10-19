@@ -14,4 +14,4 @@ and Zach Kay.
 ${infoTable}
 
 ## About
-Combobox is Zach Kay, Tyler Schreiber, Ben Headwall, and Cody Iott.
+Combobox is Zach Kay, Tyler Schreiber, Ben Hedwall, and Cody Iott.

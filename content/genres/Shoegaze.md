@@ -2,10 +2,10 @@
 title: "Shoegaze"
 tags: ['genre']
 table:
-    Origins: "80s Ireland & UK"
+    Origins: "1980s Ireland & UK"
 ---
 
-Shoegaze is a genre of rock that evolved out of the [[Dream pop | dream pop]] movement of the 1980s.
+Shoegaze is a genre of rock that evolved out of the [[Dream pop | dream pop]] movement of the '80s.
 
 ${infoTable}
 

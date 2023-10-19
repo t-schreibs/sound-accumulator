@@ -7,7 +7,7 @@ table:
     Subgenres: "[[Indie pop]], [[Bedroom pop]]"
 ---
 
-Pop music, originally indistinguishable from [[Rock | rock and roll]] in the 1950s, is a distinct genre with many subgenres whose defining characteristics are, to some extent, an accumulation of the popular taste of the last 60 years.
+Pop music, originally indistinguishable from [[Rock | rock and roll]] in the '50s, is a distinct genre with many subgenres whose defining characteristics are, to some extent, an accumulation of the popular taste of the last 60 years.
 
 ${infoTable}
 
