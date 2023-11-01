@@ -3,6 +3,7 @@ import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
 function recentPostFilter(f: Data): boolean { return f.frontmatter?.excludeFromRecent != true ?? true; }
+function blogPostsFilter(f: Data): boolean { return f.frontmatter?.tags.includes('blog') === true ?? false }
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -59,7 +60,15 @@ export const defaultContentPageLayout: PageLayout = {
       limit: 3, 
       filter: recentPostFilter
     }
-  ))]
+    )),
+    Component.OnlyFor({ title: "Sound Accumulator" }, Component.RecentNotes(
+      {
+        title: "Blog",
+        limit: 5,
+        showTags: false,
+        filter: blogPostsFilter
+      }
+    ))]
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)

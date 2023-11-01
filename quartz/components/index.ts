@@ -24,6 +24,7 @@ import RandomPageButton from "./RandomPageButton"
 import Row from "./Row"
 import Column from "./Column"
 import Breadcrumbs from "./Breadcrumbs"
+import OnlyFor from "./OnlyFor"
 
 export {
   ArticleTitle,
@@ -51,5 +52,6 @@ export {
   RandomPageButton,
   Row,
   Column,
-  Breadcrumbs
+  Breadcrumbs,
+  OnlyFor
 }

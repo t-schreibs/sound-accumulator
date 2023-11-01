@@ -19,7 +19,7 @@ export const InfoTable: QuartzTransformerPlugin = () => {
                                 visit(tree, 'paragraph', (node, _, parent) => {
                                     if (node === toReplace) {
                                         parent.children = parent.children?.map(
-                                            child => child === toReplace ? {
+                                            (child: any) => child === toReplace ? {
                                                 type: 'table',
                                                 children: [{
                                                     type: 'tableRow',
