@@ -12,7 +12,7 @@ export default ((opts?: Partial<OnlyForOptions>, component?: QuartzComponent) =>
     const Component = component
     function OnlyFor(props: QuartzComponentProps) {
       return props.fileData.frontmatter?.title === opts?.title ? 
-        <Component displayClass="desktop-only" {...props} /> :
+        <Component {...props} /> :
         <></>;
     }
 

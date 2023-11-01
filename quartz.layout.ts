@@ -61,7 +61,11 @@ export const defaultContentPageLayout: PageLayout = {
       filter: recentPostFilter
     }
     )),
-    Component.OnlyFor({ title: "Sound Accumulator" }, Component.RecentNotes(
+    Component.OnlyFor({ title: "Sound Accumulator" },
+      Component.HorizontalRule({ invisible: true })
+    ),
+    Component.OnlyFor({ title: "Sound Accumulator" }, 
+      Component.RecentNotes(
       {
         title: "Blog",
         limit: 5,

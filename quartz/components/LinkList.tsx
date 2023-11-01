@@ -15,7 +15,7 @@ function LinkList(props: QuartzComponentProps) {
   else if (tags?.includes('genre') ?? false) {
     links = allFiles.filter(file => 
       file.frontmatter?.tags?.includes('artist') && 
-        file.frontmatter?.table?.Genres?.includes(data.frontmatter?.title));
+        file.frontmatter?.table?.Genres?.includes(data.frontmatter?.title ?? data.filePath));
       header = "Artists";
   }
   if (links.length > 0) {
