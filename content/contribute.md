@@ -63,7 +63,7 @@ In order to submit to the project, you will need to [create a fork](https://docs
 2. Focus on linking!
     - While there are defined sections for certain kinds of links (genre links, artist links, etc. in the info tables), internal links should be peppered liberally throughout the "Intro" and "About" sections of any submission
     - Links are how users find music on this site - without links, your submissions will disappear into the void
-3. Keep the tone concise and generally neutral, but a degree of conversationality is permitted, and fun & interesting comparisons to other artists, albums, tracks, or genres are condoned and even encouraged
+3. Keep the tone concise and generally neutral, but a degree of conversationality is permitted, and fun & interesting comparisons to other artists, albums, or genres are condoned and even encouraged
     - Keep strong opinions to the [discussion boards](https://github.com/t-schreibs/sound-accumulator/discussions) - Sound Accumulator is not a review site
 4. All submissions must at a minimum meet the Quartz [citizen code of conduct](https://github.com/t-schreibs/sound-accumulator/blob/main/CODE_OF_CONDUCT.md) - and that goes for both the music/artists submitted and the way in which they are represented
     - This site is not Wikipedia, and its intention is not to catalog all notable music
