@@ -1,0 +1,17 @@
+$pageWidth: 750px;
+$mobileBreakpoint: 600px;
+$tabletBreakpoint: 1200px;
+$sidePanelWidth: 380px;
+$topSpacing: 6rem;
+$fullPageWidth: $pageWidth + 2 * $sidePanelWidth;
+$bodyFont: "Roboto";
+$headerFont: "Roboto Slab";
+$codeFont: "IBM Plex Mono";
+$light: #faf8f8;
+$lightgray: #e5e5e5;
+$gray: #b8b8b8;
+$darkgray: #4e4e4e;
+$dark: #2b2b2b;
+$secondary: #982c94;
+$tertiary: #84a59d;
+$highlight: rgba(143, 159, 169, 0.10);

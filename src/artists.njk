@@ -1,0 +1,14 @@
+---
+pagination:
+  data: artists
+  size: 1
+  alias: artist
+permalink: "artists/{{ artist.name | slugify }}/"
+tags: artist
+eleventyComputed:
+    title: "{{ artist.name }}"
+---
+
+<h1>{{ title }}</h1>
+
+<p>{{ artist.name }} is from {{ artist.origin }}.</p>

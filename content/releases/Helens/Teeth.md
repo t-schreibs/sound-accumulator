@@ -2,7 +2,9 @@
 title: "Teeth"
 tags: ['release']
 tracks:
-
+  - name: "Just Like Pet Sounds"
+  - name: "You Can't Be A Pilgrim!"
+  - name: "Monks"
 table:
     Artist: "[[Helens]]"
     Genres: "[[Shoegaze]]"
@@ -16,4 +18,4 @@ Teeth is the first EP released by Portland-based rock band [[Helens]].
 ${infoTable}
 
 ## About
-Teeth was recorded in a basement and is filled with '90s-inflected raw vocals, yells, wall of sound guitars, and plenty of reverb.
+Teeth is filled with '90s-inflected raw vocals, yells, wall of sound guitars, and plenty of reverb.

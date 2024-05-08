@@ -1,0 +1,18 @@
+---
+title: Sound Accumulator
+hideTitle: true
+enableToc: false
+excludeFromRecent: true
+---
+
+<h2>Discover your new favorite artist!</h2>
+
+<p>Sound Accumulator is a community-generated music wiki that prioritizes small & local artists and focuses on discoverability.</p>
+
+<h2>Artists</h2>
+
+<ul>
+    {% for artist in collections.artist %}
+        <li><a href="{{ artist.url }}">{{ artist.data.title }}</a></li>
+    {% endfor %}
+</ul>
