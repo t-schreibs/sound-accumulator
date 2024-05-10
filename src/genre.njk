@@ -1,0 +1,44 @@
+---
+pagination:
+  data: genres
+  size: 1
+  alias: genre
+permalink: "genres/{{ genre.name | slugify }}/"
+tags: genre
+eleventyComputed:
+    title: "{{ genre.name }}"
+---
+
+<h1>{{ title }}</h1>
+
+<p>{{ genre.intro }}</p>
+
+<table>
+  <tr>
+    <td>AKA</td>
+    <td>
+      <ul>
+      {% for alias in genre.aka.split(',') %}
+        <li>{{ alias }}</li>
+      {% endfor %}
+      </ul>
+    </td>
+  <tr>
+    <td>Origins</td>
+    <td>{{ genre.origins }}</td>
+  </tr>
+  <tr>
+    <td>Subgenres</td>
+    <td>
+      <ul>
+      {% for genre in collections.genres %}
+        {% if genre.name in artist.subgenres.split(',') %}
+          <li><a href="{{ genre.url }}">{{ genre.name }}</a></li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<p>{{ genre.about }}</p>

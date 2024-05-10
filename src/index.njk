@@ -1,8 +1,5 @@
 ---
 title: Sound Accumulator
-hideTitle: true
-enableToc: false
-excludeFromRecent: true
 ---
 
 <h2>Discover your new favorite artist!</h2>
@@ -14,5 +11,13 @@ excludeFromRecent: true
 <ul>
     {% for artist in collections.artist %}
         <li><a href="{{ artist.url }}">{{ artist.data.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Genres</h2>
+
+<ul>
+    {% for genre in collections.genre %}
+        <li><a href="{{ genre.url }}">{{ genre.data.title }}</a></li>
     {% endfor %}
 </ul>

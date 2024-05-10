@@ -1,0 +1,49 @@
+---
+pagination:
+  data: artists
+  size: 1
+  alias: artist
+permalink: "artists/{{ artist.name | slugify }}/"
+tags: artist
+eleventyComputed:
+    title: "{{ artist.name }}"
+---
+
+<h1>{{ title }}</h1>
+
+<p>{{ artist.intro }}.</p>
+
+<table>
+  <tr>
+    <td>Origin</td>
+    <td>{{ artist.origin }}</td>
+  </tr>
+  <tr>
+    <td>Genres</td>
+    <td>
+      <ul>
+      {% for genre in collections.genres %}
+        {% if genre.name in artist.genres.split(',') %}
+          <li><a href="{{ genre.url }}">{{ genre.name }}</a></li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Years active</td>
+    <td>{{ artist.yearsActive }}</td>
+  </tr>
+  <tr>
+    <td>Links</td>
+    <td>
+      <ul>
+      {% for link in artist.links.split(',') %}
+        <li><a href="{{ link }}">{{ link }}</a></li>
+      {% endfor %}
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<p>{{ artist.about }}</p>
