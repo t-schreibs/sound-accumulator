@@ -22,9 +22,9 @@ eleventyComputed:
     <td>Genres</td>
     <td>
       <ul>
-      {% for genre in collections.genres %}
-        {% if genre.name in artist.genres.split(',') %}
-          <li><a href="{{ genre.url }}">{{ genre.name }}</a></li>
+      {% for genre in collections.genre %}
+        {% if genre.data.title in artist.genres.split(',') %}
+          <li><a href="{{ genre.url }}">{{ genre.data.title }}</a></li>
         {% endif %}
       {% endfor %}
       </ul>

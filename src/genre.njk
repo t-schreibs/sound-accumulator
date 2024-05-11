@@ -31,9 +31,9 @@ eleventyComputed:
     <td>Subgenres</td>
     <td>
       <ul>
-      {% for genre in collections.genres %}
-        {% if genre.name in artist.subgenres.split(',') %}
-          <li><a href="{{ genre.url }}">{{ genre.name }}</a></li>
+      {% for subgenre in collections.genre %}
+        {% if subgenre.data.title in genre.subgenres.split(',') %}
+          <li><a href="{{ subgenre.url }}">{{ subgenre.data.title }}</a></li>
         {% endif %}
       {% endfor %}
       </ul>
