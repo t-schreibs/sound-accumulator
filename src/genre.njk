@@ -1,5 +1,6 @@
 ---
 pagination:
+  addAllPagesToCollections: true
   data: genres
   size: 1
   alias: genre
@@ -30,13 +31,7 @@ eleventyComputed:
   <tr>
     <td>Subgenres</td>
     <td>
-      <ul>
-      {% for subgenre in collections.genre %}
-        {% if subgenre.data.title in genre.subgenres.split(',') %}
-          <li><a href="{{ subgenre.url }}">{{ subgenre.data.title }}</a></li>
-        {% endif %}
-      {% endfor %}
-      </ul>
+      {% linkList genre.subgenres.split(','), collections.genre %}
     </td>
   </tr>
 </table>
