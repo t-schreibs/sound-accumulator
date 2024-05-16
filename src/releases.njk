@@ -1,0 +1,20 @@
+---
+pagination:
+  data: collections.alphabeticalRelease
+  size: 100
+  alias: releaseList
+permalink: "releases/"
+title: "Releases"
+---
+
+<h1>{{ title }}</h1>
+
+<section>
+    <ul>
+        {% for release in releaseList %}
+            <li>
+                <a href="{{ release.url }}">{{ release.data.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>

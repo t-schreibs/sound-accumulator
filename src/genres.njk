@@ -1,0 +1,20 @@
+---
+pagination:
+  data: collections.alphabeticalGenre
+  size: 100
+  alias: genreList
+permalink: "genres/"
+title: "Genres"
+---
+
+<h1>{{ title }}</h1>
+
+<section>
+    <ul>
+        {% for genre in genreList %}
+            <li>
+                <a href="{{ genre.url }}">{{ genre.data.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>

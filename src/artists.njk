@@ -1,0 +1,20 @@
+---
+pagination:
+  data: collections.alphabeticalArtist
+  size: 100
+  alias: artistList
+permalink: "artists/"
+title: "Artists"
+---
+
+<h1>{{ title }}</h1>
+
+<section>
+    <ul>
+        {% for artist in artistList %}
+            <li>
+                <a href="{{ artist.url }}">{{ artist.data.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>

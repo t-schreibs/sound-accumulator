@@ -8,37 +8,46 @@ permalink: "artists/{{ artist.name | slugify }}/"
 tags: artist
 eleventyComputed:
     title: "{{ artist.name }}"
+    eleventyNavigation:
+      key: "{{ artist.name }}"
+      parent: "Artists"
 ---
 
+{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+
 <h1>{{ title }}</h1>
-
-<p>{{ artist.intro }}.</p>
-
-<table>
-  <tr>
-    <td>Origin</td>
-    <td>{{ artist.origin }}</td>
-  </tr>
-  <tr>
-    <td>Genres</td>
-    <td>
-      {% linkList artist.genres.split(','), collections.genre %}
-    </td>
-  </tr>
-  <tr>
-    <td>Years active</td>
-    <td>{{ artist.yearsActive }}</td>
-  </tr>
-  <tr>
-    <td>Links</td>
-    <td>
-      <ul>
-      {% for link in artist.links.split(',') %}
-        <li><a href="{{ link }}">{{ link }}</a></li>
-      {% endfor %}
-      </ul>
-    </td>
-  </tr>
-</table>
-
-<p>{{ artist.about }}</p>
+<section>
+  <p>{% markdown artist.intro %}</p>
+</section>
+<section>
+  <table>
+    <tr>
+      <td>Origin</td>
+      <td>{{ artist.origin }}</td>
+    </tr>
+    <tr>
+    <tr>
+      <td>Genres</td>
+      <td>
+        {% linkList artist.genres.split(','), collections.genre %}
+      </td>
+    </tr>
+    <tr>
+      <td>Years active</td>
+      <td>{{ artist.yearsActive }}</td>
+    </tr>
+    <tr>
+      <td>Links</td>
+      <td>
+        <ul>
+        {% for link in artist.links.split(',') %}
+          <li><a href="{{ link }}">{{ link }}</a></li>
+        {% endfor %}
+        </ul>
+      </td>
+    </tr>
+  </table>
+</section>
+<section>
+  <p>{% markdown artist.about %}</p>
+</section>

@@ -1,0 +1,57 @@
+---
+pagination:
+  addAllPagesToCollections: true
+  data: releases
+  size: 1
+  alias: release
+permalink: "releases/{{ release.name | slugify }}/"
+tags: release
+eleventyComputed:
+    title: "{{ release.name }}"
+    eleventyNavigation:
+      key: "{{ release.name }}"
+      parent: "Releases"
+---
+
+{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+
+<h1>{{ title }}</h1>
+<section>
+  <p>{% markdown release.intro %}</p>
+</section>
+<section>
+  <table>
+    <tr>
+      <td>Artists</td>
+      <td>
+        {% linkList release.artists.split(','), collections.artist %}
+      </td>
+    <tr>
+      <td>Genres</td>
+      <td>
+        {% linkList release.genres.split(','), collections.genre %}
+      </td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td>{{ release.type }}</td>
+    </tr>
+    <tr>
+      <td>Published</td>
+      <td>{{ release.published }}</td>
+    </tr>
+    <tr>
+      <td>Links</td>
+      <td>
+        <ul>
+        {% for link in release.links.split(',') %}
+          <li><a href="{{ link }}">{{ link }}</a></li>
+        {% endfor %}
+        </ul>
+      </td>
+    </tr>
+  </table>
+</section>
+<section>
+  <p>{% markdown release.about %}</p>
+</section>

@@ -12,7 +12,7 @@ eleventyComputed:
 
 <h1>{{ title }}</h1>
 
-<p>{{ genre.intro }}</p>
+<p>{% markdown genre.intro %}</p>
 
 <table>
   <tr>
@@ -36,4 +36,4 @@ eleventyComputed:
   </tr>
 </table>
 
-<p>{{ genre.about }}</p>
+<p>{% markdown genre.about %}</p>

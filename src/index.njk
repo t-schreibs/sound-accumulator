@@ -1,23 +1,44 @@
 ---
 title: Sound Accumulator
 ---
-
-<h2>Discover your new favorite artist!</h2>
-
-<p>Sound Accumulator is a community-generated music wiki that prioritizes small & local artists and focuses on discoverability.</p>
-
-<h2>Artists</h2>
-
-<ul>
-    {% for artist in collections.artist %}
-        <li><a href="{{ artist.url }}">{{ artist.data.title }}</a></li>
-    {% endfor %}
-</ul>
-
-<h2>Genres</h2>
-
-<ul>
-    {% for genre in collections.genre %}
-        <li><a href="{{ genre.url }}">{{ genre.data.title }}</a></li>
-    {% endfor %}
-</ul>
+<section>
+    <h2>Discover your new favorite artist!</h2>
+    <p>Sound Accumulator is a community-generated music wiki that prioritizes small & local artists and focuses on discoverability.</p>
+</section>
+<section>
+    <h2>Blog</h2>
+    <ul>
+        {% for post in collections.blog %}
+            <li>
+                <a href="{{ blog.url }}">{{ blog.data.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+<section>
+    <h2>Recents</h2>
+    <h3>Artists</h3>
+    <ul>
+        {% for artist in collections.artist | limit(10) %}
+            <li>
+                <a href="{{ artist.url }}">{{ artist.data.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h3>Genres</h3>
+    <ul>
+        {% for genre in collections.genre | limit(10) %}
+            <li>
+                <a href="{{ genre.url }}">{{ genre.data.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h3>Releases</h3>
+    <ul>
+        {% for release in collections.release | limit(10) %}
+            <li>
+                <a href="{{ release.url }}">{{ release.data.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
