@@ -37,7 +37,7 @@ title: Sound Accumulator
     <ul>
         {% for release in collections.release | limit(10) %}
             <li>
-                <a href="{{ release.url }}">{{ release.data.title }}</a>
+                <a href="{{ release.url }}">{{ release.data.title }} ({{ release.data.artists }})</a>
             </li>
         {% endfor %}
     </ul>

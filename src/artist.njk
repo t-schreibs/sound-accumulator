@@ -7,47 +7,56 @@ pagination:
 permalink: "artists/{{ artist.name | slugify }}/"
 tags: artist
 eleventyComputed:
-    title: "{{ artist.name }}"
-    eleventyNavigation:
-      key: "{{ artist.name }}"
-      parent: "Artists"
+  title: "{{ artist.name }}"
+  genres: "{{ artist.genres }}"
+  eleventyNavigation:
+    key: "{{ artist.name }}"
+    parent: "Artists"
 ---
 
 {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
 
 <h1>{{ title }}</h1>
 <section>
-  <p>{% markdown artist.intro %}</p>
+<p>{% markdown artist.intro %}</p>
 </section>
 <section>
-  <table>
-    <tr>
-      <td>Origin</td>
-      <td>{{ artist.origin }}</td>
-    </tr>
-    <tr>
-    <tr>
-      <td>Genres</td>
-      <td>
-        {% linkList artist.genres.split(','), collections.genre %}
-      </td>
-    </tr>
-    <tr>
-      <td>Years active</td>
-      <td>{{ artist.yearsActive }}</td>
-    </tr>
-    <tr>
-      <td>Links</td>
-      <td>
-        <ul>
-        {% for link in artist.links.split(',') %}
-          <li><a href="{{ link }}">{{ link }}</a></li>
-        {% endfor %}
-        </ul>
-      </td>
-    </tr>
-  </table>
+<table>
+  <tr>
+    <td>Origin</td>
+    <td>{{ artist.origin }}</td>
+  </tr>
+  <tr>
+  <tr>
+    <td>Genres</td>
+    <td>
+      {% linkList artist.genres.split(','), collections.genre %}
+    </td>
+  </tr>
+  <tr>
+    <td>Years active</td>
+    <td>{{ artist.yearsActive }}</td>
+  </tr>
+  <tr>
+    <td>Links</td>
+    <td>
+      <ul>
+      {% for link in artist.links.split(',') %}
+        <li><a href="{{ link }}">{{ link }}</a></li>
+      {% endfor %}
+      </ul>
+    </td>
+  </tr>
+</table>
 </section>
 <section>
-  <p>{% markdown artist.about %}</p>
+<p>{% markdown artist.about %}</p>
+</section>
+<section>
+<h2>Releases</h2>
+<ul>
+  {% for release in collections.release | hasArtist(title) %}
+    <li><a href="{{release.url}}">{{ release.data.title }}</a></li>
+  {% endfor %}
+</ul>
 </section>

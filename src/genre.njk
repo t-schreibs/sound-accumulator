@@ -12,28 +12,53 @@ eleventyComputed:
 
 <h1>{{ title }}</h1>
 
-<p>{% markdown genre.intro %}</p>
+<section>
+  <p>{% markdown genre.intro %}</p>
+</section>
+<section>
+  <table>
+    <tr>
+      <td>AKA</td>
+      <td>
+        <ul>
+          {% for alias in genre
+            .aka
+            .split(',') %}
+            <li>{{ alias }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    <tr>
+      <td>Origins</td>
+      <td>{{ genre.origins }}</td>
+    </tr>
+    <tr>
+      <td>Subgenres</td>
+      <td>
+        {% linkList genre
+          .subgenres
+          .split(','),
+        collections.genre %}
+      </td>
+    </tr>
+  </table>
+</section>
 
-<table>
-  <tr>
-    <td>AKA</td>
-    <td>
-      <ul>
-      {% for alias in genre.aka.split(',') %}
-        <li>{{ alias }}</li>
-      {% endfor %}
-      </ul>
-    </td>
-  <tr>
-    <td>Origins</td>
-    <td>{{ genre.origins }}</td>
-  </tr>
-  <tr>
-    <td>Subgenres</td>
-    <td>
-      {% linkList genre.subgenres.split(','), collections.genre %}
-    </td>
-  </tr>
-</table>
-
-<p>{% markdown genre.about %}</p>
+<section>
+  <p>{% markdown genre.about %}</p>
+</section>
+<section>
+<h2>Artists</h2>
+<ul>
+  {% for artist in collections.artist | hasGenre(title) | limit(10) %}
+    <li><a href="{{artist.url}}">{{ artist.data.title }}</a></li>
+  {% endfor %}
+</ul>
+</section>
+<h2>Releases</h2>
+<ul>
+  {% for release in collections.release | hasGenre(title) | limit(10) %}
+    <li><a href="{{release.url}}">{{ release.data.title }} ({{ release.data.artists }})</a></li>
+  {% endfor %}
+</ul>
+</section>

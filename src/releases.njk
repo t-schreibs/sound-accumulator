@@ -13,7 +13,7 @@ title: "Releases"
     <ul>
         {% for release in releaseList %}
             <li>
-                <a href="{{ release.url }}">{{ release.data.title }}</a>
+                <a href="{{ release.url }}">{{ release.data.title }} ({{ release.data.artists }})</a>
             </li>
         {% endfor %}
     </ul>

@@ -56,6 +56,14 @@ module.exports = function(eleventyConfig) {
       return md.render(content);
     });
     eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
+    eleventyConfig.addFilter("hasArtist", function(arr, artist) 
+    {
+      return arr.filter(item => item.data.artists.includes(artist)); 
+    });
+    eleventyConfig.addFilter("hasGenre", function(arr, genre)
+    {
+      return arr.filter(item => item.data.genres.includes(genre));
+    });
 
     return {
         passthroughFileCopy: true,
