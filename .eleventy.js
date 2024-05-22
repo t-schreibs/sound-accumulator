@@ -60,6 +60,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
     eleventyConfig.addFilter("hasArtist", (arr, artist) => arr.filter(item => item.data.artists.includes(artist)));
     eleventyConfig.addFilter("hasGenre", (arr, genre) =>arr.filter(item => item.data.genres.includes(genre)));
+    eleventyConfig.addFilter("hasRelease", (arr, release) =>arr.filter(item => item.data.releases.includes(release)));
     eleventyConfig.on('eleventy.after', () => {
       execSync(`npx pagefind --site _site --glob \"**/*.html\"`, { encoding: 'utf-8' })
     })

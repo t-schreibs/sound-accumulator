@@ -44,22 +44,24 @@ eleventyComputed:
     </tr>
   </table>
 </section>
-
 <section>
   <p>{% markdown genre.about %}</p>
 </section>
+<hr>
 <section>
-<h2>Artists</h2>
-<ul>
-  {% for artist in artistList %}
-    <li><a href="{{artist.url}}">{{ artist.data.title }}</a></li>
-  {% endfor %}
-</ul>
+  <h2>Artists</h2>
+  <ul>
+    {% for artist in artistList %}
+      <li><a href="{{artist.url}}">{{ artist.data.title }}</a></li>
+    {% endfor %}
+  </ul>
 </section>
-<h2>Releases</h2>
-<ul>
-  {% for release in releaseList %}
-    <li><a href="{{release.url}}">{{ release.data.title }} ({{ release.data.artists }})</a></li>
-  {% endfor %}
-</ul>
+<hr>
+<section>
+  <h2>Releases</h2>
+  <ul>
+    {% for release in releaseList %}
+      <li><a href="{{release.url}}">{{ release.data.title }} ({{ release.data.artists }})</a></li>
+    {% endfor %}
+  </ul>
 </section>

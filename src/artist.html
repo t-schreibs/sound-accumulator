@@ -23,7 +23,7 @@ eleventyComputed:
 
 <h1>{{ artist.name }}</h1>
 <section>
-<p>{% markdown artist.intro %}</p>
+  <p>{% markdown artist.intro %}</p>
 </section>
 <section>
 <table>
@@ -55,13 +55,14 @@ eleventyComputed:
 </table>
 </section>
 <section>
-<p>{% markdown artist.about %}</p>
+  <p>{% markdown artist.about %}</p>
 </section>
+<hr>
 <section>
-<h2>Releases</h2>
-<ul>
-  {% for release in releaseList %}
-    <li><a href="{{release.url}}">{{ release.data.title }}</a></li>
-  {% endfor %}
-</ul>
+  <h2>Releases</h2>
+  <ul>
+    {% for release in releaseList %}
+      <li><a href="{{release.url}}">{{ release.data.title }}</a></li>
+    {% endfor %}
+  </ul>
 </section>

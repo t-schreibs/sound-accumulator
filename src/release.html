@@ -19,6 +19,7 @@ eleventyComputed:
 {% assign genreList = genres | split: "," %}
 {% assign artistList = artists | split: "," %}
 {% assign linkList = links | split: "," %}
+{% assign trackList = collections.track | hasRelease: release.name %}
 
 {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
 
@@ -63,4 +64,13 @@ eleventyComputed:
 </section>
 <section>
   <p>{% markdown release.about %}</p>
+</section>
+<hr>
+<section>
+  <h2>Tracks</h2>
+  <ul>
+    {% for track in trackList %}
+      <li><a href="{{track.url}}">{{ track.data.title }}</a></li>
+    {% endfor %}
+  </ul>
 </section>
