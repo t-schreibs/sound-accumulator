@@ -7,10 +7,16 @@ pagination:
 permalink: "genres/{{ genre.name | slugify }}/"
 tags: genre
 eleventyComputed:
-    title: "{{ genre.name }}"
+  title: "{{ genre.name }}"
+  aka: "{{ genre.aka }}"
+  subgenres: "{{ genre.subgenres }}"
 ---
 
-<h1>{{ title }}</h1>
+{% assign akaList = aka | split: "," %}
+{% assign subgenreList = subgenres | split: "," %}
+{% assign artistList = collections.artist | hasGenre: genre.name | limit: 20 %}
+{% assign releaseList = collections.release | hasGenre: genre.name | limit: 20 %}
+<h1>{{ genre.name }}</h1>
 
 <section>
   <p>{% markdown genre.intro %}</p>
@@ -21,9 +27,7 @@ eleventyComputed:
       <td>AKA</td>
       <td>
         <ul>
-          {% for alias in genre
-            .aka
-            .split(',') %}
+          {% for alias in akaList %}
             <li>{{ alias }}</li>
           {% endfor %}
         </ul>
@@ -35,10 +39,7 @@ eleventyComputed:
     <tr>
       <td>Subgenres</td>
       <td>
-        {% linkList genre
-          .subgenres
-          .split(','),
-        collections.genre %}
+        {% linkList subgenreList collections.genre %}
       </td>
     </tr>
   </table>
@@ -50,14 +51,14 @@ eleventyComputed:
 <section>
 <h2>Artists</h2>
 <ul>
-  {% for artist in collections.artist | hasGenre(title) | limit(20) %}
+  {% for artist in artistList %}
     <li><a href="{{artist.url}}">{{ artist.data.title }}</a></li>
   {% endfor %}
 </ul>
 </section>
 <h2>Releases</h2>
 <ul>
-  {% for release in collections.release | hasGenre(title) | limit(20) %}
+  {% for release in releaseList %}
     <li><a href="{{release.url}}">{{ release.data.title }} ({{ release.data.artists }})</a></li>
   {% endfor %}
 </ul>

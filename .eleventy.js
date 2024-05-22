@@ -1,6 +1,7 @@
 const { parse } = require('csv-parse/sync');
 const eleventyNavigation = require('@11ty/eleventy-navigation');
 const markdownIt = require("markdown-it");
+const { execSync } = require('child_process');
 
 function compareAlphabetically(a, b) {
   if (a.data.title < b.data.title) {
@@ -13,12 +14,15 @@ function compareAlphabetically(a, b) {
 }
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.setLiquidOptions({
+      strictFilters: false
+    });
     eleventyConfig.addPlugin(eleventyNavigation);
     eleventyConfig.addPassthroughCopy("src/css/*.css");
     eleventyConfig.addDataExtension("csv", (contents) => {
         const records = parse(contents, {
           columns: true,
-          skip_empty_lines: true,
+          skip_empty_lines: true
         });
         return records;
       });
@@ -44,7 +48,7 @@ module.exports = function(eleventyConfig) {
       var pageNames = pages.map(page => page.data.title);
       return `<ul>
         `  + list.map(item => pageNames.includes(item) ? 
-            `<li><a href="${pages.filter(page => page.data.title === item)[0].url}">${item}</a></li>` :
+            `<li><a href="${pages.filter(page => page.data.title === item)[0].url}">${item.replace("&#39;", "'")}</a></li>` :
             `<li>${item}</li>`).join(`
             `) + `
           </ul>`
@@ -54,22 +58,18 @@ module.exports = function(eleventyConfig) {
       return md.render(content);
     });
     eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
-    eleventyConfig.addFilter("hasArtist", function(arr, artist) 
-    {
-      return arr.filter(item => item.data.artists.includes(artist)); 
-    });
-    eleventyConfig.addFilter("hasGenre", function(arr, genre)
-    {
-      return arr.filter(item => item.data.genres.includes(genre));
-    });
+    eleventyConfig.addFilter("hasArtist", (arr, artist) => arr.filter(item => item.data.artists.includes(artist)));
+    eleventyConfig.addFilter("hasGenre", (arr, genre) =>arr.filter(item => item.data.genres.includes(genre)));
+    eleventyConfig.on('eleventy.after', () => {
+      execSync(`npx pagefind --site _site --glob \"**/*.html\"`, { encoding: 'utf-8' })
+    })
 
     return {
         passthroughFileCopy: true,
-        markdownTemplateEngine: "njk",
         dir: {      
             input: "src",      
             includes: "_includes",      
-            data: "_data",      
+            data: "entries",      
             output: "_site"    
         }
     };

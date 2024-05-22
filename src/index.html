@@ -1,6 +1,7 @@
 ---
 title: Sound Accumulator
 ---
+
 <section>
     <h2>Discover your new favorite artist!</h2>
     <p>Sound Accumulator is a community-generated music wiki that prioritizes small & local artists and focuses on discoverability.</p>
@@ -10,7 +11,7 @@ title: Sound Accumulator
     <ul>
         {% for post in collections.blog %}
             <li>
-                <a href="{{ blog.url }}">{{ blog.data.title }}</a>
+                <a href="{{ blog.url }}">{{ blog.data.title | deslugifyApostrophes }}</a>
             </li>
         {% endfor %}
     </ul>
@@ -19,25 +20,25 @@ title: Sound Accumulator
     <h2>Recents</h2>
     <h3>Artists</h3>
     <ul>
-        {% for artist in collections.artist | limit(10) %}
+        {% for artist in collections.artist | limit: 10 %}
             <li>
-                <a href="{{ artist.url }}">{{ artist.data.title }}</a>
+                <a href="{{ artist.url }}">{{ artist.data.title | deslugifyApostrophes }}</a>
             </li>
         {% endfor %}
     </ul>
     <h3>Genres</h3>
     <ul>
-        {% for genre in collections.genre | limit(10) %}
+        {% for genre in collections.genre | limit: 10 %}
             <li>
-                <a href="{{ genre.url }}">{{ genre.data.title }}</a>
+                <a href="{{ genre.url }}">{{ genre.data.title | deslugifyApostrophes }}</a>
             </li>
         {% endfor %}
     </ul>
     <h3>Releases</h3>
     <ul>
-        {% for release in collections.release | limit(10) %}
+        {% for release in collections.release | limit: 10 %}
             <li>
-                <a href="{{ release.url }}">{{ release.data.title }} ({{ release.data.artists }})</a>
+                <a href="{{ release.url }}">{{ release.data.title | deslugifyApostrophes }} ({{ release.data.artists }})</a>
             </li>
         {% endfor %}
     </ul>

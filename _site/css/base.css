@@ -6,37 +6,55 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   }
   
   body {
-    font-family: Arial, sans-serif;
+    font-family: Nunito, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9; /* Light gray */
-    color: #333; /* Dark gray */
+    background-color: #f9f9f9;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
   
   article {
     max-width: 800px;
+    width: 90%;
     margin: 0 auto;
     padding: 20px;
+    flex: 1;
+    font-family: Roboto, sans-serif;
   }
   
   h1 {
     font-size: 36px;
     margin-bottom: 20px;
-    color: #333; /* Dark gray */
+    color: #333;
+    font-weight: bold;
   }
   
   h2 {
     font-size: 24px;
     margin-bottom: 15px;
-    color: #333; /* Dark gray */
+    color: #333;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
   }
   
   p {
     font-size: 16px;
     margin-bottom: 15px;
   }
+
+  ul {
+    margin: 15px;
+    list-style-type: square;
+  }
   
   a {
-    color: #333; /* Dark gray */
+    color: #333;
     text-decoration: none;
   }
   
@@ -45,8 +63,9 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   }
   
   nav {
-    background-color: #333; /* Dark gray */
+    background-color: #171717;
     padding: 10px 0;
+    font-size: large;
   }
   
   nav ul {
@@ -60,12 +79,16 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   }
   
   nav ul li a {
-    color: #fff; /* White */
     text-decoration: none;
+    color: #fff;
   }
   
   nav ul li a:hover {
     text-decoration: underline;
+  }
+
+  nav ul li a span {
+    vertical-align: middle;
   }
   
   table {
@@ -76,19 +99,40 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   
   th, td {
     padding: 8px;
-    border: 1px solid #ccc; /* Light gray */
+    border: 1px solid #addaff;
   }
   
   th {
-    background-color: #f2f2f2; /* Light gray */
+    background-color: #f2f2f2;
     font-weight: bold;
   }
   
-  tr:nth-child(even) {
-    background-color: #f9f9f9; /* Light gray */
-  }
-  
   tr:hover {
-    background-color: #f2f2f2; /* Light gray */
+    background-color: #e9f5ff;
   }
   
+  footer {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  footer ul {
+    list-style: none;
+    text-align: center;
+  }
+
+  footer ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  footer ul li a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .site-name {
+    color: #7fafd5;
+  }

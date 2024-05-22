@@ -7,16 +7,22 @@ pagination:
 permalink: "tracks/{{ track.name | slugify }}/"
 tags: track
 eleventyComputed:
-    title: "{{ track.name }}"
-    eleventyNavigation:
-      key: "{{ track.name }}"
-      parent: "Tracks"
-    releases: "{{ track.releases }}"
+  title: "{{ track.name }}"
+  releases: "{{ track.releases }}"
+  links: "{{ track.links }}"
+  genres: "{{ track.genres }}"
+  eleventyNavigation:
+    key: "{{ track.name }}"
+    parent: "Tracks"
 ---
+
+{% assign releaseList = releases | split: "," %}
+{% assign linkList = links | split: "," %}
+{% assign genreList = genres | split: "," %}
 
 {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
 
-<h1>{{ title }}</h1>
+<h1>{{ track.name }}</h1>
 <section>
   <p>{% markdown track.intro %}</p>
 </section>
@@ -25,18 +31,12 @@ eleventyComputed:
     <tr>
       <td>Release</td>
       <td>
-        {% linkList track
-          .releases
-          .split(','),
-        collections.artist %}
+        {% linkList linkList collections.artist %}
       </td>
     <tr>
       <td>Genres</td>
       <td>
-        {% linkList track
-          .genres
-          .split(','),
-        collections.genre %}
+        {% linkList genreList collections.genre %}
       </td>
     </tr
       <td>Published</td>
@@ -46,9 +46,7 @@ eleventyComputed:
       <td>Links</td>
       <td>
         <ul>
-          {% for link in track
-            .links
-            .split(',') %}
+          {% for link in linkList %}
             <li>
               <a href="{{ link }}">{{ link }}</a>
             </li>
