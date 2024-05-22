@@ -25,7 +25,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setBrowserSyncConfig({
         files: './_site/css/**/*.css'
       });
-
     eleventyConfig.addCollection("alphabeticalArtist", function(collection) {
       return collection.getFilteredByTag('artist').sort(compareAlphabetically);
     });
@@ -35,7 +34,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addCollection("alphabeticalRelease", function(collection) {
       return collection.getFilteredByTag('release').sort(compareAlphabetically);
     });
-
     eleventyConfig.addTransform("links", function(content) {
       const path = String(this.page.outputPath);
       if (!(path.endsWith(".html") || path.endsWith(".md"))) return content;

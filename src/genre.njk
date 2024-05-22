@@ -50,14 +50,14 @@ eleventyComputed:
 <section>
 <h2>Artists</h2>
 <ul>
-  {% for artist in collections.artist | hasGenre(title) | limit(10) %}
+  {% for artist in collections.artist | hasGenre(title) | limit(20) %}
     <li><a href="{{artist.url}}">{{ artist.data.title }}</a></li>
   {% endfor %}
 </ul>
 </section>
 <h2>Releases</h2>
 <ul>
-  {% for release in collections.release | hasGenre(title) | limit(10) %}
+  {% for release in collections.release | hasGenre(title) | limit(20) %}
     <li><a href="{{release.url}}">{{ release.data.title }} ({{ release.data.artists }})</a></li>
   {% endfor %}
 </ul>
