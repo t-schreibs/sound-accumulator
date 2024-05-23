@@ -45,6 +45,13 @@ module.exports = function(eleventyConfig) {
       md = new markdownIt();
       return md.render(content);
     });
+    eleventyConfig.addPairedShortcode("defaultIfEmpty", (content, optionalContent) => {
+      if (optionalContent)
+      {
+        return optionalContent
+      }
+      return content;
+    })
     eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
     eleventyConfig.addFilter("hasArtist", (arr, artist) => arr.filter(item => item.data.artists.includes(artist)));
     eleventyConfig.addFilter("hasGenre", (arr, genre) => arr.filter(item => item.data.genres.includes(genre)));
