@@ -14,10 +14,10 @@ title: Sound Accumulator
 <hr>
 <section data-pagefind-ignore>
     <h2>Blog</h2>
-    <ul>
+    <ul class="one-column">
         {% for blog in blogList %}
             <li>
-                <a href="{{ blog.url }}">{{ blog.data.title }}</a>
+                <a href="{{ blog.url }}">{{ blog.data.title }}</a> - {{ blog.data.description }}
             </li>
         {% endfor %}
     </ul>
