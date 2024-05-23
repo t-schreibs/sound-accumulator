@@ -1,4 +1,0 @@
----
-title: Genres
-excludeFromRecent: true
----
