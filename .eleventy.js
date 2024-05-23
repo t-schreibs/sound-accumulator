@@ -3,12 +3,14 @@ const markdownIt = require("markdown-it");
 const { execSync } = require('child_process');
 const utils = require('./src/scripts/utils');
 const eleventyNavigation = require('@11ty/eleventy-navigation');
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.setLiquidOptions({
       strictFilters: false
     });
     eleventyConfig.addPlugin(eleventyNavigation);
+    eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPassthroughCopy("src/css/*.css");
     eleventyConfig.addDataExtension("csv", (contents) => utils.parseEntries(contents));
     eleventyConfig.setBrowserSyncConfig({

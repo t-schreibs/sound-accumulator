@@ -2,10 +2,10 @@
 title: Sound Accumulator
 ---
 
-{% assign blogList = collections.blog | limit: 10 %}
-{% assign artistList = collections.artist | limit: 20 %}
-{% assign genreList = collections.genre | limit: 20 %}
-{% assign releaseList = collections.release | limit: 20 %}
+{% assign blogList = collections.blog | reverse | limit: 10 %}
+{% assign artistList = collections.artist | reverse |limit: 20 %}
+{% assign genreList = collections.genre | reverse | limit: 20 %}
+{% assign releaseList = collections.release | reverse | limit: 20 %}
 
 <section>
     <h2>Discover your new favorite artist!</h2>
