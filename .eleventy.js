@@ -12,6 +12,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(eleventyNavigation);
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPassthroughCopy("src/css/*.css");
+    eleventyConfig.addPassthroughCopy("src/images/**");
     eleventyConfig.addDataExtension("csv", (contents) => utils.parseEntries(contents));
     eleventyConfig.setBrowserSyncConfig({
         files: './_site/css/**/*.css'
