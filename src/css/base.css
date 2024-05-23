@@ -6,14 +6,14 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   }
 
   html {
-    background-color: #171717;
+    background-color: #000000;
   }
   
   body {
     font-family: Nunito, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #FFFFFF;
+    color: #000000;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   }
   
   nav {
-    background-color: #171717;
+    background-color: #000000;
     padding: 10px 0;
     font-size: large;
   }
@@ -103,7 +103,7 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   
   nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #FFFFFF;
   }
   
   nav ul li a:hover {
@@ -140,7 +140,7 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   
   footer {
     background-color: #000000;
-    color: #fff;
+    color: #FFFFFF;
     text-align: center;
     padding: 10px 0;
   }
@@ -158,7 +158,7 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   
   footer ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #FFFFFF;
   }
 
   .site-name {
