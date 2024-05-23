@@ -56,12 +56,17 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   }
 
   ul {
+    columns: 2;
     margin: 15px;
     list-style-type: square;
   }
+  li {
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+  }
   
   a {
-    color: #333;
+    color: #4393d4;
     text-decoration: none;
   }
   
@@ -76,6 +81,7 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   }
   
   nav ul {
+    columns: 1;
     list-style: none;
     text-align: center;
   }
@@ -107,6 +113,10 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   th, td {
     padding: 8px;
     border: 1px solid #addaff;
+  }
+
+  td ul {
+    columns: 1;
   }
   
   th {
