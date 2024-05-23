@@ -152,6 +152,7 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   }
 
   .site-name {
+    font-family: 'Roboto Slab', Roboto, sans-serif;
     color: #942a96;
     font-weight: bold;
   }
