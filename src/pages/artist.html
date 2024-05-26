@@ -8,6 +8,7 @@ permalink: "artists/{{ artist.name | slugify }}/"
 tags: artist
 eleventyComputed:
   title: "{{ artist.name }}"
+  description: "{% excerpt artist.intro %}"
   genres: "{{ artist.genres }}"
   links: "{{ artist.links }}"
   eleventyNavigation:

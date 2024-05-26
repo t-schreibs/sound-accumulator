@@ -74,6 +74,12 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
     page-break-inside: avoid;
     break-inside: avoid-column;
   }
+
+  @media (pointer: coarse) {
+    li {
+      min-height: 48px;
+    }
+  }
   
   a {
     color: #AA55AA;

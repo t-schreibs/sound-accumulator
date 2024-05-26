@@ -8,6 +8,7 @@ permalink: "genres/{{ genre.name | slugify }}/"
 tags: genre
 eleventyComputed:
   title: "{{ genre.name }}"
+  description: "{% excerpt genre.intro %}"
   aka: "{{ genre.aka }}"
   subgenres: "{{ genre.subgenres }}"
 ---

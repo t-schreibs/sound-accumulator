@@ -8,6 +8,7 @@ permalink: "tracks/{{ track.name | slugify }}/"
 tags: track
 eleventyComputed:
   title: "{{ track.name }}"
+  description: "{% excerpt track.intro %}"
   release: "{{ track.release }}"
   links: "{{ track.links }}"
   eleventyNavigation:

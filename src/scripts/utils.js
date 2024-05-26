@@ -1,8 +1,15 @@
 const fs = require("node:fs");
 const { parse } = require('csv-parse/sync');
+const striptags = require("striptags");
+const markdownIt = require("markdown-it");
+const htmlToText = require('html-to-text');
 
 function getTracksFilepath(release) { 
   return "src/entries/tracklists/" + release + ".csv";
+}
+function replaceWikilinks(content) {
+  return content.replace(/\[\[(.*?)\|(.*?)\]\]/gm, `<a href="/$1">$2</a>`)
+    .replace(/\[\[(.*?)\]\]/gm, `<a href="/$1">$1</a>`);
 }
 function compareAlphabetically(a, b) {
     if (a.data.title < b.data.title) {
@@ -34,9 +41,15 @@ function compareAlphabetically(a, b) {
           fs.writeFileSync(filepath, "name,links,intro,about", handleError);
         }
   }
+  function textDescription(content) {
+    md = new markdownIt();
+    return htmlToText.convert(replaceWikilinks(md.renderInline(content)));
+  }
 
   exports.getTracksFilepath = getTracksFilepath;
   exports.compareAlphabetically = compareAlphabetically;
   exports.parseEntries = parseEntries;
   exports.handleError = handleError;
   exports.generateTracksFileIfNonexistent = generateTracksFileIfNonexistent;
+  exports.textDescription = textDescription;
+  exports.replaceWikilinks = replaceWikilinks;

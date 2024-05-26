@@ -8,6 +8,7 @@ permalink: "releases/{{ release.name | slugify }}/"
 tags: release
 eleventyComputed:
   title: "{{ release.name }}"
+  description: "{% excerpt release.intro %}"
   genres: "{{ release.genres }}"
   links: "{{ release.links }}"
   artists: "{{ release.artists }}"

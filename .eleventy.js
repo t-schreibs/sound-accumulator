@@ -29,8 +29,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addTransform("links", function(content) {
       const path = String(this.page.outputPath);
       if (!(path.endsWith(".html") || path.endsWith(".md"))) return content;
-      return content.replace(/\[\[(.*?)\|(.*?)\]\]/gm, `<a href="/$1">$2</a>`)
-                    .replace(/\[\[(.*?)\]\]/gm, `<a href="/$1">$1</a>`);
+      return utils.replaceWikilinks(content);
     });
     eleventyConfig.addShortcode("linkList", function(list, pages) {
       var pageNames = pages.map(page => page.data.title);
@@ -56,6 +55,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter("hasArtist", (arr, artist) => arr.filter(item => item.data.artists.includes(artist)));
     eleventyConfig.addFilter("hasGenre", (arr, genre) => arr.filter(item => item.data.genres.includes(genre)));
     eleventyConfig.addFilter("hasRelease", (arr, release) => arr.filter(item => item.data.release === release));
+    eleventyConfig.addShortcode("excerpt", (page) => utils.textDescription(page));
     eleventyConfig.on('eleventy.before', () => {
       const records = fs.readFileSync("src/entries/releases.csv", utils.handleError);
       for (const release of utils.parseEntries(records))
