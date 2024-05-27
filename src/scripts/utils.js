@@ -12,13 +12,7 @@ function replaceWikilinks(content) {
     .replace(/\[\[(.*?)\]\]/gm, `<a href="/$1">$1</a>`);
 }
 function compareAlphabetically(a, b) {
-    if (a.data.title < b.data.title) {
-      return -1;
-    }
-    if (a.data.title > b.data.title) {
-      return 1;
-    }
-    return 0;
+    return a.data.title.localeCompare(b.data.title);
   }
   function parseEntries(contents) {
     return parse(contents, {
