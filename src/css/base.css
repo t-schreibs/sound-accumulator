@@ -79,6 +79,9 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
     li {
       min-height: 48px;
     }
+    ul li:last-child {
+      min-height: 0;
+    }
   }
   
   a {
