@@ -12,6 +12,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(eleventyNavigation);
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPassthroughCopy("src/css/*.css");
+    eleventyConfig.addPassthroughCopy({"src/public": "/"});
     eleventyConfig.addPassthroughCopy("src/images/**");
     eleventyConfig.addDataExtension("csv", (contents) => utils.parseEntries(contents));
     eleventyConfig.setBrowserSyncConfig({
@@ -63,6 +64,10 @@ module.exports = function(eleventyConfig) {
         utils.generateTracksFileIfNonexistent(release.name)
       }
     });
+    eleventyConfig.addGlobalData('version', () => {
+      const segment = () => (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+      return `${segment()}-${segment()}-${segment()}`;
+    })
     eleventyConfig.on('eleventy.after', () => {
       execSync(`npx pagefind --site _site --glob \"**/*.html\"`, { encoding: 'utf-8' });
     });
