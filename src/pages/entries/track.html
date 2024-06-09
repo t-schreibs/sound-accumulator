@@ -1,0 +1,95 @@
+---
+pagination:
+  addAllPagesToCollections: true
+  data: tracks
+  size: 1
+  alias: track
+permalink: "tracks/{{ track.name | slugify }}/"
+tags: track
+eleventyComputed:
+  title: "{{ track.name }}"
+  description: "{% description track.intro %}"
+  release: "{{ track.release }}"
+  links: "{{ track.links }}"
+  eleventyNavigation:
+    key: "{{ track.name }}"
+    parent: "Tracks"
+---
+
+{% assign releaseInfo = release | getInfo: releases %}
+{% assign linkList = links | split : "," %}
+{% assign genreList = releaseInfo.genres | split : "," %}
+{% assign releaseList = release | split : "," %}
+{% assign artistList = releaseInfo.artists | split : "," %}
+{% assign slugifiedRelease = release | slugify %}
+{% assign releaseLink = ' <a href="/releases/' | append: slugifiedRelease | append : '">' | append: release | append : '</a>' %}
+{% if releaseInfo.name == title %}
+{% assign defaultIntro = title | append : ' is the title track from the ' | append: releaseInfo.type | append : ' ' | append: releaseLink | append : ', published on ' | append: releaseInfo.published | append : '.' %}
+{% else %}
+{% assign defaultIntro = title | append : ' is a track from the ' | append: releaseInfo.type | append : ' ' | append: releaseLink | append : ', published on ' | append: releaseInfo.published | append : '.' %}
+{% endif %}
+{% assign linkCount = linkList | size %}
+{% assign defaultLinks = releaseInfo.links | split : "," %}
+
+{{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
+
+<h1>{{ track.name }}</h1>
+<section>
+  <p>
+    {% defaultIfEmpty defaultIntro %}
+    {% markdown track.intro %}</p>
+  {% enddefaultIfEmpty %}
+</section>
+<section>
+  <table>
+    <tr>
+      <td>Artists</td>
+      <td>
+        {% linkList artistList collections.artist %}
+      </td>
+    </tr>
+    <tr>
+      <td>Release</td>
+      <td>
+        {{ releaseLink }}
+      </td>
+    </tr>
+    <tr>
+      <td>Genres</td>
+      <td>
+        {% linkList genreList collections.genre %}
+      </td>
+    </tr>
+    <tr>
+      <td>Published</td>
+      <td>{{ releaseInfo.published }}</td>
+    </tr>
+    <tr>
+      <td>Links</td>
+      <td>
+        <ul>
+          {% if linkCount > 0 %}
+            {% for link in linkList %}
+              <li>
+                <a href="{{ link }}">{{ link }}</a>
+              </li>
+            {% endfor %}
+          {% else %}
+            {% for link in defaultLinks %}
+              <li>
+                <a href="{{ link }}">{{ link }}</a>
+              </li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+  </table>
+</section>
+<section>
+  <p>
+    {% markdown track.about %}
+  </p>
+</section>
+<hr>
+{% render 'randomPage' collection: collections.track currentPage: title %}

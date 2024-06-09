@@ -8,17 +8,19 @@ permalink: "genres/{{ genre.name | slugify }}/"
 tags: genre
 eleventyComputed:
   title: "{{ genre.name }}"
-  description: "{% excerpt genre.intro %}"
+  description: "{% description genre.intro %}"
   aka: "{{ genre.aka }}"
   subgenres: "{{ genre.subgenres }}"
 ---
 
-{% assign akaList = aka | split: "," %}
-{% assign subgenreList = subgenres | split: "," %}
-{% assign artistList = collections.artist | hasGenre: genre.name | limit: 20 %}
-{% assign releaseList = collections.release | hasGenre: genre.name | limit: 20 %}
-<h1>{{ genre.name }}</h1>
+{% assign akaList = aka | split : "," %}
+{% assign subgenreList = subgenres | split : "," %}
+{% assign artistList = collections.artist | hasGenre: genre.name | limit : 20 %}
+{% assign releaseList = collections.release | hasGenre: genre.name | limit : 20 %}
 
+{{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
+
+<h1>{{ genre.name }}</h1>
 <section>
   <p>{% markdown genre.intro %}</p>
 </section>
@@ -33,6 +35,7 @@ eleventyComputed:
           {% endfor %}
         </ul>
       </td>
+    </tr>
     <tr>
       <td>Origins</td>
       <td>{{ genre.origins }}</td>
@@ -53,7 +56,9 @@ eleventyComputed:
   <h2>Artists</h2>
   <ul>
     {% for artist in artistList %}
-      <li><a href="{{artist.url}}">{{ artist.data.title }}</a></li>
+      <li>
+        <a href="{{artist.url}}">{{ artist.data.title }}</a>
+      </li>
     {% endfor %}
   </ul>
 </section>
@@ -62,7 +67,11 @@ eleventyComputed:
   <h2>Releases</h2>
   <ul>
     {% for release in releaseList %}
-      <li><a href="{{release.url}}">{{ release.data.title }} ({{ release.data.artists }})</a></li>
+      <li>
+        <a href="{{release.url}}">{{ release.data.title }} ({{ release.data.artists }})</a>
+      </li>
     {% endfor %}
   </ul>
 </section>
+<hr>
+{% render 'randomPage' collection: collections.genre currentPage: title %}

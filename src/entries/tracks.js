@@ -1,4 +1,4 @@
-const utils = require('../../src/scripts/utils')
+const utils = require('../../src/config/utils')
 const fs = require("node:fs");
 
 module.exports = function () {

@@ -8,7 +8,7 @@ permalink: "releases/{{ release.name | slugify }}/"
 tags: release
 eleventyComputed:
   title: "{{ release.name }}"
-  description: "{% excerpt release.intro %}"
+  description: "{% description release.intro %}"
   genres: "{{ release.genres }}"
   links: "{{ release.links }}"
   artists: "{{ release.artists }}"
@@ -17,12 +17,12 @@ eleventyComputed:
     parent: "Releases"
 ---
 
-{% assign genreList = genres | split: "," %}
-{% assign artistList = artists | split: "," %}
-{% assign linkList = links | split: "," %}
+{% assign genreList = genres | split : "," %}
+{% assign artistList = artists | split : "," %}
+{% assign linkList = links | split : "," %}
 {% assign trackList = collections.track | hasRelease: release.name %}
 
-{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+{{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
 
 <h1>{{ release.name }}</h1>
 <section>
@@ -35,6 +35,7 @@ eleventyComputed:
       <td>
         {% linkList artistList collections.artist %}
       </td>
+    </tr>
     <tr>
       <td>Genres</td>
       <td>
@@ -71,7 +72,11 @@ eleventyComputed:
   <h2>Tracks</h2>
   <ul>
     {% for track in trackList %}
-      <li><a href="{{track.url}}">{{ track.data.title }}</a></li>
+      <li>
+        <a href="{{track.url}}">{{ track.data.title }}</a>
+      </li>
     {% endfor %}
   </ul>
 </section>
+<hr>
+{% render 'randomPage' collection: collections.release currentPage: title %}

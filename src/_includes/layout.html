@@ -7,7 +7,7 @@
     <meta name="description" content="{{ description }}">
     <meta name="theme-color" content="#AA55AA">
     <meta property="og:title" content="{{ title }}"/>
-    <meta property="og:url" content="{{ "https://soundaccumulator.com" + page.url }}" />
+    <meta property="og:url" content="{{ "https://soundaccumulator.com" | append: page.url }}" />
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:image" content="/images/og-image.png"/>
     <meta property="og:site_name" content="Sound Accumulator"/>
@@ -34,10 +34,10 @@
     <nav>
       <ul>
         <li><a class="site-name" href="/">Sound Accumulator</a></li>
-        <li><a href="/artists">Artists</a></li>
-        <li><a href="/genres">Genres</a></li>
-        <li><a href="/releases">Releases</a></li>
-        <li><a href="/blog">Blog</a></li>
+        <li><a href="/artists/0">Artists</a></li>
+        <li><a href="/genres/0">Genres</a></li>
+        <li><a href="/releases/0">Releases</a></li>
+        <li><a href="/blog/0">Blog</a></li>
         <li><a href="/search"><span class="material-icons">search</span></a></li>
       </ul>
     </nav>
