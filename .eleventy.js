@@ -6,6 +6,7 @@ const shortcodes = require('./src/config/shortcodes');
 const transforms = require('./src/config/transforms');
 const events = require('./src/config/events');
 const globalData = require('./src/config/globalData');
+const linters = require('./src/config/linters');
 const inclusiveLanguage = require('@11ty/eleventy-plugin-inclusive-language');
 
 module.exports = function(eleventyConfig) {
@@ -20,6 +21,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(transforms);
     eleventyConfig.addPlugin(events);
     eleventyConfig.addPlugin(globalData);
+    eleventyConfig.addPlugin(linters);
     eleventyConfig.addPlugin(inclusiveLanguage);
     eleventyConfig.addPassthroughCopy("src/css/*.css");
     eleventyConfig.addPassthroughCopy({"src/public": "/"});

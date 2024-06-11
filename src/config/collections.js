@@ -1,6 +1,6 @@
 function compareAlphabetically(a, b) {
     return a.data.title.localeCompare(b.data.title);
-  }
+}
 
 module.exports = eleventyConfig => {
     eleventyConfig.addCollection("alphabeticalArtist", function (collection) {
