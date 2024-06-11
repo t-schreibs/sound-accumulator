@@ -17,6 +17,12 @@ module.exports = eleventyConfig => {
               `) + `
             </ul>`
     });
+    eleventyConfig.addShortcode("externalLinks", function(list) {
+        return `<ul>
+        ` + list.map(item => `<li><a href="${item}" target="_blank">${item}</a></li>`).join(`
+        `) + `
+        </ul>`
+    });
     eleventyConfig.addShortcode("markdown", (content) => {
         md = new markdownIt();
         return md.render(content);

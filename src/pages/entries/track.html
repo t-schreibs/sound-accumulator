@@ -24,9 +24,9 @@ eleventyComputed:
 {% assign slugifiedRelease = release | slugify %}
 {% assign releaseLink = ' <a href="/releases/' | append: slugifiedRelease | append : '">' | append: release | append : '</a>' %}
 {% if releaseInfo.name == title %}
-{% assign defaultIntro = title | append : ' is the title track from the ' | append: releaseInfo.type | append : ' ' | append: releaseLink | append : ', published on ' | append: releaseInfo.published | append : '.' %}
+  {% assign defaultIntro = title | append : ' is the title track from the ' | append: releaseInfo.type | append : ' ' | append: releaseLink | append : ', published on ' | append: releaseInfo.published | append : '.' %}
 {% else %}
-{% assign defaultIntro = title | append : ' is a track from the ' | append: releaseInfo.type | append : ' ' | append: releaseLink | append : ', published on ' | append: releaseInfo.published | append : '.' %}
+  {% assign defaultIntro = title | append : ' is a track from the ' | append: releaseInfo.type | append : ' ' | append: releaseLink | append : ', published on ' | append: releaseInfo.published | append : '.' %}
 {% endif %}
 {% assign linkCount = linkList | size %}
 {% assign defaultLinks = releaseInfo.links | split : "," %}
@@ -67,21 +67,11 @@ eleventyComputed:
     <tr>
       <td>Links</td>
       <td>
-        <ul>
-          {% if linkCount > 0 %}
-            {% for link in linkList %}
-              <li>
-                <a href="{{ link }}">{{ link }}</a>
-              </li>
-            {% endfor %}
-          {% else %}
-            {% for link in defaultLinks %}
-              <li>
-                <a href="{{ link }}">{{ link }}</a>
-              </li>
-            {% endfor %}
-          {% endif %}
-        </ul>
+        {% if linkCount > 0 %}
+          {% externalLinks linkList %}
+        {% else %}
+          {% externalLinks defaultLinks %}
+        {% endif %}
       </td>
     </tr>
   </table>

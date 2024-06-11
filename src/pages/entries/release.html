@@ -52,15 +52,7 @@ eleventyComputed:
     </tr>
     <tr>
       <td>Links</td>
-      <td>
-        <ul>
-          {% for link in linkList %}
-            <li>
-              <a href="{{ link }}">{{ link }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </td>
+      <td>{% externalLinks linkList %}</td>
     </tr>
   </table>
 </section>
