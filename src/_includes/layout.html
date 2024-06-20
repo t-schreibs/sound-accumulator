@@ -7,8 +7,8 @@
     <meta name="description" content="{{ description }}">
     <meta name="theme-color" content="#AA55AA">
     <meta property="og:title" content="{{ title }}"/>
-    <meta property="og:url" content="{{ "https://soundaccumulator.com" | append: page.url }}" />
-    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:url" content="{{ "https://soundaccumulator.com" | append: page.url }}"/>
+    <meta property="og:description" content="{{ description }}"/>
     <meta property="og:image" content="/images/og-image.png"/>
     <meta property="og:site_name" content="Sound Accumulator"/>
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
@@ -26,32 +26,59 @@
     <link rel="manifest" href="/manifest.json"/>
     <title>{{ title }}</title>
     <script>
-      if ("serviceWorker" in navigator)
-        navigator.serviceWorker.register("/service-worker.js");
+      if ("serviceWorker" in navigator) 
+        navigator
+          .serviceWorker
+          .register("/service-worker.js");
     </script>
   </head>
   <body>
     <nav>
       <ul>
-        <li><a class="site-name" href="/">Sound Accumulator</a></li>
-        <li class="hide-on-small-screens"><a href="/locations/0">Locations</a></li>
-        <li><a href="/artists/0">Artists</a></li>
-        <li><a href="/genres/0">Genres</a></li>
-        <li><a href="/releases/0">Releases</a></li>
-        <li><a href="/blog/0">Blog</a></li>
-        <li><a href="/search"><span class="material-icons">search</span></a></li>
+        <li>
+          <a class="site-name" href="/">Sound Accumulator</a>
+        </li>
+        <li class="hide-on-small-screens">
+          <a href="/locations/0">Locations</a>
+        </li>
+        <li>
+          <a href="/artists/0">Artists</a>
+        </li>
+        <li>
+          <a href="/genres/0">Genres</a>
+        </li>
+        <li>
+          <a href="/releases/0">Releases</a>
+        </li>
+        <li>
+          <a href="/blog/0">Blog</a>
+        </li>
+        <li>
+          <a href="/search">
+            <span class="material-icons">search</span></a>
+        </li>
       </ul>
     </nav>
     <article data-pagefind-body>
-      <h1>{{ title }}</h1>
+      {% if hideTitle != true %}
+        <h1>{{ title }}</h1>
+      {% endif %}
       {{ content | safe }}
     </article>
     <footer>
       <ul>
-        <li ><a class="site-name" href="/">Sound Accumulator</a></li>
-        <li><a href="https://github.com/t-schreibs/sound-accumulator/discussions">Discuss</a></li>
-        <li><a href="/contribute">Contribute</a></li>
-        <li><a href="/feed.xml">RSS</a></li>
+        <li >
+          <a class="site-name" href="/">Sound Accumulator</a>
+        </li>
+        <li>
+          <a href="https://github.com/t-schreibs/sound-accumulator/discussions">Discuss</a>
+        </li>
+        <li>
+          <a href="/contribute">Contribute</a>
+        </li>
+        <li>
+          <a href="/feed.xml">RSS</a>
+        </li>
       </ul>
     </footer>
   </body>
