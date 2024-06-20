@@ -6,9 +6,11 @@ pagination:
   alias: genre
 permalink: "genres/{{ genre.name | slugify }}/"
 tags: genre
+type: genre
 eleventyComputed:
   title: "{{ genre.name }}"
   description: "{% description genre.intro %}"
+  intro: "{% markdown genre.intro %}"
   aka: "{{ genre.aka }}"
   subgenres: "{{ genre.subgenres }}"
 ---
@@ -18,12 +20,6 @@ eleventyComputed:
 {% assign artistList = collections.artist | hasGenre: genre.name | limit : 20 %}
 {% assign releaseList = collections.release | hasGenre: genre.name | limit : 20 %}
 
-{{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
-
-<h1>{{ genre.name }}</h1>
-<section>
-  <p>{% markdown genre.intro %}</p>
-</section>
 <section>
   <table>
     <tr>

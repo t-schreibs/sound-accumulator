@@ -6,15 +6,14 @@ pagination:
   alias: release
 permalink: "releases/{{ release.name | slugify }}/"
 tags: release
+type: release
 eleventyComputed:
   title: "{{ release.name }}"
   description: "{% description release.intro %}"
+  intro: "{% markdown release.intro %}"
   genres: "{{ release.genres }}"
   links: "{{ release.links }}"
   artists: "{{ release.artists }}"
-  eleventyNavigation:
-    key: "{{ release.name }}"
-    parent: "Releases"
 ---
 
 {% assign genreList = genres | split : "," %}
@@ -22,12 +21,6 @@ eleventyComputed:
 {% assign linkList = links | split : "," %}
 {% assign trackList = collections.track | hasRelease: release.name %}
 
-{{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
-
-<h1>{{ release.name }}</h1>
-<section>
-  <p>{% markdown release.intro %}</p>
-</section>
 <section>
   <table>
     <tr>

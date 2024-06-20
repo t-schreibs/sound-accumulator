@@ -13,7 +13,7 @@ function generateTracksFileIfNonexistent(releaseName) {
     const filepath = getTracksFilepath(releaseName);
     if (!fs.existsSync(filepath)) {
         console.log("Generating file " + filepath);
-        fs.writeFileSync(filepath, "name,links,intro,about", handleError);
+        fs.writeFileSync(filepath, "name,links,intro,about", utils.handleError);
     }
 }
 

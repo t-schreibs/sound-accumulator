@@ -6,14 +6,14 @@ pagination:
   alias: artist
 permalink: "artists/{{ artist.name | slugify }}/"
 tags: artist
+type: artist
 eleventyComputed:
   title: "{{ artist.name }}"
   description: "{% description artist.intro %}"
+  intro: "{% markdown artist.intro %}"
   genres: "{{ artist.genres }}"
   links: "{{ artist.links }}"
-  eleventyNavigation:
-    key: "{{ artist.name }}"
-    parent: "Artists"
+  origin: "{{ artist.origin }}"
 ---
 
 {% assign collection = collections.artist %}
@@ -21,12 +21,6 @@ eleventyComputed:
 {% assign linkList = links | split : "," %}
 {% assign releaseList = collections.release | hasArtist: artist.name %}
 
-{{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
-
-<h1>{{ artist.name }}</h1>
-<section>
-  <p>{% markdown artist.intro %}</p>
-</section>
 <section>
   <table>
     <tr>

@@ -34,6 +34,7 @@
     <nav>
       <ul>
         <li><a class="site-name" href="/">Sound Accumulator</a></li>
+        <li class="hide-on-small-screens"><a href="/locations/0">Locations</a></li>
         <li><a href="/artists/0">Artists</a></li>
         <li><a href="/genres/0">Genres</a></li>
         <li><a href="/releases/0">Releases</a></li>
@@ -42,6 +43,7 @@
       </ul>
     </nav>
     <article data-pagefind-body>
+      <h1>{{ title }}</h1>
       {{ content | safe }}
     </article>
     <footer>

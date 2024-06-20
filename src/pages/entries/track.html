@@ -6,14 +6,12 @@ pagination:
   alias: track
 permalink: "tracks/{{ track.name | slugify }}/"
 tags: track
+type: track
 eleventyComputed:
   title: "{{ track.name }}"
   description: "{% description track.intro %}"
   release: "{{ track.release }}"
   links: "{{ track.links }}"
-  eleventyNavigation:
-    key: "{{ track.name }}"
-    parent: "Tracks"
 ---
 
 {% assign releaseInfo = release | getInfo: releases %}
@@ -31,14 +29,12 @@ eleventyComputed:
 {% assign linkCount = linkList | size %}
 {% assign defaultLinks = releaseInfo.links | split : "," %}
 
-{{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
-
-<h1>{{ track.name }}</h1>
 <section>
   <p>
     {% defaultIfEmpty defaultIntro %}
-    {% markdown track.intro %}</p>
-  {% enddefaultIfEmpty %}
+    {% markdown track.intro %}
+    {% enddefaultIfEmpty %}
+  </p>
 </section>
 <section>
   <table>

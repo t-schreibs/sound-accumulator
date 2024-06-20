@@ -1,0 +1,19 @@
+---
+pagination:
+  data: collections.location
+  size: 50
+  alias: locationList
+permalink: "locations/{{ pagination.pageNumber }}/"
+title: "Locations"
+description: "Discover your new favorite artist!"
+---
+
+<section data-pagefind-ignore>
+  <ul>
+    {% for location in locationList %}
+      <li>
+        <a href="/locations/{{ location.name | slugify }}">{{ location.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

@@ -5,9 +5,5 @@ description: ""
 permalink: "blog/{{ title | slugify }}/"
 ---
 
-## {{ title }}
-
-{{ description }}
-
 ### 
 

@@ -49,6 +49,10 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
     font-weight: bold;
   }
 
+  .h2-size-text {
+    font-size: 24px;
+  }
+
   h3 {
     font-size: 20px;
     margin-bottom: 8px;
@@ -177,4 +181,10 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   }
   .one-column {
     columns: 1;
+  }
+
+  @media (max-width: 750px) {
+    .hide-on-small-screens {
+      display: none;
+    }
   }
