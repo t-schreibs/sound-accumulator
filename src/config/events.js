@@ -1,6 +1,9 @@
 const fs = require("node:fs");
 const { execSync } = require('child_process');
 const utils = require('./utils');
+const fetch = require("@11ty/eleventy-fetch");
+const { getData, getPreview, getTracks, getDetails } =
+  require('spotify-url-info')(fetch);
 
 function getTracksFilepath(release) {
     return "src/entries/tracklists/" + release + ".csv";
