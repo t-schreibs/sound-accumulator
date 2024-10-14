@@ -7,7 +7,6 @@ def try_scaffold_artist(artist, spotify):
     current_artists = music_entries.get('artist');
     if exists(artist['name'], current_artists):
         return False;
-
     create_artist_entry(artist);
     results = spotify.artist_albums(artist['uri'], album_type='album,single');
     releases = results['items'];
@@ -37,13 +36,11 @@ def exists(name, entries):
     return sum(1 for entry in entries if entry[0] == name);
 
 def create_artist_entry(artist):
-    print(f'Generating new artist entry: {artist['name']}');
     entry = [artist['name'], '', '', ','.join(artist['genres']), '', artist['external_urls']['spotify'], '', artist['about']];
     entries = [entry];
     music_entries.add('artist', entries);
 
 def create_release_entry(release):
-    print(f'Generating new release entry: {release['name']}');
     entry = [release['name'], ','.join(release['artists'].map(lambda artist: artist['name'])), ','.join(release['genres']), 
              get_release_type(release['type']), release['release_date'], release['external_urls']['spotify'], '', ''];
     entries = [entry];
@@ -51,10 +48,8 @@ def create_release_entry(release):
     music_entries.generate_tracklist(release['name']);
 
 def create_track_entries(tracks, release):
-    print('Generating new track entries');
     entries = [];
     for track in tracks:
-        print(f'    {track['name']}');
         entry = [track['name'], track['external_urls']['spotify'], '', ''];
         entries.append(entry);
     music_entries.add('track', entries, release);

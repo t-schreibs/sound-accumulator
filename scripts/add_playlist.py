@@ -18,4 +18,7 @@ for artist in artists:
     if artist not in uniqueArtists:
         uniqueArtists.append(artist);
 for artist in uniqueArtists:
-    utils.try_scaffold_artist(artist, spotify);
+    if utils.try_scaffold_artist(artist, spotify):
+        print(f'Generated entries for {artist['name']}');
+    else:
+        print(f'Skipped {artist['name']}');
