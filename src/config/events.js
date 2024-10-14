@@ -3,7 +3,7 @@ const { execSync } = require('child_process');
 const utils = require('./utils');
 
 function getTracksFilepath(release) {
-    return "src/entries/tracklists/" + release + ".csv";
+    return "src/entries/tracklists/" + release.replace('/', '%2F') + ".csv";
 }
 function generateTracksFileIfNonexistent(releaseName) {
     if (releaseName === '') {

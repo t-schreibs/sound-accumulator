@@ -4,7 +4,7 @@ pagination:
   data: tracks
   size: 1
   alias: track
-permalink: "tracks/{{ track.name | slugify }}/"
+permalink: "tracks/{{ track.release | slugify }}/{{ track.name | slugify }}/"
 tags: track
 type: track
 eleventyComputed:

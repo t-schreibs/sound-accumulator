@@ -5,20 +5,24 @@ ENTRIES_PATH = (Path.cwd() / "src" / "entries").resolve();
 
 def get(type, release = None):
     filepath = get_filepath(type, release);
-    with open(filepath, newline='') as file:
+    with open(filepath) as file:
         return list(csv.reader(file));
 
 def add(type, entries, release = None):
     filepath = get_filepath(type, release);
-    with open(filepath, newline='') as file:
+    with open(filepath, "a") as file:
         writer = csv.writer(file);
         writer.writerows(entries);
 
-def generate_tracklist(release):
+def try_generate_tracklist(release):
     filepath = get_filepath('track', release);
-    with open(filepath, newline='') as file:
-        writer = csv.writer(file);
-        writer.writerows(['name', 'links', 'intro', 'about']);
+    try:
+        with open(filepath, "x") as file:
+            writer = csv.writer(file);
+            writer.writerows([['name', 'links', 'intro', 'about']]);
+        return True;
+    except:
+        return False;
     
 def get_filepath(type, release = None):
     match type:
@@ -29,6 +33,6 @@ def get_filepath(type, release = None):
         case "release":
             return Path.joinpath(ENTRIES_PATH, 'releases.csv');
         case "track":
-            return Path.joinpath(ENTRIES_PATH, 'tracklists', f'{release}.csv');
+            return Path.joinpath(ENTRIES_PATH, 'tracklists', f'{release.replace('/', '%2F')}.csv');
         case _:
             raise Exception(f'Entry type {type} not supported.');

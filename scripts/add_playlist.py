@@ -12,13 +12,13 @@ artists = [];
 for entry in entries:
     track = entry['track'];
     for artist in track['artists']:
-        artists.append(artist);
+        artists.append(spotify.artist(artist['uri']));
 uniqueArtists = [];
 for artist in artists:
     if artist not in uniqueArtists:
         uniqueArtists.append(artist);
 for artist in uniqueArtists:
     if utils.try_scaffold_artist(artist, spotify):
-        print(f'Generated entries for {artist['name']}');
+        print(f'Generated new entries for {artist['name']}');
     else:
-        print(f'Skipped {artist['name']}');
+        print(f'No new entries for {artist['name']}');

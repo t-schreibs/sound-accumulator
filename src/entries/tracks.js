@@ -6,7 +6,7 @@ module.exports = function () {
     const tracks = files.map(
         file => {
             const csv = utils.parseEntries(fs.readFileSync("src/entries/tracklists/" + file, utils.handleError));
-            const release = file.substring(0, file.length - 4);
+            const release = file.substring(0, file.length - 4).replace('%2F', '/');
             csv.map(
                 track => {
                     track.release = release;
