@@ -1,15 +1,8 @@
 import sys
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
-import credentials
 import utils
 
 url = sys.argv[1]
-clientCredentials = SpotifyClientCredentials(
-    client_id = credentials.CLIENT_ID,
-    client_secret = credentials.CLIENT_SECRET
-);
-spotify = spotipy.Spotify(client_credentials_manager=clientCredentials);
+spotify = utils.get_spotify_client();
 results = spotify.playlist_tracks(url)
 entries = results['items']
 while results['next']:
@@ -25,4 +18,4 @@ for artist in artists:
     if artist not in uniqueArtists:
         uniqueArtists.append(artist);
 for artist in uniqueArtists:
-    utils.scaffold_artist(artist, spotify);
+    utils.try_scaffold_artist(artist, spotify);
