@@ -22,7 +22,7 @@ def try_scaffold_artist(artist, spotify):
         release_name = release['name'];
         if release_type == 'single':
             release_name += ' (single)';
-        if not exists(release['name'], current_releases):
+        if not exists(release_name, current_releases):
             release = spotify.album(release['uri']);
             release['album_type'] = release_type;
             release['name'] = release_name;

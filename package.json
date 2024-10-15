@@ -378,7 +378,6 @@
     "build:eleventy": "eleventy",
     "start": "npm run watch:eleventy",
     "build": "npm run build:eleventy",
-    "say-hi": "python3 ./scripts/say-hi.py",
     "add-artist": "python3 ./scripts/add_artist.py",
     "add-playlist": "python3 ./scripts/add_playlist.py"
   },
