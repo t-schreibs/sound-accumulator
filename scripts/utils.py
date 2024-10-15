@@ -75,4 +75,3 @@ def get_release_type(release):
             return 'single' if release['total_tracks'] < 4 else 'EP';
         case _:
             return 'LP';
-        

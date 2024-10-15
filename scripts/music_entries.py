@@ -6,7 +6,7 @@ ENTRIES_PATH = (Path.cwd() / "src" / "entries").resolve();
 def get(type, release = None):
     filepath = get_filepath(type, release);
     with open(filepath) as file:
-        return list(csv.reader(file));
+        return list(csv.reader(file))[1:];
 
 def add(type, entries, release = None):
     filepath = get_filepath(type, release);

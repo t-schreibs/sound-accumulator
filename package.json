@@ -379,7 +379,8 @@
     "start": "npm run watch:eleventy",
     "build": "npm run build:eleventy",
     "add-artist": "python3 ./scripts/add_artist.py",
-    "add-playlist": "python3 ./scripts/add_playlist.py"
+    "add-playlist": "python3 ./scripts/add_playlist.py",
+    "add-blog-post": "python3 ./scripts/add_blog_post.py"
   },
   "keywords": [],
   "author": "Tyler Schreiber",
