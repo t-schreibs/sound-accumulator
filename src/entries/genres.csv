@@ -7,16 +7,16 @@ Bedroom pop,"Lo-fi,DIY music","1980s-90s lo-fi, 2000s home recording boom",,Bedr
 - Soft, or at least generally wistful, vocal style and lyrical content, whether rapped or sung
 - Use of electric piano-esque or otherwise gentle synthesizer sounds
 - Youth"
-Dream pop,Dreampop,1980s Ireland & UK,,Dream pop is a genre of music that spawned out of the neo-psychedelia movement in Ireland and the UK in the '70s.,"Though dream pop spawned [[genres/shoegaze | shoegaze]] and often overlaps it stylistically, there are some notable distinctions to be made:
+Dream pop,Dreampop,1980s Ireland & UK,Ambient pop,Dream pop is a genre of music that spawned out of the neo-psychedelia movement in Ireland and the UK in the '70s.,"Though dream pop spawned [[genres/shoegaze | shoegaze]] and often overlaps it stylistically, there are some notable distinctions to be made:
 - Where shoegaze relies primarily on distortion and reverb for its sense of space, dream pop is far more likely to rely on chorus and other modulation effects
 - Where shoegaze vocalists tend to refrain from extremes of range or dynamics, dream pop singers are far more likely to make use of extended ranges and other more dramatic effects - though both genres seek to create a sense of distance between the singer and the listener that is not characteristic of most other pop music"
-Electronica,"Post-rock,Alternative dance,Ambient",1990s UK,"Trip hop,Post-classical","Electronica is a general term for a variety of electronic musical subgenres that are intended for personal listening rather than for dancing, though the term is often used ambiguously to describe most or all electronic music.","A less-ambiguous definition of electronica stipulates a genre of music that is generally characterized by:
+Electronica,"Post-rock,Alternative dance,Ambient",1990s UK,"Trip hop,Post-classical,Jazztronica","Electronica is a general term for a variety of electronic musical subgenres that are intended for personal listening rather than for dancing, though the term is often used ambiguously to describe most or all electronic music.","A less-ambiguous definition of electronica stipulates a genre of music that is generally characterized by:
 - An increased focus on ambient or unusual sounds, when compared with EDM
 - Often less rigid (or, sometimes, completely absent) propulsive dance beats
 - A much wider range of tempos than found in EDM
 - Sampling or otherwise integrating sounds & techniques from a wider variety of genres than is typically found in dance music"
 Indie pop,,1970s UK,,Indie pop is a subgenre of [[genres/Pop | pop music]] that emerged in the '80s as a response to the increasing commercialization of [[genres/Rock | rock]] and other [[genres/Pop | popular genres]].,
-Pop,Popular music,"1950s US, UK","Indie pop,Bedroom pop,Ambient pop","Pop music, originally indistinguishable from [[genres/Rock | rock and roll]] in the '50s, is a distinct genre with many subgenres whose defining characteristics are, to some extent, an accumulation of the popular taste of the last 60 years.","Pop music, in its current, simplest form, is largely defined by:
+Pop,Popular music,"1950s US, UK","Indie pop,Bedroom pop,Ambient pop,Synth pop","Pop music, originally indistinguishable from [[genres/Rock | rock and roll]] in the '50s, is a distinct genre with many subgenres whose defining characteristics are, to some extent, an accumulation of the popular taste of the last 60 years.","Pop music, in its current, simplest form, is largely defined by:
 - Verse/chorus song form, with a heavy emphasis placed on melodic hooks
 - A focus on the single rather than the LP as the vehicle for releasing and marketing new music
 - Song lengths of roughly 3 minutes, which is both radio- and single-friendly
@@ -36,8 +36,10 @@ Soul,,1950s US,"Neo-soul,Progressive soul,Psychedelic soul",,
 Neo-soul,Modern soul,1990s US,,"Neo-soul is a revival subgenre of [[genres/soul|soul]] which mixes classic soul with elements of [[genres/hip-hop|hip-hop]], [[genres/jazz|jazz]], and other genres.",
 Crankwave,,2020s UK,,Crankwave is a genre of music inspired by [[genres/new wave|new wave]] that was pioneered in the 2020s in the UK.,
 Hip-hop,,1970s US,Trip hop,Hip-hop is a genre of music that had its origins the sampling and looping of [[genres/funk|funk]] that began in the 1970s in the US.,
-Jazz,,1900s US,"Bepop,Swing,Hard bop,Bossa nova,Fusion,Traditional jazz",Jazz is a broad umbrella genre for a variety of loosely-related subgenres that generally share a common harmonic vocabulary.,
+Jazz,,1900s US,"Bepop,Swing,Hard bop,Bossa nova,Fusion,Traditional jazz,Jazztronica",Jazz is a broad umbrella genre for a variety of loosely-related subgenres that generally share a common harmonic vocabulary.,
 Funk,,1950s US,,"Funk is a genre of music, closely related to [[genres/soul|soul]], that was invented in New Orleans.",
 Folktronica,,,,,
-New wave,Punk,"1970s punk - US, UK, and Australia",,New wave is a genre of music with origins in the [[genres/punk|punk]] music of the 1970s.,
-Ambient pop,,,,,
+New wave,Punk,"1970s punk - US, UK, and Australia",,New wave is a genre of music with origins in the [[genres/punk|punk]] music of the 1970s.,"The development of new wave can simultaneously be understood as an extension of, and a reaction to, [[genres/punk|punk]] music. Early new wave was, in some ways, a rebranding of punk (especially in the United States), but the genre quickly became its own thing, melding the punk approach to noise and vocals with some of the developments in [[genres/synth pop|synth pop]] and other adjacent genres."
+Ambient pop,,1980s UK,,Ambient pop is a hybrid genre of music which combines [[genres/electronica|ambient]] with [[genres/pop|pop]].,"Ambient pop originally developed as an early extension of the [[genres/dream pop|dream pop]] movement - shifting toward minimal, increasingly electronic atmospheres as [[genres/shoegaze|shoegaze]] moved in the direction of distorted guitars."
+Jazztronica,"Nu jazz,Future jazz",1970s US with the introduction of electronic instruments into jazz,,Jazztronica is a hybrid genre of music which combines [[genres/electronica|electronica]] with many of the subgenres of [[genres/jazz|jazz]].,
+Synth pop,,,,,

@@ -1,0 +1,40 @@
+---
+pagination:
+  addAllPagesToCollections: true
+  data: missingGenres
+  size: 1
+  alias: genre
+permalink: "genres/{{ genre | slugify }}/"
+tags: genre
+type: genre
+eleventyComputed:
+  title: "{{ genre }}"
+  intro: "{% markdown \"This genre hasn't been documented yet!\" %}"
+---
+
+{% assign artistList = collections.artist | hasGenre: genre | limit : 20 %}
+{% assign releaseList = collections.release | hasGenre: genre | limit : 20 %}
+
+<section>
+  <h2>Artists</h2>
+  <ul>
+    {% for artist in artistList %}
+      <li>
+        <a href="{{artist.url}}">{{ artist.data.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+<hr>
+<section>
+  <h2>Releases</h2>
+  <ul>
+    {% for release in releaseList %}
+      <li>
+        <a href="{{release.url}}">{{ release.data.title }} ({{ release.data.artists }})</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+<hr>
+{% render 'randomPage' collection: collections.genre currentPage: title %}

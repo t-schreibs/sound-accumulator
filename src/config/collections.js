@@ -26,5 +26,5 @@ module.exports = eleventyConfig => {
         return Object.keys(grouped).filter(key => key !== '').map(
             key => ({ "name": key, "artists": grouped[key].sort(compareTitlesAlphabetically) })
         );
-    })
+    });
 };
