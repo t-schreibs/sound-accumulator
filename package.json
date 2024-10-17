@@ -381,7 +381,8 @@
     "add-artist": "python3 ./scripts/add_artist.py",
     "add-playlist": "python3 ./scripts/add_playlist.py",
     "add-blog-post": "python3 ./scripts/add_blog_post.py",
-    "update-python-reqs": "pip3 freeze > requirements.txt"
+    "update-python-reqs": "pip3 freeze > requirements.txt",
+    "install-python-reqs": "pip3 install -r requirements.txt"
   },
   "keywords": [],
   "author": "Tyler Schreiber",
