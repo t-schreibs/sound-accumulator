@@ -1,4 +1,5 @@
 const slug = require('limax');
+const { removeMissing } = require('./utils');
 
 module.exports = eleventyConfig => {
     eleventyConfig.addFilter("slugify", (content) => slug(content));
@@ -9,4 +10,5 @@ module.exports = eleventyConfig => {
     eleventyConfig.addFilter("getInfo", (name, data) => data.filter(entry => entry.name === name)[0]);
     eleventyConfig.addFilter("randomPage", (collection, avoid) => collection.filter(
         entry => entry.data.title !== avoid)[Math.floor(Math.random() * collection.length)]);
+    eleventyConfig.addFilter("removeMissing", (collection) => removeMissing(collection));
 };

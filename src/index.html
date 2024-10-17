@@ -5,8 +5,8 @@ hideTitle: true
 ---
 
 {% assign blogList = collections.blog | reverse | limit : 10 %}
-{% assign artistList = collections.artist | reverse | limit : 20 %}
-{% assign genreList = collections.genre | reverse | limit : 20 %}
+{% assign artistList = collections.artist | removeMissing | reverse | limit : 20 %}
+{% assign genreList = collections.genre | removeMissing | reverse | limit : 20 %}
 {% assign releaseList = collections.release | reverse | limit : 20 %}
 
 <section>

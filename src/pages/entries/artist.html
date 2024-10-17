@@ -16,7 +16,7 @@ eleventyComputed:
   origin: "{{ artist.origin }}"
 ---
 
-{% assign collection = collections.artist %}
+{% assign collection = collections.artist | removeMissing %}
 {% assign genreList = genres | split : "," %}
 {% assign linkList = links | split : "," %}
 {% assign releaseList = collections.release | hasArtist: artist.name %}
@@ -58,4 +58,4 @@ eleventyComputed:
   </ul>
 </section>
 <hr>
-{% render 'randomPage' collection: collections.artist currentPage: title %}
+{% render 'randomPage' collection: collection currentPage: title %}

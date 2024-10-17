@@ -15,6 +15,7 @@ eleventyComputed:
   subgenres: "{{ genre.subgenres }}"
 ---
 
+{% assign collection = collections.genre | removeMissing %}
 {% assign akaList = aka | split : "," %}
 {% assign subgenreList = subgenres | split : "," %}
 {% assign artistList = collections.artist | hasGenre: genre.name | limit : 20 %}
@@ -70,4 +71,4 @@ eleventyComputed:
   </ul>
 </section>
 <hr>
-{% render 'randomPage' collection: collections.genre currentPage: title %}
+{% render 'randomPage' collection: collection currentPage: title %}

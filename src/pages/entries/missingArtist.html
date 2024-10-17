@@ -1,0 +1,28 @@
+---
+pagination:
+  addAllPagesToCollections: true
+  data: missingArtists
+  size: 1
+  alias: artist
+permalink: "artists/{{ artist | slugify }}/"
+tags: ["artist", "missing"]
+type: artist
+eleventyComputed:
+  title: "{{ artist }}"
+  intro: "{% markdown \"This artist hasn't been documented yet!\" %}"
+---
+
+{% assign releaseList = collections.release | hasArtist: artist.name %}
+
+<section>
+  <h2>Releases</h2>
+  <ul>
+    {% for release in releaseList %}
+      <li>
+        <a href="{{release.url}}">{{ release.data.title }} ({{ release.data.artists }})</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+<hr>
+{% render 'randomPage' collection: collections.artist currentPage: title %}

@@ -20,7 +20,11 @@ function replaceWikilinks(content) {
   return content.replace(/\[\[(.*?)\|(.*?)\]\]/gm, (_match, a, b) => `<a href="/` + slugifyLastSegment(a) + `">` + b + `</a>`)
     .replace(/\[\[(.*?)\]\]/gm, (_match, a) => `<a href="/` + slugifyLastSegment(a) + `">` + a + `</a>`);
 }
+function removeMissing(collection) {
+  return collection.filter(entry => !entry.data.tags.includes("missing"));
+}
 
 exports.parseEntries = parseEntries;
 exports.handleError = handleError;
 exports.replaceWikilinks = replaceWikilinks;
+exports.removeMissing = removeMissing;
