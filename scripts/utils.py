@@ -26,7 +26,7 @@ def try_scaffold_artist(artist, spotify):
             release = spotify.album(release['uri']);
             release['album_type'] = release_type;
             release['name'] = release_name;
-            create_release_entry(release);
+            create_release_entry(release, artist['genres']);
             results = spotify.album_tracks(release['uri']);
             tracks = results['items'];
             while results['next']:
@@ -48,12 +48,14 @@ def exists(name, entries):
     return sum(1 for entry in entries if entry[0].lower() == name.lower());
 
 def create_artist_entry(artist):
-    entry = [artist['name'], '', '', ','.join(artist['genres']), '', artist['external_urls']['spotify'], '', ''];
+    entry = [artist['name'], '', '', ','.join(capitalize_each(artist['genres'])), '', 
+             artist['external_urls']['spotify'], '', ''];
     entries = [entry];
     music_entries.add('artist', entries);
 
-def create_release_entry(release):
-    entry = [release['name'], ','.join([artist['name'] for artist in release['artists']]), ','.join(release['genres']), 
+def create_release_entry(release, default_genres):
+    entry = [release['name'], ','.join([artist['name'] for artist in release['artists']]), 
+             ','.join(capitalize_each(release['genres'] if release['genres'] else default_genres)), 
              release['album_type'], release['release_date'], release['external_urls']['spotify'], '', ''];
     entries = [entry];
     music_entries.add('release', entries);
@@ -75,3 +77,6 @@ def get_release_type(release):
             return 'single' if release['total_tracks'] < 4 else 'EP';
         case _:
             return 'LP';
+
+def capitalize_each(list):
+    return [entry.capitalize() for entry in list];
