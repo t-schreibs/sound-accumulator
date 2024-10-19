@@ -1,5 +1,6 @@
 import csv
 from pathlib import Path
+from urllib.parse import quote
 
 ENTRIES_PATH = (Path.cwd() / "src" / "entries").resolve();
 
@@ -33,6 +34,9 @@ def get_filepath(type, release = None):
         case "release":
             return Path.joinpath(ENTRIES_PATH, 'releases.csv');
         case "track":
-            return Path.joinpath(ENTRIES_PATH, 'tracklists', f'{release.replace('/', '%2F')}.csv');
+            return Path.joinpath(ENTRIES_PATH, 'tracklists', f'{get_clean_filename(release, '')}.csv');
         case _:
             raise Exception(f'Entry type {type} not supported.');
+
+def get_clean_filename(filename):
+    return quote(filename, ' ,()!+');

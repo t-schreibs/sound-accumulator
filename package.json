@@ -139,6 +139,7 @@
     "hast-util-to-text": "^3.1.2",
     "hast-util-whitespace": "^2.0.1",
     "hastscript": "^7.2.0",
+    "he": "^1.2.0",
     "html-encoding-sniffer": "^3.0.0",
     "html-to-text": "^9.0.5",
     "html-void-elements": "^2.0.1",
