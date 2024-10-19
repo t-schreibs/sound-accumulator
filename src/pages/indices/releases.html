@@ -11,9 +11,9 @@ description: "Discover your new favorite artist!"
 <section data-pagefind-ignore>
     <ul>
         {% for release in releaseList %}
-            <li>
-                <a href="{{ release.url }}">{{ release.data.title }} ({{ release.data.artists }})</a>
-            </li>
+        <li>
+            <a href="{{ release.url }}">{{ release.data.title }} ({{ release.data.artists | replace: ",", ", " }})</a>
+        </li>
         {% endfor %}
     </ul>
 </section>

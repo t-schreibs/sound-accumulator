@@ -12,7 +12,7 @@ eleventyComputed:
   intro: "{% markdown \"This artist hasn't been documented yet!\" %}"
 ---
 
-{% assign releaseList = collections.release | hasArtist: artist.name %}
+{% assign releaseList = collections.release | hasArtist: artist %}
 
 <section>
   <h2>Releases</h2>
