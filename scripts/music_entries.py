@@ -49,4 +49,4 @@ def get_filepath(type, release=None):
 
 
 def get_clean_filename(filename):
-    return quote(filename, " ,()!+")
+    return quote(filename, " ,()!+&'èé@")
