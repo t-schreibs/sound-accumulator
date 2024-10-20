@@ -8,7 +8,7 @@ hideTitle: true
 {% assign artistList = collections.artist | removeMissing | reverse | limit : 20 %}
 {% assign genreList = collections.genre | removeMissing | reverse | limit : 20 %}
 {% assign releaseList = collections.release | removeSingles | reverse | limit : 20 %}
-{% assign missingList = collections.missing | reverse %}
+{% assign missingList = collections.missing | reverse | limit: 40 %}
 
 <section>
     <h1>Discover your new favorite artist!</h1>
