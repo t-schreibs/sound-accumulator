@@ -7,8 +7,11 @@ ENTRIES_PATH = (Path.cwd() / "src" / "entries").resolve()
 
 def get(type, release=None):
     filepath = get_filepath(type, release)
-    with open(filepath, newline="", encoding="utf-8") as file:
-        return list(csv.reader(file))[1:]
+    try:
+        with open(filepath, newline="", encoding="utf-8") as file:
+            return list(csv.reader(file))[1:]
+    except:
+        return list()
 
 
 def add(type, entries, release=None):

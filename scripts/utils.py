@@ -33,9 +33,8 @@ def try_scaffold_artist(artist, spotify):
             while results["next"]:
                 results = spotify.next(results)
                 tracks.extend(results["items"])
-            current_tracks = music_entries.get("track", release["name"])
             create_track_entries(
-                filter(lambda track: not exists(track["name"], current_tracks), tracks),
+                tracks,
                 release["name"],
             )
             result = True
@@ -95,7 +94,8 @@ def create_track_entries(tracks, release):
         if not exists(track["name"], current_tracks):
             entry = [track["name"], track["external_urls"]["spotify"], "", ""]
             entries.append(entry)
-    music_entries.add("track", entries, release)
+    if entries:
+        music_entries.add("track", entries, release)
 
 
 def get_release_type(release):
