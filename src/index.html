@@ -7,7 +7,8 @@ hideTitle: true
 {% assign blogList = collections.blog | reverse | limit : 10 %}
 {% assign artistList = collections.artist | removeMissing | reverse | limit : 20 %}
 {% assign genreList = collections.genre | removeMissing | reverse | limit : 20 %}
-{% assign releaseList = collections.release | reverse | limit : 20 %}
+{% assign releaseList = collections.release | removeSingles | reverse | limit : 20 %}
+{% assign missingList = collections.missing | reverse %}
 
 <section>
     <h1>Discover your new favorite artist!</h1>
@@ -48,6 +49,18 @@ hideTitle: true
         {% for release in releaseList %}
             <li>
                 <a href="{{ release.url }}">{{ release.data.title }} ({{ release.data.artists | replace: ",", ", "}})</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+<hr>
+<section>
+    <h2>Help us out!</h2>
+    <p>We're missing entries for the following topics:</p>
+    <ul>
+        {% for entry in missingList %}
+            <li>
+                <a href="{{ entry.url }}">{{ entry.data.title }} ({{ entry.data.type }})</a>
             </li>
         {% endfor %}
     </ul>

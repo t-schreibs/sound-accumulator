@@ -11,4 +11,5 @@ module.exports = eleventyConfig => {
     eleventyConfig.addFilter("randomPage", (collection, avoid) => collection.filter(
         entry => entry.data.title !== avoid)[Math.floor(Math.random() * collection.length)]);
     eleventyConfig.addFilter("removeMissing", (collection) => removeMissing(collection));
+    eleventyConfig.addFilter("removeSingles", (collection) => collection.filter(entry => entry.data.releaseType !== 'single'))
 };

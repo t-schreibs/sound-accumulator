@@ -55,6 +55,7 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   h3 {
     font-size: calc(1.2rem + 0.15vw);
     margin-bottom: 8px;
+    margin-top: 50px;
   }
   
   p {

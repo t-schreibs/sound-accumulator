@@ -14,6 +14,7 @@ eleventyComputed:
   genres: "{{ release.genres }}"
   links: "{{ release.links }}"
   artists: "{{ release.artists }}"
+  releaseType: "{{ release.type }}"
 ---
 
 {% assign genreList = genres | split : "," %}
@@ -37,7 +38,7 @@ eleventyComputed:
     </tr>
     <tr>
       <td>Type</td>
-      <td>{{ release.type }}</td>
+      <td>{{ releaseType }}</td>
     </tr>
     <tr>
       <td>Published</td>
