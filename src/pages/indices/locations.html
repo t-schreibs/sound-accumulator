@@ -12,7 +12,7 @@ description: "Discover your new favorite artist!"
   <ul>
     {% for location in locationList %}
       <li>
-        <a href="/locations/{{ location.name | slugify }}">{{ location.name }}</a>
+        <a href="/locations/{{ location.name | slugify }}">{{ location.name }} ({{ location.artists | size }})</a>
       </li>
     {% endfor %}
   </ul>
