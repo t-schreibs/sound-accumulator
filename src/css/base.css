@@ -11,6 +11,7 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   
   body {
     font-family: Nunito, sans-serif;
+    font-size: calc(1rem + 0.15vw);
     line-height: 1.6;
     background-color: #FFFFFF;
     color: #000000;
@@ -37,31 +38,27 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto Slab', Roboto, sans-serif;
-    color: #333;
+    color: #000000;
     font-weight: bold;
   }
   
   h1 {
-    font-size: 36px;
+    font-size: calc(2.2rem + 0.15vw);
     margin-bottom: 20px;
   }
   
   h2 {
-    font-size: 24px;
+    font-size: calc(1.6rem + 0.15vw);
     margin-bottom: 15px;
   }
 
-  .h2-size-text {
-    font-size: 24px;
-  }
-
   h3 {
-    font-size: 18px;
+    font-size: calc(1.2rem + 0.15vw);
     margin-bottom: 8px;
   }
   
   p {
-    font-size: 16px;
+    font-size: calc(1rem + 0.15vw);
     margin-bottom: 15px;
   }
 
@@ -73,6 +70,9 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   @media (min-width: 750px) {
     ul {
       columns: 2;
+    }
+    ul li {
+      padding-right: 20px;
     }
   }
 
@@ -114,6 +114,7 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   nav ul li {
     display: inline;
     margin: 0 10px;
+    padding: 0;
   }
   
   nav ul li a {
@@ -127,6 +128,11 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
 
   nav ul li a span {
     vertical-align: middle;
+  }
+
+  section {
+    margin-top: 30px;
+    margin-bottom: 50px;
   }
   
   table {
