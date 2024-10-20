@@ -8,12 +8,12 @@ import os
 BLOG_PATH = (Path.cwd() / "src" / "pages" / "blog").resolve()
 
 
-def start_post(date):
+def start_post(date, description):
     post = Document()
     post.add("---")
     post.add(f'title: "{date}"')
     post.add("tags: blog")
-    post.add('description: ""')
+    post.add(f'description: "{description}"')
     post.add('permalink: "blog/{{ title | slugify }}/"')
     post.add("---")
     post.add("")

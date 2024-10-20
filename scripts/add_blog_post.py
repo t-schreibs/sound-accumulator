@@ -1,9 +1,11 @@
+import sys
 import blogging
 from datetime import date
 from colorist import red
 
+description = sys.argv[1]
 blog_date = date.today().strftime("%d %B %Y")
-post = blogging.start_post(blog_date)
+post = blogging.start_post(blog_date, description)
 blogging.add_artist_list(post, blogging.get_artists_to_include_in_next_post())
 try:
     with open(blogging.get_filepath(blog_date), "x") as file:
