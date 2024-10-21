@@ -1,0 +1,19 @@
+---
+pagination:
+  data: collections.alphabeticalRelease
+  size: 50
+  alias: releaseList
+permalink: "releases/{{ pagination.pageNumber }}/"
+title: "Releases"
+description: "Discover your new favorite artist!"
+---
+
+<section data-pagefind-ignore>
+    <ul>
+        {% for release in releaseList %}
+        <li>
+            <a href="{{ release.url }}">{{ release.data.title }} ({{ release.data.artists | replace: ",", ", " }})</a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>

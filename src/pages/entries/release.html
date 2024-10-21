@@ -1,0 +1,68 @@
+---
+pagination:
+  addAllPagesToCollections: true
+  data: releases
+  size: 1
+  alias: release
+permalink: "releases/{{ release.name | slugify }}/"
+tags: release
+type: release
+eleventyComputed:
+  title: "{{ release.name }}"
+  description: "{% description release.intro %}"
+  intro: "{% markdown release.intro %}"
+  genres: "{{ release.genres }}"
+  links: "{{ release.links }}"
+  artists: "{{ release.artists }}"
+  releaseType: "{{ release.type }}"
+---
+
+{% assign genreList = genres | split : "," %}
+{% assign artistList = artists | split : "," %}
+{% assign linkList = links | split : "," %}
+{% assign trackList = collections.track | hasRelease: release.name %}
+
+<section>
+  <table>
+    <tr>
+      <td>Artists</td>
+      <td>
+        {% linkList artistList collections.artist %}
+      </td>
+    </tr>
+    <tr>
+      <td>Genres</td>
+      <td>
+        {% linkList genreList collections.genre %}
+      </td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td>{{ releaseType }}</td>
+    </tr>
+    <tr>
+      <td>Published</td>
+      <td>{{ release.published }}</td>
+    </tr>
+    <tr>
+      <td>Links</td>
+      <td>{% externalLinks linkList %}</td>
+    </tr>
+  </table>
+</section>
+<section>
+  <p>{% markdown release.about %}</p>
+</section>
+<hr>
+<section>
+  <h2>Tracks</h2>
+  <ul>
+    {% for track in trackList %}
+      <li>
+        <a href="{{track.url}}">{{ track.data.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+<hr>
+{% render 'randomPage' collection: collections.release currentPage: title %}

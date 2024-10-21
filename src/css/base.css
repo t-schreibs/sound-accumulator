@@ -11,6 +11,7 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   
   body {
     font-family: Nunito, sans-serif;
+    font-size: calc(1rem + 0.15vw);
     line-height: 1.6;
     background-color: #FFFFFF;
     color: #000000;
@@ -34,39 +35,44 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', Roboto, sans-serif;
+    color: #000000;
+    font-weight: bold;
+  }
   
   h1 {
-    font-size: 36px;
+    font-size: calc(2.2rem + 0.15vw);
     margin-bottom: 20px;
-    color: #333;
-    font-weight: bold;
   }
   
   h2 {
-    font-size: 24px;
+    font-size: calc(1.6rem + 0.15vw);
     margin-bottom: 15px;
-    color: #333;
-    font-weight: bold;
   }
 
   h3 {
-    font-size: 20px;
+    font-size: calc(1.2rem + 0.15vw);
     margin-bottom: 8px;
   }
   
   p {
-    font-size: 16px;
     margin-bottom: 15px;
   }
 
   ul {
     margin: 15px;
+    margin-bottom: 30px;
     list-style-type: square;
   }
 
   @media (min-width: 750px) {
     ul {
       columns: 2;
+    }
+    ul li {
+      padding-right: 20px;
     }
   }
 
@@ -96,18 +102,20 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   nav {
     background-color: #000000;
     padding: 10px 0;
-    font-size: large;
+    font-size: calc(1rem + 0.15vw);
   }
   
   nav ul {
     columns: 1;
     list-style: none;
     text-align: center;
+    margin-bottom: 15px;
   }
   
   nav ul li {
     display: inline;
     margin: 0 10px;
+    padding: 0;
   }
   
   nav ul li a {
@@ -121,6 +129,11 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
 
   nav ul li a span {
     vertical-align: middle;
+  }
+
+  section {
+    margin-top: 30px;
+    margin-bottom: 50px;
   }
   
   table {
@@ -136,6 +149,7 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
 
   td ul {
     columns: 1;
+    margin-bottom: 15px;
   }
   
   th {
@@ -158,6 +172,7 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
     columns: 1;
     list-style: none;
     text-align: center;
+    margin-bottom: 15px;
   }
 
   footer ul li {
@@ -177,4 +192,10 @@ body, h1, h2, h3, p, ul, ol, nav, table, th, td {
   }
   .one-column {
     columns: 1;
+  }
+
+  @media (max-width: 750px) {
+    .hide-on-small-screens {
+      display: none;
+    }
   }

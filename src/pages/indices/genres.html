@@ -1,0 +1,19 @@
+---
+pagination:
+  data: collections.alphabeticalGenre
+  size: 50
+  alias: genreList
+permalink: "genres/{{ pagination.pageNumber }}/"
+title: "Genres"
+description: "Discover your new favorite artist!"
+---
+
+<section data-pagefind-ignore>
+    <ul>
+        {% for genre in genreList %}
+            <li>
+                <a href="{{ genre.url }}">{{ genre.data.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>

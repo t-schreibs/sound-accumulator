@@ -1,0 +1,6 @@
+<section>
+    {% assign page = collection | randomPage: currentPage %}
+    <p>Something else to check out: 
+        <a href="{{page.url}}">{{ page.data.title }}</a>
+    </p>
+</section>

@@ -1,16 +1,18 @@
 ---
 title: Sound Accumulator
 description: Discover your new favorite artist!
+hideTitle: true
 ---
 
-{% assign blogList = collections.blog | reverse | limit: 10 %}
-{% assign artistList = collections.artist | reverse |limit: 20 %}
-{% assign genreList = collections.genre | reverse | limit: 20 %}
-{% assign releaseList = collections.release | reverse | limit: 20 %}
+{% assign blogList = collections.blog | reverse | limit : 10 %}
+{% assign artistList = collections.artist | removeMissing | reverse | limit : 20 %}
+{% assign genreList = collections.genre | removeMissing | reverse | limit : 20 %}
+{% assign releaseList = collections.release | removeSingles | reverse | limit : 20 %}
+{% assign missingList = collections.missing | reverse | limit: 40 %}
 
 <section>
-    <h2>Discover your new favorite artist!</h2>
-    <p>Sound Accumulator is a community-generated music wiki that prioritizes small & local artists and focuses on discoverability.</p>
+    <h1>Discover your new favorite artist!</h1>
+    <p>Sound Accumulator is a community-generated music wiki that prioritizes small & mid-size artists and focuses on discoverability.</p>
 </section>
 <hr>
 <section data-pagefind-ignore>
@@ -46,7 +48,19 @@ description: Discover your new favorite artist!
     <ul>
         {% for release in releaseList %}
             <li>
-                <a href="{{ release.url }}">{{ release.data.title }} ({{ release.data.artists }})</a>
+                <a href="{{ release.url }}">{{ release.data.title }} ({{ release.data.artists | replace: ",", ", "}})</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+<hr>
+<section>
+    <h2>Help us out!</h2>
+    <p>We're missing entries for the following topics:</p>
+    <ul>
+        {% for entry in missingList %}
+            <li>
+                <a href="{{ entry.url }}">{{ entry.data.title }} ({{ entry.data.type }})</a>
             </li>
         {% endfor %}
     </ul>

@@ -1,0 +1,81 @@
+---
+pagination:
+  addAllPagesToCollections: true
+  data: tracks
+  size: 1
+  alias: track
+permalink: "tracks/{{ track.release | slugify }}/{{ track.name | slugify }}/"
+tags: track
+type: track
+eleventyComputed:
+  title: "{{ track.name }}"
+  description: "{% description track.intro %}"
+  release: "{{ track.release }}"
+  links: "{{ track.links }}"
+---
+
+{% assign releaseInfo = release | getInfo: releases %}
+{% assign linkList = links | split : "," %}
+{% assign genreList = releaseInfo.genres | split : "," %}
+{% assign releaseList = release | split : "," %}
+{% assign artistList = releaseInfo.artists | split : "," %}
+{% assign slugifiedRelease = release | slugify %}
+{% assign releaseLink = ' <a href="/releases/' | append: slugifiedRelease | append : '">' | append: release | remove: ' (single)' | append : '</a>' %}
+{% if releaseInfo.name == title | remove : " (single)" %}
+  {% assign defaultIntro = title | append : ' is the title track from the ' | append: releaseInfo.type | append : ' ' | append: releaseLink | append : ', published on ' | append: releaseInfo.published | append : '.' %}
+{% else %}
+  {% assign defaultIntro = title | append : ' is a track from the ' | append: releaseInfo.type | append : ' ' | append: releaseLink | append : ', published on ' | append: releaseInfo.published | append : '.' %}
+{% endif %}
+{% assign linkCount = linkList | size %}
+{% assign defaultLinks = releaseInfo.links | split : "," %}
+
+<section>
+  <p>
+    {% defaultIfEmpty defaultIntro %}
+    {% markdown track.intro %}
+    {% enddefaultIfEmpty %}
+  </p>
+</section>
+<section>
+  <table>
+    <tr>
+      <td>Artists</td>
+      <td>
+        {% linkList artistList collections.artist %}
+      </td>
+    </tr>
+    <tr>
+      <td>Release</td>
+      <td>
+        {{ releaseLink }}
+      </td>
+    </tr>
+    <tr>
+      <td>Genres</td>
+      <td>
+        {% linkList genreList collections.genre %}
+      </td>
+    </tr>
+    <tr>
+      <td>Published</td>
+      <td>{{ releaseInfo.published }}</td>
+    </tr>
+    <tr>
+      <td>Links</td>
+      <td>
+        {% if linkCount > 0 %}
+          {% externalLinks linkList %}
+        {% else %}
+          {% externalLinks defaultLinks %}
+        {% endif %}
+      </td>
+    </tr>
+  </table>
+</section>
+<section>
+  <p>
+    {% markdown track.about %}
+  </p>
+</section>
+<hr>
+{% render 'randomPage' collection: collections.track currentPage: title %}

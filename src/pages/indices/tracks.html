@@ -1,0 +1,19 @@
+---
+pagination:
+  data: collections.alphabeticalTrack
+  size: 50
+  alias: trackList
+permalink: "tracks/{{ pagination.pageNumber }}/"
+title: "Tracks"
+description: "Discover your new favorite artist!"
+---
+
+<section data-pagefind-ignore>
+    <ul>
+        {% for track in trackList %}
+            <li>
+                <a href="{{ track.url }}">{{ track.data.title }} ({{ track.data.release }})</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>

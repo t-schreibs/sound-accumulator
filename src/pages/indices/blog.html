@@ -1,0 +1,19 @@
+---
+pagination:
+  data: collections.blog
+  size: 50
+  alias: blogList
+permalink: "blog/{{ pagination.pageNumber }}"
+title: "Blog"
+description: "Discover your new favorite artist!"
+---
+
+<section data-pagefind-ignore>
+    <ul class="one-column">
+        {% for blog in blogList %}
+            <li>
+                <a href="{{ blog.url }}">{{ blog.data.title }}</a> - {{ blog.data.description }}
+            </li>
+        {% endfor %}
+    </ul>
+</section>

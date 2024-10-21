@@ -1,0 +1,22 @@
+---
+layout: layout
+---
+
+{% assign previous = pagination.href.previous %}
+{% assign next = pagination.href.next %}
+
+{{ content | safe }}
+
+<section>
+    {% if previous %}
+        <a href="{{ previous }}">Previous</a>
+    {% else %}
+        Previous
+    {% endif %}
+    |
+    {% if next %}
+        <a href="{{ next }}">Next</a>
+    {% else %}
+        Next
+    {% endif %}
+</section>

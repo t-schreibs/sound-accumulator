@@ -1,0 +1,74 @@
+---
+pagination:
+  addAllPagesToCollections: true
+  data: genres
+  size: 1
+  alias: genre
+permalink: "genres/{{ genre.name | slugify }}/"
+tags: genre
+type: genre
+eleventyComputed:
+  title: "{{ genre.name }}"
+  description: "{% description genre.intro %}"
+  intro: "{% markdown genre.intro %}"
+  aka: "{{ genre.aka }}"
+  subgenres: "{{ genre.subgenres }}"
+---
+
+{% assign collection = collections.genre | removeMissing %}
+{% assign akaList = aka | split : "," %}
+{% assign subgenreList = subgenres | split : "," %}
+{% assign artistList = collections.artist | hasGenre: genre.name | limit : 20 %}
+{% assign releaseList = collections.release | hasGenre: genre.name | limit : 20 %}
+
+<section>
+  <table>
+    <tr>
+      <td>AKA</td>
+      <td>
+        <ul>
+          {% for alias in akaList %}
+            <li>{{ alias }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Origins</td>
+      <td>{{ genre.origins }}</td>
+    </tr>
+    <tr>
+      <td>Subgenres</td>
+      <td>
+        {% linkList subgenreList collections.genre %}
+      </td>
+    </tr>
+  </table>
+</section>
+<section>
+  <p>{% markdown genre.about %}</p>
+</section>
+<hr>
+<section>
+  <h2>Artists</h2>
+  <ul>
+    {% for artist in artistList %}
+      <li>
+        <a href="{{artist.url}}">{{ artist.data.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+<hr>
+<section>
+  <h2>Releases</h2>
+  <ul>
+    {% for release in releaseList %}
+      <li>
+        <a href="{{release.url}}">{{ release.data.title }} ({{ release.data.artists | replace: ",", ", " }})</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+<hr>
+{% render 'randomPage' collection: collection currentPage: title %}

@@ -1,4 +1,4 @@
-const utils = require('../../src/scripts/utils')
+const utils = require('../../src/config/utils')
 const fs = require("node:fs");
 
 module.exports = function () {
@@ -6,7 +6,7 @@ module.exports = function () {
     const tracks = files.map(
         file => {
             const csv = utils.parseEntries(fs.readFileSync("src/entries/tracklists/" + file, utils.handleError));
-            const release = file.substring(0, file.length - 4);
+            const release = decodeURIComponent(file.substring(0, file.length - 4));
             csv.map(
                 track => {
                     track.release = release;

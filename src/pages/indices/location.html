@@ -1,0 +1,23 @@
+---
+pagination:
+  data: collections.location
+  size: 1
+  alias: location
+permalink: "locations/{{ location.name | slugify }}/"
+description: "Discover your new favorite artist!"
+eleventyComputed:
+  title: "{{ location.name }}"
+---
+
+<section>
+  <a href="/locations/0">&lt;&lt; All locations</a>
+</section>
+<section data-pagefind-ignore>
+  <ul>
+    {% for artist in location.artists %}
+      <li>
+        <a href="{{ artist.url }}">{{ artist.data.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

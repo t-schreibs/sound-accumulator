@@ -1,0 +1,17 @@
+---
+layout: layout
+---
+
+{% if type %}
+<section>
+    <a href="/{{ type }}s/0">&lt;&lt; All {{ type }}s</a>
+</section>
+{% endif %}
+
+{% if intro %}
+    <section>
+        <p>{{ intro }}</p>
+    </section>
+{% endif %}
+
+{{ content | safe }}
