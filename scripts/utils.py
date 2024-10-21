@@ -109,7 +109,7 @@ def get_release_type(release):
 def format_date(date):
     return (
         datetime.datetime.strptime(date, "%Y-%m-%d")
-        .strftime("%B %d %Y")
+        .strftime("%B %d, %Y")
         .replace(" 0", " ")
     )
 
