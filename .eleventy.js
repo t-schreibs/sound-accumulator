@@ -13,7 +13,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setLiquidOptions({
       strictFilters: false
     });
-    eleventyConfig.addPlugin(eleventyNavigation);
+    //eleventyConfig.addPlugin(eleventyNavigation);
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(collections);
     eleventyConfig.addPlugin(filters);

@@ -1,8 +1,8 @@
-import sys
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import credentials
 import music_entries
+import datetime
 from colorist import red
 
 
@@ -74,7 +74,7 @@ def create_release_entry(release, default_genres):
             capitalize_each(release["genres"] if release["genres"] else default_genres)
         ),
         release["album_type"],
-        release["release_date"],
+        format_date(release["release_date"]),
         release["external_urls"]["spotify"],
         "",
         "",
@@ -104,6 +104,14 @@ def get_release_type(release):
             return "single" if release["total_tracks"] < 4 else "EP"
         case _:
             return "LP"
+
+
+def format_date(date):
+    return (
+        datetime.datetime.strptime(date, "%Y-%m-%d")
+        .strftime("%B %d %Y")
+        .replace(" 0", " ")
+    )
 
 
 def capitalize_each(list):
