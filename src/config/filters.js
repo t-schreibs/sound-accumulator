@@ -1,5 +1,5 @@
 const slug = require('limax');
-const { removeMissing } = require('./utils');
+const { removeMissing, replaceWikilinks } = require('./utils');
 
 module.exports = eleventyConfig => {
     eleventyConfig.addFilter("slugify", (content) => slug(content));
@@ -11,5 +11,6 @@ module.exports = eleventyConfig => {
     eleventyConfig.addFilter("randomPage", (collection, avoid) => collection.filter(
         entry => entry.data.title !== avoid)[Math.floor(Math.random() * collection.length)]);
     eleventyConfig.addFilter("removeMissing", (collection) => removeMissing(collection));
-    eleventyConfig.addFilter("removeSingles", (collection) => collection.filter(entry => entry.data.releaseType !== 'single'))
+    eleventyConfig.addFilter("removeSingles", (collection) => collection.filter(entry => entry.data.releaseType !== 'single'));
+    eleventyConfig.addFilter("replaceWikilinks", (content) => replaceWikilinks(content));
 };

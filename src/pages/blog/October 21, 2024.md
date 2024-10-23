@@ -36,12 +36,12 @@ here.
 
 #### Portland, but this time it's alt-rock
 
-- [[artists/ore.|ore.]] - [[genres/alt-rock|Alt-rock]] band from Portland, Oregon.
+- [[artists/ore.|ore.]] - [[genres/alt-rock|Alt-rock]] band from Portland.
 - [[artists/The Banana Creatures|The Banana Creatures]] - Creative [[genres/alt-rock|alt-rock]] outfit whose members live in Portland and Seattle.
 - [[artists/Cardioid|Cardioid]] - the solo moniker of Lizzy Ellison, a project which sees her developing expansive [[genres/alt-rock|alt-rock]] and [[genres/dream pop|dream pop]] ideas.
 - [[artists/Bug Seance|Bug Seance]] - [[genres/shoegaze|Shoegazy]] [[genres/emo|emo]] band from Portland.
-- [[artists/Bad Pioneer|Bad Pioneer]] - Synthesist from Portland, Oregon.
-- [[artists/Veana Baby|Veana Baby]] - [[genres/lo-fi|lo-fi]] [[genres/neo-soul|soul]] artist based in Portland, Oregon.
+- [[artists/Bad Pioneer|Bad Pioneer]] - Synthesist from Portland.
+- [[artists/Veana Baby|Veana Baby]] - [[genres/lo-fi|lo-fi]] [[genres/neo-soul|soul]] artist based in Portland.
 
 #### Chicago is for synthesists
 
