@@ -3,7 +3,7 @@ title: "October 21, 2024"
 tags: blog
 description: "A revamped website, and a bunch of new artists"
 permalink: "blog/{{ title | slugify }}/"
-artists: ["New Venusians", "mui zyu", "The Growth Eternal", "Puppy Angst", "A.M. Overcast", "as a sketch pad", "ore.", "Karima Walker", "Roméo Poirier", "Otto Benson", "The JuJu Exchange", "Jacob Mann", "Mountains", "Bad Pioneer", "TALsounds", "Brett Naucke", "Cardioid", "Veana Baby", "Sharada Shashidhar", "Woolworm", "Troth", "The Banana Creatures", "Bug Seance", "Apifera"]
+artists: ["New Venusians", "mui zyu", "The Growth Eternal", "Puppy Angst", "A.M. Overcast", "as a sketch pad", "Ore.", "Karima Walker", "Roméo Poirier", "Otto Benson", "The JuJu Exchange", "Jacob Mann", "Mountains", "Bad Pioneer", "TALsounds", "Brett Naucke", "Cardioid", "Veana Baby", "Sharada Shashidhar", "Woolworm", "Troth", "The Banana Creatures", "Bug Seance", "Apifera"]
 ---
 
 ### Lots happening in this little corner of the internet!
@@ -36,7 +36,7 @@ here.
 
 #### Portland, but this time it's alt-rock
 
-- [[artists/ore.|ore.]] - [[genres/alt-rock|Alt-rock]] band from Portland.
+- [[artists/Ore.|Ore.]] - [[genres/alt-rock|Alt-rock]] band from Portland.
 - [[artists/The Banana Creatures|The Banana Creatures]] - Creative [[genres/alt-rock|alt-rock]] outfit whose members live in Portland and Seattle.
 - [[artists/Cardioid|Cardioid]] - the solo moniker of Lizzy Ellison, a project which sees her developing expansive [[genres/alt-rock|alt-rock]] and [[genres/dream pop|dream pop]] ideas.
 - [[artists/Bug Seance|Bug Seance]] - [[genres/shoegaze|Shoegazy]] [[genres/emo|emo]] band from Portland.
