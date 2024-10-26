@@ -21,7 +21,7 @@ eleventyComputed:
 {% assign artistList = releaseInfo.artists | split : "," %}
 {% assign slugifiedRelease = release | slugify %}
 {% assign releaseLink = ' <a href="/releases/' | append: slugifiedRelease | append : '">' | append: release | remove: ' (single)' | append : '</a>' %}
-{% if title contains releaseInfo.name %}
+{% if releaseInfo.name contains title %}
   {% assign defaultIntro = title | append : ' is the title track from the ' | append: releaseInfo.type | append : ' ' | append: releaseLink | append : ', published on ' | append: releaseInfo.published | append : '.' %}
 {% else %}
   {% assign defaultIntro = title | append : ' is a track from the ' | append: releaseInfo.type | append : ' ' | append: releaseLink | append : ', published on ' | append: releaseInfo.published | append : '.' %}
